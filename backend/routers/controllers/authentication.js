@@ -4,12 +4,12 @@ const bcrypt = require("bcrypt")
 require("dotenv").config();
 
 const Login = (req, res) => {
-  const email = req.body.toLowerCase();
-  const password = req.password;
+  const email = req.body.email.toLowerCase();
+  const password = req.body.password;
   userModel.findOne({ email })
   .then(async(result) => {
     if (!result) {
-      res.json({
+     return res.json({
         success: false,
         message: "The email doesn't exist",
       });
