@@ -3,15 +3,15 @@ const rateModel = require("../../db/models/rate");
 const addToRating =(req,res)=>{
 const {
     userId,
-    book,
-    count} =req.body 
-
+    book
+    } =req.body 
+let count = 0 
 
     const Rate = new rateModel ({userId,
         book,
-        count
+        count: count 
         })
-
+        
         Rate.save 
         .then((result) => {
             res.status(200).json({
