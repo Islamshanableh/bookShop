@@ -10,6 +10,6 @@ const booksRouter = express.Router();
 booksRouter.post("/createbook", CreatNewBook);
 booksRouter.get("/allbooks", getAllBooks);
 booksRouter.get("/typeOfBook/:type", FindByCategory);
-
+booksRouter.get("/nameOfBook/:name", getBookByName);
 
 module.exports = loginRouter;
