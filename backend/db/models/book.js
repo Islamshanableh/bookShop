@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 
-const books = new mongoose.Schema ({
+const bookSchema = new mongoose.Schema ({
 
     image:{type:String,require:true},
     name:{type:String,require:true},
