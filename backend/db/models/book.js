@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
 
-const books = new mongoose.Schema ({
+const bookSchema = new mongoose.Schema ({
 
-    image:{type:String,require:true},
-    name:{type:String,require:true},
+    image:{type:String},
+    name:{type:String , unique:true},
     type:{type:String},
-    author:{type:Number},
-    description:{type:Number},
+    author:{type:String},
     description:{type:String},
     language:{tupe:String},
     price :{type:Number},
