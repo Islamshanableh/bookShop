@@ -66,7 +66,18 @@ const FindByCategory = (req, res) => {
 };
 
 const getBookByName =(req,res)=>{
-
+  const name = req.params.name;
+  bookModel.find({ name }).then((result) => {
+    res.json({
+      succes: true,
+      message: result
+    });
+  }).catch((err)=>{
+    res.json({
+      success:false,
+      message: "incorrect name of book"
+    })
+  })
 }
 
 module.exports = {
