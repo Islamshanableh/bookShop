@@ -44,7 +44,11 @@ Book.save()
 }
 
 // this function return all books 
-const getAllArticles = (req, res) => {}
+const getAllArticles = (req, res) => {
+
+    bookModel.find({}).then((result)=>{}).catch((err)=>{})
+
+}
 
 
 module.exports = {
