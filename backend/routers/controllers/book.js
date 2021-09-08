@@ -65,8 +65,13 @@ const FindByCategory = (req, res) => {
   })
 };
 
+const getBookByName =(req,res)=>{
+
+}
+
 module.exports = {
   CreatNewBook,
   getAllBooks,
   FindByCategory,
+  getBookByName
 };
