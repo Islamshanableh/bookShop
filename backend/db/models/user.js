@@ -21,7 +21,7 @@ userSchema.pre('save', async function(){
     this.password = await bcrypt.hash(this.password,10) 
     })
 
-
+    module.exports={createNewUser}
 
 
 
