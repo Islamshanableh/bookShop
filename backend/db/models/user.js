@@ -19,6 +19,8 @@ userSchema.pre('save', async function(){
     this.email = this.email.toLowerCase()
     this.password = await bcrypt.hash(this.password,10) 
     })
+
+    
 module.exports=mongoose.model("User",userSchema)
 
 
