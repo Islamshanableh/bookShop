@@ -1,5 +1,5 @@
 const bookModel = require("../../db/models/book");
-const NewBook = (req, res) => {
+const CreatNewBook = (req, res) => {
 
 const {
     image,
@@ -42,3 +42,12 @@ Book.save()
   });
  
 }
+
+// this function return all books 
+const getAllArticles = (req, res) => {}
+
+
+module.exports = {
+    CreatNewBook,
+    getAllArticles
+  };
