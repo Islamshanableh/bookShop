@@ -5,3 +5,5 @@ const rateSchema = new mongoose.Schema({
   book: { type: mongoose.Schema.Types.objectId, ref: "Book" },
   count: { type: Number }
 });
+
+module.exports = mongoose.model("rate" , rateSchema);
