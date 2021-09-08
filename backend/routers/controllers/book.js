@@ -44,14 +44,26 @@ Book.save()
 }
 
 // this function return all books 
-const getAllArticles = (req, res) => {
+const getAllBooks = (req, res) => {
 
-    bookModel.find({}).then((result)=>{}).catch((err)=>{})
-
+    bookModel.find({}).then((books) => {
+        res.status(200).json({
+          success: true,
+          message: `All the books `,
+          books : books 
+        });
+      })
+      .catch((err) => {
+        res.status(500).json({
+          success: false,
+          message: `Server Error`,
+          
+        });
+      });
 }
 
 
 module.exports = {
     CreatNewBook,
-    getAllArticles
+    getAllBooks
   };
