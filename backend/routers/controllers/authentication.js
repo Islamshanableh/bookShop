@@ -7,20 +7,46 @@ const Login = (req, res) => {
   const email = req.body.toLowerCase();
   const password = req.password;
   userModel.findOne({ email })
-  .then((result) => {
+  .then(async(result) => {
     if (!result) {
       res.json({
         success: false,
         message: "The email doesn't exist",
       });
     }
-   const check = bcrypt.compareSync(password,result.password)
-   if(!check){
-       res.json({
-           success: false,
-           message:"The password you’ve entered is incorrect"
-       })
-   }
+    try {
+        const check = bcrypt.compareSync(password,result.password)
+        if(!check){
+            res.json({
+                success: false,
+                message:"The password you’ve entered is incorrect"
+            })
+        }
+        const payload={
+            firstName: result.firstName,
+            email: result.email,
+            dateOfBirthday: result.BirthDate
+        }
+        const options = {
+         expiresIn: "10000000h",
+       };
+       const token = await jwt.sign(payload, process.env.SECRET, options);
+       res.status(200).json({
+         success: true,
+         message: `Email and Password are correct`,
+         token: token,
+       });
+    } catch (error) {
+        throw new Error(error.message);
+    }
+  
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      err: err,
+    });
   });
 };
 
