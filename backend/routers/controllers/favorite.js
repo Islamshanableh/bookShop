@@ -1,0 +1,1 @@
+const favoriteModel = require('../../db/models/favorite')
