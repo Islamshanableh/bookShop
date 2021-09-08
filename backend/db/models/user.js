@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema({
     country:{type:String},
     phoneNumber:{type:Number},
     BirthDate:{type:Number},
-    email:{type:String},
+    email:{type:String , unique: true },
     password:{tupe:String},
     favorite :[{type:mongoose.Schema.Types.ObjectId,ref:"Favorite"}],
     cart :[{type:mongoose.Schema.Types.ObjectId,ref:"Cart"}]
