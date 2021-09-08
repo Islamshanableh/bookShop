@@ -1,4 +1,5 @@
 const bookModel = require("../../db/models/book");
+
 const CreatNewBook = (req, res) => {
 
 const {
@@ -62,8 +63,13 @@ const getAllBooks = (req, res) => {
       });
 }
 
+const FindByCategory =(req,res)=>{
+
+}
+
 
 module.exports = {
     CreatNewBook,
-    getAllBooks
+    getAllBooks,
+    FindByCategory
   };
