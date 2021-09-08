@@ -13,6 +13,6 @@ const bookSchema = new mongoose.Schema ({
     rating :[{type:mongoose.Schema.Types.ObjectId,ref:"Rate"}]
     
     })
-    module.export=mongoose.model("Book",bookSchema)
+    module.exports=mongoose.model("Book",bookSchema)
 
     

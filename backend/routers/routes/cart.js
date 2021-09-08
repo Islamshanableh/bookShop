@@ -3,6 +3,6 @@ const { addToCart } = require("../controllers/cart");
 
 const cartRouter = express.Router();
 
-cartRouter.post("/addToCart", addToCart);
+cartRouter.post("/", addToCart);
 
 module.exports = cartRouter;

@@ -53,6 +53,12 @@ const getAllBooks = (req, res) => {
 const FindByCategory = (req, res) => {
   const type = req.params.type;
   bookModel.find({ type }).then((result) => {
+    if(!result.length){
+      res.json({
+        success:false,
+        message: "incorrect category"
+      })
+    }
     res.json({
       succes: true,
       message: result
@@ -60,7 +66,7 @@ const FindByCategory = (req, res) => {
   }).catch((err)=>{
     res.json({
       success:false,
-      message: "incorrect category"
+      message: "server error"
     })
   })
 };
@@ -68,6 +74,11 @@ const FindByCategory = (req, res) => {
 const getBookByName =(req,res)=>{
   const name = req.params.name;
   bookModel.find({ name }).then((result) => {
+    if(!result.length){
+      res.json({
+        success:false,
+        message: "incorrect  name of book"
+      })}
     res.json({
       succes: true,
       message: result

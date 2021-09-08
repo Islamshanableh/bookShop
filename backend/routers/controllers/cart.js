@@ -1,6 +1,6 @@
 const cartModel = require("../../db/models/cart");
 
-const addToCart = ()=>{
+const addToCart = (req,res)=>{
     const {userId , bookId} = req.body;
 
     const cart = new cartModel ({

@@ -12,4 +12,4 @@ booksRouter.get("/allbooks", getAllBooks);
 booksRouter.get("/typeOfBook/:type", FindByCategory);
 booksRouter.get("/nameOfBook/:name", getBookByName);
 
-module.exports = loginRouter;
+module.exports = booksRouter;

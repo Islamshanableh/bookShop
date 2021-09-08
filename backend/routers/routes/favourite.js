@@ -3,6 +3,6 @@ const {addToFavorite}=require("../controllers/favorite")
 const favoriteRouter=express.Router()
 
 
-favoriteRouter.post("/",favoriteRouter)
+favoriteRouter.post("/",addToFavorite)
 
-module.exports = {addToFavorite};
+module.exports = favoriteRouter;
