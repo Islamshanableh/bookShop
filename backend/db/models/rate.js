@@ -6,4 +6,4 @@ const rateSchema = new mongoose.Schema({
   count: { type: Number }
 });
 
-module.exports = mongoose.model("rate" , rateSchema);
+module.exports = mongoose.model("Rate" , rateSchema);
