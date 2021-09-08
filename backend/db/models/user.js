@@ -9,17 +9,19 @@ const userSchema = new mongoose.Schema({
     phoneNumber:{type:Number},
     BirthDate:{type:Number},
     email:{type:String , unique: true },
-    password:{tupe:String},
+    password:{type:String},
     favorite :[{type:mongoose.Schema.Types.ObjectId,ref:"Favorite"}],
     cart :[{type:mongoose.Schema.Types.ObjectId,ref:"Cart"}]
 
 })
-module.export=mongoose.model("User",userSchema)
 
 userSchema.pre('save', async function(){
     this.email = this.email.toLowerCase()
     this.password = await bcrypt.hash(this.password,10) 
     })
+module.exports=mongoose.model("User",userSchema)
+
+
 
 
 
