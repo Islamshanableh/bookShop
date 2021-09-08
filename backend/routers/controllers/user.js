@@ -1,8 +1,8 @@
-const user = require("../../db/models/user");
+const userSchema = require("../../db/models/user");
 
 const createNewUser = (req, res) => {
-    const { firstName, lastName, country, phoneNumber, BirthDate,email,password ,favorite,cart} = req.body;
-    const newUser = new user({
+    const { firstName, lastName, country, phoneNumber, BirthDate,email,password} = req.body;
+    const newUser = new userSchema({
       firstName,
       lastName,
       country,
@@ -10,8 +10,7 @@ const createNewUser = (req, res) => {
       BirthDate,
       email,
       password,
-      favorite,
-      cart
+      
     });
     
     newUser
@@ -25,6 +24,7 @@ const createNewUser = (req, res) => {
       });
     })
     .catch((err) => {
+      console.log(err)
       res.status(409);
       res.json({ success: false, message: "The email already exists" });
     });
