@@ -25,8 +25,20 @@ const Book = new bookModel({
 
 })
 Book.save()
-.then()
-.catch()
-
+.then((result) => {
+    res.status(200).json({
+      success: true,
+      message: `Success book Added`,
+      book : result,
+    });
+  })
+  .catch((err) => {
+   
+    res.status(409).json({
+      success: false,
+      message: `book already exist `,
+      err: err,
+    });
+  });
  
 }
