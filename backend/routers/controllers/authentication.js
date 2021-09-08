@@ -14,7 +14,13 @@ const Login = (req, res) => {
         message: "The email doesn't exist",
       });
     }
-   
+   const check = bcrypt.compareSync(password,result.password)
+   if(!check){
+       res.json({
+           success: false,
+           message:"The password you’ve entered is incorrect"
+       })
+   }
   });
 };
 
