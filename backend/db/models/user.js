@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt')
+
 
 const userSchema = new mongoose.Schema({
     firstName:{type:String,require:true},
@@ -14,7 +16,10 @@ const userSchema = new mongoose.Schema({
 })
 module.export=mongoose.model("User",userSchema)
 
-
+userSchema.pre('save', async function(){
+    this.email = this.email.toLowerCase()
+    this.password = await bcrypt.hash(this.password,10) 
+    })
 
 
 
