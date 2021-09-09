@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
-import { Rate } from "../rating/rate";
+import { Rate } from "../rate/rate";
 import axios from "axios";
 
-export const AllBook = () => {
+export const AllBook =  () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/books/allbooks").then((res) => {
+    axios.get("http://localhost:5000/books/").then((res) => {
       setBooks([...res.data.books]);
+      console.log(books);
     });
   }, []);
   return (
     <div>
+      <h1>rasgeg</h1>
       {books &&
         books.map((element, index) => {
           return (
@@ -26,7 +28,7 @@ export const AllBook = () => {
               {element.price},<br></br>
               <Route
                 exact
-                path="/"
+                path="/home"
                 render={() => <Rate userId={element._id} book={element._id} />}
               />
             </div>
