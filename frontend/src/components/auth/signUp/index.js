@@ -14,6 +14,29 @@ export const Register = () =>{
   
     const [message, setMessage] = useState("");
 
+    const addNewUser = async (e) => {
+        e.preventDefault();
+        try {
+          const result = await axios.post("http://localhost:5000/users", {
+            firstName,
+            lastName,
+            country,
+            email,
+            password,
+            birthDate,
+            phoneNumber,
+          });
+          if (result.data.success) {
+            setMessage("The user has been created successfully");
+          } else throw Error;
+        } catch (error) {
+          if (error.response && error.response.data) {
+            return setMessage(error.response.data.message);
+          }
+          setMessage("Error happened while register, please try again !!");
+        }
+      };
+
 
 
     return(
