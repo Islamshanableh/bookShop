@@ -8,14 +8,12 @@ const Navigation = () => {
 <Link to= "/signup" >signUp</Link>
 <Link to= "/Home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link></div>	)
-:()
-
-
-
-
-
-
-
+:(<div className="navigation">
+<Link to= "/signOut" >signOut</Link>
+<Link to= "/Home" >Home</Link>	
+<Link to= "/aboutUs" >aboutUs</Link>
+</div>)
+}
 	</div>)
 };
 
