@@ -54,7 +54,7 @@ const FindByCategory = (req, res) => {
   const type = req.params.type;
   bookModel.find({ type }).then((result) => {
     if(!result.length){
-      res.json({
+  return    res.json({
         success:false,
         message: "incorrect category"
       })
@@ -75,7 +75,7 @@ const getBookByName =(req,res)=>{
   const name = req.params.name;
   bookModel.find({ name }).then((result) => {
     if(!result.length){
-      res.json({
+    return  res.json({
         success:false,
         message: "incorrect  name of book"
       })}
@@ -89,22 +89,26 @@ const getBookByName =(req,res)=>{
 }
 
 const getBookByAuthor = (req,res)=>{
-const author = req.body.author
-bookModel.find({author})
-.then((result)=>{
-  if(!result.length){
-   return res.json({
-      success:false,
-      message: "please enter the correct Author name"
+  const author = req.params.author;
+  bookModel
+    .find({author })
+    .then((result) => {
+      if(!result.length){
+       return res.json({
+          success:false,
+          message: "incorrect  name of Author"
+        })
+      }
+      res.status(200);
+      res.json({
+        success: true,
+        massage: `all the books by${author}`,
+        articles: result,
+      });
     })
-  }
-  res.json({
-    succes: true,
-    message: result
-  })
-}).cath((err)=>{
-  res.json("server error")
-})
+    .catch((err) => {
+     res.json("server error")
+    });
 }
 
 module.exports = {
