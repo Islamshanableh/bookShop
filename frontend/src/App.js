@@ -7,8 +7,17 @@ export const userContext = createContext();
 
 
 const App = () => {
+	const [token,setToken]=useState()
+const state={token,setToken}
 	return (<div>
-		
+<userContext.Provider value={state}>
+<Navigaion/>
+
+<Switch>
+<Route path="/login" component={Login}/>
+</Switch>
+
+</userContext.Provider>
 	</div>)
 };
 
