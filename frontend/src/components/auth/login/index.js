@@ -12,6 +12,22 @@ const Login=()=>{
     const [status,setStatus]=useState()
   
   const tokenContext = useContext(userContext);
+
+  
+const checkValid = ()=>{
+    axios
+    .post("http://localhost:5000/login",{email,password})
+    .then((res)=>{
+        if(!res.data.success){
+            return setStatus(<div>{res.data.message}</div>)
+        }
+        tokenContext.setToken(res.data.token);
+        history.push("/dashbord")
+    
+    }).catch((err)=>{
+        res.json(err)
+    })
+      }
   
 
   return (
