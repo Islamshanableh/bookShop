@@ -22,10 +22,10 @@ const checkValid = ()=>{
             return setStatus(<div>{res.data.message}</div>)
         }
         tokenContext.setToken(res.data.token);
-        history.push("/dashbord")
+        history.push("/home")
     
     }).catch((err)=>{
-        res.json(err)
+        throw err
     })
       }
   

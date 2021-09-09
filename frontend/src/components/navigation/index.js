@@ -1,6 +1,7 @@
-import React from 'react';
+import React ,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import {userContext} from "../../App"
+
 // import {userContext} from "../../App"
 
 const Navigation = () => {
@@ -9,11 +10,11 @@ const Navigation = () => {
 {!token.token?(<div className="navigation">
 <Link to= "/login" >login </Link>
 <Link to= "/signUp" >Register</Link>
-<Link to= "/Home" >Home</Link>	
+<Link to= "/home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link></div>	)
 :(<div className="navigation">
 <Link to= "/signOut" >signOut</Link>
-<Link to= "/Home" >Home</Link>	
+<Link to= "/home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link>
 </div>)
 }
