@@ -3,6 +3,19 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export const Register = () =>{
+
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [country, setCountry] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [birthDate, setBirthDate] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState(0);
+  
+    const [message, setMessage] = useState("");
+
+
+
     return(
         <div>
             <>
