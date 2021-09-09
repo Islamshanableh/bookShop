@@ -2,7 +2,8 @@ const express = require("express");
 const { CreatNewBook,
 getAllBooks,
 FindByCategory,
-getBookByName } = require("../controllers/book");
+getBookByName,
+getBookByAuthor } = require("../controllers/book");
 
 
 const booksRouter = express.Router();
@@ -10,6 +11,8 @@ const booksRouter = express.Router();
 booksRouter.post("/createbook", CreatNewBook);
 booksRouter.get("/allbooks", getAllBooks);
 booksRouter.get("/typeOfBook/:type", FindByCategory);
-booksRouter.get("/nameOfBook/:name", getBookByName);
+booksRouter.get("/:name", getBookByName);
+booksRouter.get("/:author", getBookByAuthor);
+
 
 module.exports = booksRouter;
