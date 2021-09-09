@@ -48,5 +48,6 @@ const checkValid = ()=>{
         {status}
         </>
     )
-
-export default Login
+    }
+    
+    export default Login
