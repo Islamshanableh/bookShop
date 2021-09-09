@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {userContext} from "../../App"
 const Navigation = () => {
+	const token = useContext (userContext) 
 	return (<div className="App">
 {!token.token?(<div className="navigation">
 <Link to= "/signin" >login </Link>
