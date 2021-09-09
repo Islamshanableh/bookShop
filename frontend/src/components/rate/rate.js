@@ -18,4 +18,20 @@ export const Rate = ({ userId, book }) => {
         // );
       });
   };
+
+  return (
+    <div className="App">
+      <Rating
+        onClick={handleRating}
+        ratingValue={rating}
+        size={20}
+        label
+        transition
+        fillColor="orange"
+        emptyColor="gray"
+        className="foo" // Will remove the inline style if applied
+      />
+      {rating}
+    </div>
+  );
 };
