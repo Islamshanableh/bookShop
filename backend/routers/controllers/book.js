@@ -84,15 +84,27 @@ const getBookByName =(req,res)=>{
       message: result
     });
   }).catch((err)=>{
-    res.json({
-      success:false,
-      message: "incorrect name of book"
-    })
+    res.json("server error")
   })
 }
 
 const getBookByAuthor = (req,res)=>{
-
+const author = req.body.author
+bookModel.find({author})
+.then((result)=>{
+  if(!result.length){
+   return res.json({
+      success:false,
+      message: "please enter the correct Author name"
+    })
+  }
+  res.json({
+    succes: true,
+    message: result
+  })
+}).cath((err)=>{
+  res.json("server error")
+})
 }
 
 module.exports = {
