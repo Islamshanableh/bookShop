@@ -17,6 +17,7 @@ const state={token,setToken}
 <Switch>
 <Route path="/login" component={Login}/>
 <Route path = "/signUp" component = {Register}/>
+
 </Switch>
 
 </userContext.Provider>
