@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import { Rate } from "../rate/rate";
+import { AddCart } from "../cart/cart";
 import axios from "axios";
 
 export const AllBook =  () => {
@@ -9,7 +10,6 @@ export const AllBook =  () => {
   useEffect(() => {
     axios.get("http://localhost:5000/books/").then((res) => {
       setBooks([...res.data.books]);
-      console.log(books);
     });
   }, []);
   return (
@@ -31,6 +31,12 @@ export const AllBook =  () => {
                 path="/home"
                 render={() => <Rate userId={element._id} book={element._id} />}
               />
+               <Route
+                exact
+                path="/home"
+                render={() => <AddCart bookId={element._id} />}
+              />
+              
             </div>
           );
         })}
