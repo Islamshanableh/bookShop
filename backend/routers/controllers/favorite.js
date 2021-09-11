@@ -26,4 +26,7 @@ const addToFavorite = (req, res) => {
     });
 };
 
+
+const FindByUserId = (req, res) => {}
+
 module.exports = { addToFavorite };
