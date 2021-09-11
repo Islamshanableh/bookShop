@@ -10,7 +10,7 @@ const bookSchema = new mongoose.Schema ({
     description:{type:String},
     language:{tupe:String},
     price :{type:Number},
-    rating :[{type:mongoose.Schema.Types.ObjectId,ref:"Rate"}]
+    rating :[Number]
     
     })
     module.exports=mongoose.model("Book",bookSchema)
