@@ -42,4 +42,4 @@ const FindByUserId = (req, res) => {
   })
 }
 
-module.exports = { addToFavorite };
+module.exports = { addToFavorite ,FindByUserId};
