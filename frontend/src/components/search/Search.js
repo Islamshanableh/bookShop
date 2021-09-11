@@ -3,6 +3,7 @@ import "../../App.css";
 
 export const Search = () => {
   const [value, setValue] = useState("");
+  const [searchVal, setSearchVal] = useState("");
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -14,7 +15,11 @@ export const Search = () => {
         <option value="name">Name</option>
         <option value="author">Author</option>
       </select>
-      <input></input>
+      <input
+        onChange={(e) => {
+          setSearchVal(e.target.value);
+        }}
+      ></input>
       <button></button>
     </div>
   );
