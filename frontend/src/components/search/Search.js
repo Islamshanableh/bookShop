@@ -12,7 +12,6 @@ export const Search = () => {
   const [searchVal, setSearchVal] = useState("");
   const handleChange = (e) => {
     setValue(e.target.value);
-    console.log(value);
   };
 
   const goSearch = () => {
@@ -82,14 +81,14 @@ export const Search = () => {
                 {element.price},<br></br>
                 <Route
                   exact
-                  path="/home"
+                  path="/"
                   render={() => (
                     <Rate bookId={element._id} rateCount={element.rating} />
                   )}
                 />
                 <Route
                   exact
-                  path="/home"
+                  path="/"
                   render={() => <AddCart bookId={element._id} />}
                 />
               </div>
