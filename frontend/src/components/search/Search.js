@@ -5,6 +5,7 @@ import axios from "axios";
 export const Search = () => {
   const [value, setValue] = useState("");
   const [searchVal, setSearchVal] = useState("");
+  const [books, setBooks] = useState([]);
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -46,6 +47,35 @@ export const Search = () => {
         }}
       ></input>
       <button onClick={goSearch}></button>
+      <div>
+        <h1>all books</h1>
+        {books &&
+          books.map((element, index) => {
+            return (
+              <div key={element._id}>
+                <br></br> {element.image},<br></br> {element.name}
+                <br></br>
+                {element.type},<br></br>
+                {element.author},<br></br>
+                {element.description},<br></br>
+                {element.language},<br></br>
+                {element.price},<br></br>
+                <Route
+                  exact
+                  path="/home"
+                  render={() => (
+                    <Rate bookId={element._id} rateCount={element.rating} />
+                  )}
+                />
+                <Route
+                  exact
+                  path="/home"
+                  render={() => <AddCart bookId={element._id} />}
+                />
+              </div>
+            );
+          })}
+      </div>
     </div>
   );
 };
