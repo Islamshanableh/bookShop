@@ -27,6 +27,8 @@ const addToFavorite = (req, res) => {
 };
 
 
-const FindByUserId = (req, res) => {}
+const FindByUserId = (req, res) => {
+  const userId = req.token.userId;
+}
 
 module.exports = { addToFavorite };
