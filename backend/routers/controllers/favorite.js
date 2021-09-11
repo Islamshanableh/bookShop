@@ -34,6 +34,12 @@ const FindByUserId = (req, res) => {
       succes: true,
       message: result
     });
+  }).catch((err)=>{
+    res.json({
+      success:false,
+      message: "server error"
+    })
+  })
 }
 
 module.exports = { addToFavorite };
