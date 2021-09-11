@@ -1,13 +1,14 @@
 const rateModel = require("../../db/models/rate");
 
 const addToRating = (req, res) => {
-  const { userId, book ,count } = req.body;
- 
+  const { bookId ,count } = req.body;
+  const userId = req.token.userId
 
   const Rate = new rateModel({ userId, book, count });
 
   Rate.save()
-    .then((result) => {
+    .then(async(result) => {
+      await bookSchema.findByIdAndUpdate(bookId,{$push:{"rating" : count}})
       res.status(200).json({
         success: true,
         message: `Success rate  Added`,
