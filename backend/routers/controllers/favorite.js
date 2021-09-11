@@ -26,4 +26,20 @@ const addToFavorite = (req, res) => {
     });
 };
 
-module.exports = { addToFavorite };
+
+const FindByUserId = (req, res) => {
+  const userId = req.token.userId;
+  favoriteModel.find({userId}).then((result) => {
+    res.json({
+      succes: true,
+      message: result
+    });
+  }).catch((err)=>{
+    res.json({
+      success:false,
+      message: "server error"
+    })
+  })
+}
+
+module.exports = { addToFavorite ,FindByUserId};
