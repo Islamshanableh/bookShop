@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../../App.css";
 import axios from "axios";
+import { Route } from "react-router-dom";
+import { Rate } from "../rate/rate";
+import { AddCart } from "../cart/cart";
 
 export const Search = () => {
   const [value, setValue] = useState("");
