@@ -29,7 +29,7 @@ export const AllBook =  () => {
               <Route
                 exact
                 path="/home"
-                render={() => <Rate userId={element._id} book={element._id} />}
+                render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
               />
                <Route
                 exact

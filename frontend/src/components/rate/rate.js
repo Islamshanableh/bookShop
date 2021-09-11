@@ -4,16 +4,20 @@ import { userContext } from "../../App";
 
 import axios from "axios";
 
-export const Rate = ({ userId, book }) => {
+export const Rate = ({ bookId , rateCount }) => {
   const state = useContext(userContext);
   const token = state.token;
+  const value = rateCount.reduce(function (acc, number, index) {
+    return acc + number;
+  });
+  
   const [rating, setRating] = useState(0);
   const handleRating = (count) => {
     setRating(count);
     axios
       .post(
         "http://localhost:5000/rate",
-        { userId, book, count },
+        { bookId, count },
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -34,7 +38,7 @@ export const Rate = ({ userId, book }) => {
     <div className="App">
       <Rating
         onClick={handleRating}
-        ratingValue={rating}
+        ratingValue={value/rateCount.length}
         size={20}
         label
         transition
@@ -42,7 +46,7 @@ export const Rate = ({ userId, book }) => {
         emptyColor="gray"
         className="foo" // Will remove the inline style if applied
       />
-      {rating}
+      
     </div>
   );
 };

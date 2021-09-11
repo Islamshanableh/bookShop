@@ -7,7 +7,6 @@ export const AddCart =({bookId})=>{
     const [cart, setCart] = useState(0);
     const state = useContext(userContext);
     const token = state.token;
-    console.log(bookId);
     const adding = ()=>{
         axios
       .post(

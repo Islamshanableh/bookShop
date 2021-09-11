@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "../../App.css";
-import axios from "axios";
 import { Route } from "react-router-dom";
 import { Rate } from "../rate/rate";
 import { AddCart } from "../cart/cart";
+import axios from "axios";
 
 export const Search = () => {
-  const [value, setValue] = useState("");
-  const [searchVal, setSearchVal] = useState("");
   const [books, setBooks] = useState([]);
+  const [value, setValue] = useState("");
   const [message, setMessage] = useState("");
+  const [searchVal, setSearchVal] = useState("");
   const handleChange = (e) => {
     setValue(e.target.value);
   };
@@ -37,6 +37,7 @@ export const Search = () => {
       setMessage("no books found");
     }
   };
+
   return (
     <div className="App">
       <select onChange={handleChange}>
@@ -80,14 +81,14 @@ export const Search = () => {
                 {element.price},<br></br>
                 <Route
                   exact
-                  path="/home"
+                  path="/"
                   render={() => (
                     <Rate bookId={element._id} rateCount={element.rating} />
                   )}
                 />
                 <Route
                   exact
-                  path="/home"
+                  path="/"
                   render={() => <AddCart bookId={element._id} />}
                 />
               </div>
