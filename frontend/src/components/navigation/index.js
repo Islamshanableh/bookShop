@@ -4,6 +4,7 @@ import {userContext} from "../../App"
 import { MdAddShoppingCart } from "react-icons/md";
 
 
+
 // import {userContext} from "../../App"
 
 const Navigation = () => {
@@ -13,11 +14,14 @@ const Navigation = () => {
 <Link to= "/login" >login </Link>
 <Link to= "/signUp" >Register</Link>
 <Link to= "/home" >Home</Link>	
-<Link to= "/aboutUs" >aboutUs</Link></div>	)
+<Link to= "/aboutUs" >aboutUs</Link>
+
+</div>	)
 :(<div className="navigation">
 <Link to= "/signOut" >signOut</Link>
 <Link to= "/home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link>
+
 <Link to= "/cart" ><MdAddShoppingCart/>Shopping Cart</Link>
 </div>)
 }
