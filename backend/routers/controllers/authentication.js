@@ -32,6 +32,7 @@ const Login = (req, res) => {
          expiresIn: "10000000h",
        };
        const token = await jwt.sign(payload, process.env.SECRET, options);
+    
        res.status(200).json({
          success: true,
          message: `Email and Password are correct`,

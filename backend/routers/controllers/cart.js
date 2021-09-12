@@ -1,6 +1,7 @@
 const cartModel = require("../../db/models/cart");
 
 const addToCart = (req,res)=>{
+  console.log(req.token);
     const {bookId} = req.body;
     const userId = req.token.userId
     
@@ -30,7 +31,7 @@ const addToCart = (req,res)=>{
 const FindByUserId = (req,res)=>{
   const userId = req.token.userId
   cartModel.find({userId})
-  .populate("bookId")
+  .populate("bookId","image name type author description language price-_id")
   .exec()
   .then((result)=>{
     if(!result.length){
@@ -40,7 +41,16 @@ const FindByUserId = (req,res)=>{
         err: err,
       })
     }
-    
+    res.json({
+      succes: true,
+      message: result
+    });
+  }).catch((err)=>{
+    res.json({
+      success:false,
+      message: "server error"
+    })
+  
   })
 }
 
