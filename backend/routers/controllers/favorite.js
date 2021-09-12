@@ -31,6 +31,13 @@ const FindByUserId = (req, res) => {
   const userId = req.token.userId;
   favoriteModel.find({userId}).populate("bookId","image name type author description language price-_id")
   .exec().then((result) => {
+    if(!result.length){
+      return res.status(409).json({
+        success: false,
+        message: `no favourites yet `,
+        err: err,
+      })
+    }
     res.json({
       succes: true,
       message: result
