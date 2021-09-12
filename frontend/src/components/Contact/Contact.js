@@ -30,7 +30,23 @@ export const Contact = () => {
 
     return(
         <div>
-            
+              <button onClick={openModal}>Contact Us</button>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+        ariaHideApp={false}
+      >
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Contact Us</h2>
+
+        <div>
+          <p> Rashed MIgdady</p>
+
+          <button onClick={closeModal}>X</button>
+        </div>
+      </Modal>
         </div>
     )
 }
