@@ -18,7 +18,7 @@ export const ShoppingCart = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((res) => {
+      .then((res) => {cd 
         setBook(res.data.message);
         setPrice((res.data.message).reduce((acc,elem,i)=>{
           // console.log();
