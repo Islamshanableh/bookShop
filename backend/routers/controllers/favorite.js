@@ -51,6 +51,20 @@ const FindByUserId = (req, res) => {
 }
 const deleteBookById = (req, res) => {
   const id = req.params.id; 
+  favoriteModel
+    .findByIdAndDelete(id)
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The book => ${id} not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `Success Delete book with id => ${id}`,
+      });
+    })
 
 }
 module.exports = { addToFavorite ,FindByUserId};
