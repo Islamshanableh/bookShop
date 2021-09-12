@@ -19,7 +19,7 @@ export const AddCart =({bookId})=>{
         }
       )
       .then((res) => {
-        console.log("The rating has been created successfully");
+        console.log(token);
       })
       .catch((err) => {
          console.log(
