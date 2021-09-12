@@ -54,6 +54,10 @@ const FindByUserId = (req,res)=>{
   })
 }
 
-module.exports = {addToCart,FindByUserId}
+const deleteArticleById = (req, res) => {
+
+};
+
+module.exports = {addToCart,FindByUserId,deleteArticleById}
 
 
