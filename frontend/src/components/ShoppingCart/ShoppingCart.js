@@ -20,6 +20,10 @@ export const ShoppingCart = () => {
       });
   }, [book]);
 
+  const deleteBook=(id)=>{
+console.log(id);
+  }
+
   return (
     <div>
       {!book ? (
@@ -44,7 +48,7 @@ export const ShoppingCart = () => {
                 <br></br>
                 {element.bookId.price}
                 <br></br>
-                <button onClick={()=>{}}>X</button>
+                <button onClick={()=>{deleteBook(element._id)}}>X</button>
               </div>
             );
           })}
