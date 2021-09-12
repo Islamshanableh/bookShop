@@ -36,6 +36,9 @@ export const  FavBage =()=> {
 
       return (
         <div>
+          {!book ? (
+            <div> favourite is Empty</div>
+          ) : ()
 
             
         </div>
