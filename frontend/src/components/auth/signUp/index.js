@@ -357,10 +357,21 @@ export const Register = () =>{
           <input type="date" min="1960-01-01" max={date} onChange={(e) => setBirthDate(e.target.value)} />
           <br />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
+          <br />
+          
+          <input
+            type="password"
+            placeholder="Confirm Password"
+           
+            onChange={(e) => { setConfirmP(e.target.value);
+              confirm(e);
+            }}
+          />
+
           <br />
           <button>Register</button>
           <br />
