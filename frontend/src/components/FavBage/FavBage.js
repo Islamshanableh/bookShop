@@ -69,7 +69,4 @@ export const  FavBage =()=> {
   };
 
 
-            
-        </div>
-
-}
+  
