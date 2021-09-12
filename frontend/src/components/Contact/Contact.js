@@ -13,24 +13,24 @@ const customStyles = {
 };
 
 export const Contact = () => {
-    let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-  
-    function openModal() {
-      setIsOpen(true);
-    }
-  
-    function afterOpenModal() {
-      subtitle.style.color = "#f00";
-    }
-  
-    function closeModal() {
-      setIsOpen(false);
-    }
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
 
-    return(
-        <div>
-              <button onClick={openModal}>Contact Us</button>
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    subtitle.style.color = "#f00";
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  return (
+    <div>
+      <button onClick={openModal}>Contact Us</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -47,9 +47,6 @@ export const Contact = () => {
           <button onClick={closeModal}>X</button>
         </div>
       </Modal>
-        </div>
-    )
-}
-
-
-  
+    </div>
+  );
+};
