@@ -25,6 +25,10 @@ const addToCart = (req,res)=>{
       });
 }
 
-module.exports = {addToCart}
+const FindByUserId = (req,res)=>{
+  
+}
+
+module.exports = {addToCart,FindByUserId}
 
 
