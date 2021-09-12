@@ -41,6 +41,16 @@ export const Register = () =>{
         }
       };
 
+      const confirm = (e) => {
+    
+
+        if (password === confirmP) {
+           setIsErorr("");
+        } else {
+           setIsErorr("Confirm Password not match!!");
+        }
+      };
+
 
 
     return(
