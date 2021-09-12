@@ -9,6 +9,18 @@ export const  FavBage =()=> {
 
     const state = useContext(userContext);
     const token = state.token;
+    useEffect(() => {
+        axios
+          .get("http://localhost:5000/favorite/getAllFav/", {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          })
+          .then((res) => {
+              console.log(res.data)
+            setBook(res.data.message);
+          });
+      }, [book]);
 
 
 
