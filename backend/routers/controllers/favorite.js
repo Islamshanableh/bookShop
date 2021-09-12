@@ -29,7 +29,8 @@ const addToFavorite = (req, res) => {
 
 const FindByUserId = (req, res) => {
   const userId = req.token.userId;
-  favoriteModel.find({userId}).then((result) => {
+  favoriteModel.find({userId}).populate("bookId","image name type author description language price-_id")
+  .exec().then((result) => {
     res.json({
       succes: true,
       message: result
