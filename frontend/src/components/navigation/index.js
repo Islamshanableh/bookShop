@@ -1,6 +1,8 @@
 import React ,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import {userContext} from "../../App"
+import { MdAddShoppingCart } from "react-icons/md";
+
 
 // import {userContext} from "../../App"
 
@@ -16,6 +18,7 @@ const Navigation = () => {
 <Link to= "/signOut" >signOut</Link>
 <Link to= "/home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link>
+<Link to= "/cart" ><MdAddShoppingCart/>Shopping Cart</Link>
 </div>)
 }
 	</div>)
