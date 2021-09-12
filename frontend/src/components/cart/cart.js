@@ -19,7 +19,7 @@ export const AddCart =({bookId})=>{
         }
       )
       .then((res) => {
-        console.log(token);
+        setCart("the item added successfuly to the cart")
       })
       .catch((err) => {
          console.log(
@@ -32,6 +32,7 @@ export const AddCart =({bookId})=>{
             <button onClick ={adding}>
                 add
             </button>
+            {cart}
         </div>
     )
 }
