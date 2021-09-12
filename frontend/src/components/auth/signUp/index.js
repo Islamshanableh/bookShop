@@ -353,11 +353,8 @@ export const Register = () =>{
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <br />
-          <input
-            type="text"
-            placeholder="Birthday"
-            onChange={(e) => setBirthDate(e.target.value)}
-          />
+          
+          <input type="date" min="1960-01-01" max={date} onChange={(e) => setBirthDate(e.target.value)} />
           <br />
           <input
             type="text"
