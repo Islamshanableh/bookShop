@@ -29,8 +29,8 @@ export const ShoppingCart = () => {
         Authorization: `Bearer ${token}`,
       },
     })
-    .then((res)=>{setStatus(<div className="deleteOrUpdate">{`Success deleted the article with id=>${id}`}</div>)})
-    .catch((err)=>{setStatus(<div className="deleteOrUpdate" >Some thing wrong</div>)})
+    .then((res)=>{setStatus(<div>{`Success deleted the book with id=>${id}`}</div>)})
+    .catch((err)=>{setStatus(<div>Some thing wrong</div>)})
 
   }
 
