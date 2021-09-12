@@ -55,7 +55,28 @@ const FindByUserId = (req,res)=>{
 }
 
 const deleteArticleById = (req, res) => {
-
+  const id = req.params.id; 
+  cartModel
+    .findByIdAndDelete(id)
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The Article => ${id} not found`,
+        });
+      }
+      res.status(200).json({
+        success: true,
+        message: `Success Delete atricle with id => ${id}`,
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        // err: err,
+      });
+    });
 };
 
 module.exports = {addToCart,FindByUserId,deleteArticleById}
