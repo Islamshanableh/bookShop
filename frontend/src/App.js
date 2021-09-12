@@ -20,7 +20,7 @@ const state={token,setToken}
 <Route path="/login" component={Login}/>
 <Route path = "/signUp" component = {Register}/>
 <Route path = '/home' component = {AllBook} />
-<Route path = '/' component = {Search} />
+<Route path = '/search' component = {Search} />
 </Switch>
 
 </userContext.Provider>
