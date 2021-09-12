@@ -49,5 +49,8 @@ const FindByUserId = (req, res) => {
     })
   })
 }
-const deleteBookById = (req, res) => {}
+const deleteBookById = (req, res) => {
+  const id = req.params.id; 
+
+}
 module.exports = { addToFavorite ,FindByUserId};
