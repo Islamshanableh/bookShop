@@ -22,6 +22,17 @@ export const  FavBage =()=> {
           });
       }, [book]);
 
+      const deleteBook=(id)=>{
+
+        axios.delete(`http://localhost:5000/favorite/${id}`,{
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((res)=>{setStatus(<div>{`Success deleted the book with id=>${id}`}</div>)})
+        .catch((err)=>{setStatus(<div>Some thing wrong</div>)})
+    
+      }
 
 
 }
