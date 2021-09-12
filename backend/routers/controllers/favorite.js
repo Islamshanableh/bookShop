@@ -73,4 +73,4 @@ const deleteBookById = (req, res) => {
     });
 
 }
-module.exports = { addToFavorite ,FindByUserId};
+module.exports = { addToFavorite ,FindByUserId ,deleteBookById };
