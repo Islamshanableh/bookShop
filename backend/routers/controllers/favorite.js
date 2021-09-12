@@ -64,7 +64,13 @@ const deleteBookById = (req, res) => {
         success: true,
         message: `Success Delete book with id => ${id}`,
       });
-    })
+    }) .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        // err: err, 
+      });
+    });
 
 }
 module.exports = { addToFavorite ,FindByUserId};
