@@ -4,7 +4,9 @@ import { userContext } from "../../App";
 
 export const ShoppingCart = () => {
   const [book, setBook] = useState();
-  const [price, setPrice] = useState([]);
+  const [price, setPrice] = useState();
+  const [status, setStatus] = useState();
+
   const state = useContext(userContext);
   const token = state.token;
 
@@ -21,7 +23,15 @@ export const ShoppingCart = () => {
   }, [book]);
 
   const deleteBook=(id)=>{
-console.log(id);
+
+    axios.delete(`http://localhost:5000/cart/${id}`,{
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+    .then((res)=>{setStatus(<div className="deleteOrUpdate">{`Success deleted the article with id=>${id}`}</div>)})
+    .catch((err)=>{setStatus(<div className="deleteOrUpdate" >Some thing wrong</div>)})
+
   }
 
   return (
