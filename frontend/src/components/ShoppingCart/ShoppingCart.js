@@ -7,8 +7,9 @@ export const ShoppingCart = () => {
   const [price, setPrice] = useState();
   const [status, setStatus] = useState();
 
-  const state = useContext(userContext);
+  const state  = useContext(userContext);
   const token = state.token;
+
 
   useEffect(() => {
     axios
@@ -19,11 +20,16 @@ export const ShoppingCart = () => {
       })
       .then((res) => {
         setBook(res.data.message);
+        setPrice((res.data.message).reduce((acc,elem,i)=>{
+          // console.log();
+          return  acc+parseInt((elem.bookId.price),10)
+        },0))
       });
-  }, [book]);
+  },[status]);
+
+
 
   const deleteBook=(id)=>{
-
     axios.delete(`http://localhost:5000/cart/${id}`,{
       headers: {
         Authorization: `Bearer ${token}`,
@@ -64,6 +70,7 @@ export const ShoppingCart = () => {
           })}
         </div>
       )}
+      <div><h1>`the total price is {price}`</h1></div>
     </div>
   );
 };
