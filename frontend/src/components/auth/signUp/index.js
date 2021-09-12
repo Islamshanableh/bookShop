@@ -2,9 +2,7 @@ import React, { useState } from "react";
 
 import axios from "axios";
 
-
-export const Register = () =>{
-
+export const Register = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");
@@ -18,49 +16,45 @@ export const Register = () =>{
   const [confirmP, setConfirmP] = useState("");
 
   const [isErorr, setIsErorr] = useState("");
-    const addNewUser = async (e) => {
-        e.preventDefault();
-        try {
-          const result = await axios.post("http://localhost:5000/users", {
-            firstName,
-            lastName,
-            country,
-            email,
-            password,
-            birthDate,
-            phoneNumber,
-          });
-          if (result.data.success) {
-            setMessage("The user has been created successfully");
-          } else throw Error;
-        } catch (error) {
-          if (error.response && error.response.data) {
-            return setMessage(error.response.data.message);
-          }
-          setMessage("Error happened while register, please try again !!");
-        }
-      };
+  const addNewUser = async (e) => {
+    e.preventDefault();
+    try {
+      const result = await axios.post("http://localhost:5000/users", {
+        firstName,
+        lastName,
+        country,
+        email,
+        password,
+        birthDate,
+        phoneNumber,
+      });
+      if (result.data.success) {
+        setMessage("The user has been created successfully");
+      } else throw Error;
+    } catch (error) {
+      if (error.response && error.response.data) {
+        return setMessage(error.response.data.message);
+      }
+      setMessage("Error happened while register, please try again !!");
+    }
+  };
 
-      const confirm = (e) => {
-    
+  const confirm = (e) => {
+    if (password === confirmP) {
+      setIsErorr("");
+    } else {
+      setIsErorr("Confirm Password not match!!");
+    }
+  };
 
-        if (password === confirmP) {
-           setIsErorr("");
-        } else {
-           setIsErorr("Confirm Password not match!!");
-        }
-      };
-
-      
   var today = new Date();
-  var date = today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
+  var date =
+    today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
 
-
-
-    return(
-        <div>
-            <>
-            <label>{isErorr && <div>{isErorr}</div>}</label>
+  return (
+    <div>
+      <>
+        <label>{isErorr && <div>{isErorr}</div>}</label>
         <form onSubmit={addNewUser}>
           <br />
           <input
@@ -353,8 +347,13 @@ export const Register = () =>{
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <br />
-          
-          <input type="date" min="1960-01-01" max={date} onChange={(e) => setBirthDate(e.target.value)} />
+
+          <input
+            type="date"
+            min="1960-01-01"
+            max={date}
+            onChange={(e) => setBirthDate(e.target.value)}
+          />
           <br />
           <input
             type="password"
@@ -362,12 +361,12 @@ export const Register = () =>{
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          
+
           <input
             type="password"
             placeholder="Confirm Password"
-           
-            onChange={(e) => { setConfirmP(e.target.value);
+            onChange={(e) => {
+              setConfirmP(e.target.value);
               confirm(e);
             }}
           />
@@ -378,7 +377,6 @@ export const Register = () =>{
         </form>
         {message && <div>{message}</div>}
       </>
-
-        </div>
-    )
-}
+    </div>
+  );
+};
