@@ -14,7 +14,7 @@ export const AllBook =  () => {
   }, []);
   return (
     <div>
-      <h1>rasgeg</h1>
+      
       {books &&
         books.map((element, index) => {
           return (
