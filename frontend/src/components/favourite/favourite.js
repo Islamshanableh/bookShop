@@ -8,6 +8,15 @@ function Favourite({bookId}) {}
 const [favourite, setFavourite] = useState(0);
 const state = useContext(userContext);
 const token = state.token;
-
+return (
+    <div>
+            <button onClick ={adding}>
+            addToFavourite 
+        </button>
+        <div>
+        {favourite}
+        </div>
+    </div>
+)
 
 export default Favourite
