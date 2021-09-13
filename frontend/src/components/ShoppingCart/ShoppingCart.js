@@ -3,7 +3,7 @@ import axios from "axios";
 import { userContext } from "../../App";
 
 export const ShoppingCart = () => {
-  const [book, setBook] = useState();
+  const [book, setBook] = useState([]);
   const [price, setPrice] = useState(0);
   const [status, setStatus] = useState();
 
@@ -20,6 +20,7 @@ export const ShoppingCart = () => {
        return acc + parseInt((elem.bookId.price),10)
      },0))
     }).catch((err)=>{setBook([])
+      setPrice(0)
        console.log("servr error")})
   }
   
@@ -56,7 +57,7 @@ export const ShoppingCart = () => {
   }
   return (
     <div>
-      {!book ? (
+      {!book.length ? (
         <div>Shopping cart is Empty</div>
       ) : (
         <div>
