@@ -5,6 +5,7 @@ export const Logout=()=>{
     const history = useHistory()
     localStorage.clear()
     history.push("/login")
+    
     return (<div>
         
     </div>)
