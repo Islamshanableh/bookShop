@@ -24,7 +24,7 @@ const Navigation = () => {
 <Link  className="Link"to= "/logOut" >logOut</Link>
 <Link  className="Link"to= "/home" >Home</Link>	
 <Link  className="Link"to= "/aboutUs" >aboutUs</Link>
-<Link className="Link" to= "/cart" ><MdAddShoppingCart/>Shopping Cart</Link>
+<Link className="Link" to= "/cart" ><MdAddShoppingCart className="cart"/>Cart</Link>
 </div>)
 }
 	</div>)
