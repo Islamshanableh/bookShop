@@ -6,7 +6,6 @@ import { Register } from './components/auth/signUp';
 import { AllBook } from './components/book/Book';
 import { Search } from './components/search/Search';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
-
 import {FavBage}from "./components/FavBage/FavBage"
 
 

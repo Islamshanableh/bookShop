@@ -10,18 +10,38 @@ export const  FavBage =()=> {
 
     const state = useContext(userContext);
     const token = state.token;
-    useEffect(() => {
-        axios
-          .get("http://localhost:5000/favorite/getAllFav/", {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          })
-          .then((res) => {
-              console.log(res.data)
-            setBook(res.data.message);
-          });
-      }, [book]);
+
+
+    const getAllFavo =()=>{
+      axios
+      .get("http://localhost:5000/favorite/getAllFav/", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((res) => {
+          console.log(res.data)
+        setBook(res.data.message);
+      })
+      .catch((err)=>{setBook([])
+        console.log("servr error")})
+    }
+    // useEffect(() => {
+        // axios
+        //   .get("http://localhost:5000/favorite/getAllFav/", {
+        //     headers: {
+        //       Authorization: `Bearer ${token}`,
+        //     },
+        //   })
+        //   .then((res) => {
+        //       console.log(res.data)
+        //     setBook(res.data.message);
+        //   });
+      //   getAllFavo()
+      // }, [book]);
+
+      useEffect((
+        )=>{getAllFavo()},[book])
 
       const deleteBook=(id)=>{
 
@@ -30,7 +50,10 @@ export const  FavBage =()=> {
             Authorization: `Bearer ${token}`,
           },
         })
-        .then((res)=>{setStatus(<div>{`Success deleted the book with id=>${id}`}</div>)})
+        .then( 
+          (res)=>{
+            getAllFavo()
+            setStatus(<div>{`Success deleted the book with id=>${id}`}</div>)})
         .catch((err)=>{setStatus(<div>Some thing wrong</div>)})
     
       }
