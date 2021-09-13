@@ -8,6 +8,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 // import {userContext} from "../../App"
 
 const Navigation = () => {
+	
 	const token = useContext (userContext) 
 	token.setToken(localStorage.getItem('token'))
 	return (<div className="App">
@@ -22,7 +23,6 @@ const Navigation = () => {
 <Link to= "/logOut" >logOut</Link>
 <Link to= "/home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link>
-
 <Link to= "/cart" ><MdAddShoppingCart/>Shopping Cart</Link>
 </div>)
 }
