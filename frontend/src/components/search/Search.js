@@ -68,7 +68,7 @@ export const Search = () => {
         <p>{message}</p>
       </div>
       <div>
-        <h1>all books</h1>
+        
         {books &&
           books.map((element, index) => {
             return (
