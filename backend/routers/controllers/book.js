@@ -133,6 +133,32 @@ const getBookByUserId=(req,res)=>{
     });
 
 }
+const updateBook = (req, res) => {
+  const id = req.params.id
+
+  bookModel
+    .findByIdAndUpdate(id, req.body, { new: true })
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The book => not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: ` Success book updated`,
+        book: [result]
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        // err: err,
+      });
+    });
+};
 
 module.exports = {
   CreatNewBook,
