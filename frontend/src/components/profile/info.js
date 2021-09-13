@@ -20,6 +20,29 @@ export const Info = () => {
             
           });
       }, []);
+      const updateInfo = () => {
+        axios
+          .post(
+            "http://localhost:5000/users/update",
+            {
+              firstName: firstName,
+              lastName: lastName,
+              phoneNumber: phone,
+              BirthDate: date,
+              country: country,
+            },
+    
+            {
+              headers: {
+                Authorization: `Bearer ${token}`,
+              },
+            }
+          )
+          .then((res) => {
+            setInfo([...res.data.userInfo]);
+            setMessage(res.data.message)
+          });
+      };
   return(
       <div></div>
   )}
