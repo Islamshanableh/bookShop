@@ -8,23 +8,27 @@ import {
 
 function footer() {
     return (
-        <div>
+  <div  className="footer " >
+
         <div className="folllowUs">
             follow Us on 
-            </div>    
-            <a href=""
+           
+        <a href=""
         className="facebook">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
-      </a>
-      <a href=""
-        className="facebook">
+        </a>
+        <a href=""
+         className="facebook">
         <FontAwesomeIcon icon={faTwitter} size="2x" />
-      </a>
-      <a href=""
+        </a>
+         <a href=""
         className="facebook">
         <FontAwesomeIcon icon={faInstagram} size="2x" />
-      </a>
-        </div>
+       </a>
+       </div> 
+
+
+  </div>
     )
 }
 
