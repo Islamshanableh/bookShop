@@ -50,5 +50,67 @@ export const Info = () => {
         setMessage(res.data.message);
       });
   };
-  return <div></div>;
+  return (
+    <div>
+      <div>
+        <h1>all books</h1>
+        {info &&
+          info.map((element, index) => {
+            return (
+              <div key={element._id}>
+                <br></br>
+                <br></br>
+                <label>firstName</label>{" "}
+                <input
+                  type="text"
+                  defaultValue={element.firstName}
+                  onChange={(e) => {
+                    setFirstName(e.target.value);
+                  }}
+                ></input>
+                <br></br>
+                <label>lastName</label>
+                <input
+                  type="text"
+                  defaultValue={element.lastName}
+                  onChange={(e) => {
+                    setLastName(e.target.value);
+                  }}
+                ></input>
+                <br></br>
+                <label>phone</label>{" "}
+                <input
+                  type="text"
+                  defaultValue={element.phoneNumber}
+                  onChange={(e) => {
+                    setPhone(e.target.value);
+                  }}
+                ></input>
+                <br></br>
+                <label>BirthDate</label>{" "}
+                <input
+                  type="text"
+                  defaultValue={element.BirthDate}
+                  onChange={(e) => {
+                    setDate(e.target.value);
+                  }}
+                ></input>
+                <br></br>
+                <label>country</label>{" "}
+                <input
+                  type="text"
+                  defaultValue={element.country}
+                  onChange={(e) => {
+                    setCountry(e.target.value);
+                  }}
+                ></input>
+                <br></br>
+                <button onClick={updateInfo}>update</button>
+              </div>
+            );
+          })}
+      </div>
+      <h1>{message}</h1>
+    </div>
+  );
 };
