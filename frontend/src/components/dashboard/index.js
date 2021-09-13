@@ -46,6 +46,34 @@ const Dashboard = () => {
 			
 		  });
 	  }, []);
+	  const updateBook = (element) => {
+		console.log(element);
+	  axios
+		.put(
+		  `http://localhost:5000/books/update/${element}`,
+		  {
+			image: image,
+			name: name,
+			type: type,
+			author: author,
+			language: language,
+			price:price,
+			description:description,
+
+		  },
+  
+		  {
+			headers: {
+			  Authorization: `Bearer ${token}`,
+			},
+		  }
+		)
+		.then((res) => {
+		  setBook([...res.data.book]);
+		  getAll();
+		  setSuccsess(res.data.message)
+		});
+	};
 	return <div className="App">Dashboard component</div>;
 };
 
