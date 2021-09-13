@@ -7,6 +7,8 @@ import { AllBook } from './components/book/Book';
 import { Search } from './components/search/Search';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 import { Logout } from './components/logout/Logout';
+import {FavBage}from "./components/FavBage/FavBage"
+
 export const userContext = createContext();
 
 
@@ -27,7 +29,7 @@ const state={token,setToken}
 <Route path = '/search' component = {Search} />
 <Route path = '/cart' component = {ShoppingCart} />
 <Route path = '/logout' component = {Logout} />
-
+<Route path = '/Favourite' component = {FavBage} />
 </Switch>
 
 </userContext.Provider>
