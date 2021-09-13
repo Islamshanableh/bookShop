@@ -14,6 +14,7 @@ const Dashboard = () => {
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
   const [success, setSuccsess] = useState(null);
+
   const getAll = () => {
     axios
       .get(
@@ -44,6 +45,7 @@ const Dashboard = () => {
         setBook([...res.data.book]);
       });
   }, []);
+
   const updateBook = (element) => {
     console.log(element);
     axios
