@@ -4,7 +4,7 @@ import { userContext } from "../../App";
 import axios from "axios";
 
 
-function Favourite({bookId}) {}
+const  Favourite=({bookId}) =>{
 const [favourite, setFavourite] = useState(0);
 const state = useContext(userContext);
 const token = state.token;
@@ -26,19 +26,7 @@ const adding = ()=>{
     .catch((err) => {
       throw err 
     });
-
-
-
-}
-
-
-
-
-
-
-
-
-
+  }
 return (
     <div>
             <button onClick ={adding}>
@@ -49,5 +37,5 @@ return (
         </div>
     </div>
 )
-
+}
 export default Favourite

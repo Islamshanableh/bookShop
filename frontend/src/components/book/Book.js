@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
 import { Rate } from "../rate/rate";
 import { AddCart } from "../cart/cart";
+import Favourite from "../favourite/favourite";
 import axios from "axios";
 
 export const AllBook =  () => {
@@ -36,7 +37,11 @@ export const AllBook =  () => {
                 path="/home"
                 render={() => <AddCart bookId={element._id} />}
               />
-              
+               <Route
+                exact
+                path="/home"
+                render={() => <Favourite bookId={element._id} />}
+              />
             </div>
           );
         })}
