@@ -41,7 +41,9 @@ export const About = () => {
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>About Us</h2>
 
         <div>
-          <p> we are students from meraki academy</p>
+          
+          <p>Better Books for everyone,is an online book retailer based in Amman that ships to readers throughout the Middle East.</p>
+           <p> It was founded in October 2021 by entrepreneur Ala' Alsallal with the support of Shadow Team.</p>
           <button onClick={closeModal}>close</button>
         </div>
       </Modal>

@@ -42,7 +42,14 @@ export const Contact = () => {
         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Contact Us</h2>
 
         <div>
-          <p> Rashed MIgdady</p>
+          
+          <p> Contact Phone:+962-555-555-555 Email:Shadow.team@Shadow.org</p>
+          <p>Authors :</p>
+          <p> Rashed Migdady https://github.com/RashedMigdady</p>
+          <p> Islam Shanableh https://github.com/Islamshanableh</p>
+          <p>Odai Jawabreh https://github.com/OdaiJawabreh </p>
+          <p> um Kalthoum Radi https://github.com/KulthumRadi </p>
+
 
           <button onClick={closeModal}>X</button>
         </div>
