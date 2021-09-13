@@ -17,8 +17,12 @@ export const ShoppingCart = () => {
           Authorization: `Bearer ${token}`,
         },
       })
-      .then((res) => {
-        setBook(res.data.message);
+      .then(async(res) => {
+       await setBook(res.data.message);
+       setPrice(res.data.message.reduce((acc,elem,i)=>{
+       return acc + parseInt((elem.bookId.price),10)
+       },0))
+
       });
   }, [status]);
 
@@ -28,11 +32,8 @@ export const ShoppingCart = () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }) .then((result)={
-      setBook()
-    }) .catch((err)=>{
-      throw err
-    })
+    }).then((result)=>{setStatus(<div>{`deleted book`}</div>)})
+    .catch((err)=>{setStatus(<div>{`some thing wrong`}</div>)})
   }
   return (
     <div>
@@ -64,6 +65,7 @@ export const ShoppingCart = () => {
           })}
         </div>
       )}
+      {`The total price is => ${price}`}
     </div>
   );
 };
