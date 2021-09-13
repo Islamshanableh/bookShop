@@ -7,7 +7,11 @@ import { AllBook } from './components/book/Book';
 import { Search } from './components/search/Search';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 
+import {FavBage}from "./components/FavBage/FavBage"
+
+
 import { Logout } from './components/logout/Logout';
+
 
 
 
