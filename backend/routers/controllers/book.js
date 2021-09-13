@@ -1,6 +1,7 @@
 const bookModel = require("../../db/models/book");
 
 const CreatNewBook = (req, res) => {
+  const userId = req.token.userId
   const { image, name, type, author, description, language, price, rating } =
     req.body;
 
@@ -13,6 +14,7 @@ const CreatNewBook = (req, res) => {
     language,
     price,
     rating,
+    userId:userId
   });
   Book.save()
     .then((result) => {
@@ -110,11 +112,62 @@ const getBookByAuthor = (req,res)=>{
      res.json("server error")
     });
 }
+const getBookByUserId=(req,res)=>{
+  const userId = req.token.userId
+  bookModel
+    .find({userId})
+    .then((result) => {
+      if(!result.length){
+       return res.json({
+          success:false,
+          message: "incorrect userId"
+        })
+      }
+      res.status(200);
+      res.json({
+        success: true,
+        massage: `all the books by userId`,
+        book: result,
+      });
+    })
+    .catch((err) => {
+     res.json("server error")
+    });
+
+}
+const updateBook = (req, res) => {
+  const id = req.params.id
+
+  bookModel
+    .findByIdAndUpdate(id, req.body, { new: true })
+    .then((result) => {
+      if (!result) {
+        return res.status(404).json({
+          success: false,
+          message: `The book => not found`,
+        });
+      }
+      res.status(202).json({
+        success: true,
+        message: ` Success book updated`,
+        book: [result]
+      });
+    })
+    .catch((err) => {
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        // err: err,
+      });
+    });
+};
 
 module.exports = {
   CreatNewBook,
   getAllBooks,
   FindByCategory,
   getBookByName,
-  getBookByAuthor
+  getBookByAuthor,
+  updateBook,
+  getBookByUserId
 };
