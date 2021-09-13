@@ -50,6 +50,8 @@ const state={token,setToken}
 </Switch>
 
 </userContext.Provider>
+
+<footer/>
 	</div>)
 };
 
