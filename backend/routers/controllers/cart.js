@@ -37,7 +37,7 @@ const FindByUserId = (req,res)=>{
     if(!result.length){
       return res.status(409).json({
         success: false,
-        message: `Shopping cart is Empty`,
+        message: result,
         err: err,
       })
     }
