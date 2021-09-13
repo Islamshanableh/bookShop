@@ -10,6 +10,7 @@ export const Search = () => {
   const [value, setValue] = useState("");
   const [message, setMessage] = useState("");
   const [searchVal, setSearchVal] = useState("");
+  
   const handleChange = (e) => {
     setValue(e.target.value);
   };

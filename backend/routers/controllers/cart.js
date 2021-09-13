@@ -1,7 +1,7 @@
 const cartModel = require("../../db/models/cart");
 
 const addToCart = (req,res)=>{
-  console.log(req.token);
+ 
     const {bookId} = req.body;
     const userId = req.token.userId
     
@@ -25,8 +25,6 @@ const addToCart = (req,res)=>{
         });
       });
 }
-
-//.populate("author", "firstName lastName -_id")
 
 const FindByUserId = (req,res)=>{
   const userId = req.token.userId
