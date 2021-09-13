@@ -9,6 +9,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 
 const Navigation = () => {
 	const token = useContext (userContext) 
+	
 	return (<div className="App">
 {!token.token?(<div className="navigation">
 <Link to= "/login" >login </Link>

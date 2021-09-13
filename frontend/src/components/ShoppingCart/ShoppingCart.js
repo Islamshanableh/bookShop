@@ -4,28 +4,42 @@ import { userContext } from "../../App";
 
 export const ShoppingCart = () => {
   const [book, setBook] = useState();
-  const [price, setPrice] = useState();
+  const [price, setPrice] = useState(0);
   const [status, setStatus] = useState();
 
   const state  = useContext(userContext);
   const token = state.token;
 
 
-  useEffect(() => {
-    axios
-      .get("http://localhost:5000/cart/", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((res) => {
-        setBook(res.data.message);
-        setPrice((res.data.message).reduce((acc,elem,i)=>{
-          // console.log();
-          return  acc+parseInt((elem.bookId.price),10)
-        },0))
-      });
-  },[status]);
+
+  const getBooks = ()=>{
+    axios.get("http://localhost:5000/cart",{headers:{Authorization: `Bearer ${token}` }})
+    .then((result)=>{
+     setBook(result.data.message)
+     setPrice(result.data.message.reduce((acc,elem,i)=>{
+       return acc + parseInt((elem.bookId.price),10)
+     },0))
+    }).catch((err)=>{console.log("servr error")})
+  }
+  
+  // useEffect(() => {
+
+  //   axios.get("http://localhost:5000/cart",{
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   }))
+  //   .then((res) => {
+  //    setBook(res.data.message) 
+  //    console.log(res.data.message)
+  //   });
+  // }, [book]);
+
+  useEffect((
+  )=>{getBooks()},[book])
+
+  
+
 
 
 
@@ -34,12 +48,11 @@ export const ShoppingCart = () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    })
-    .then((res)=>{setStatus(<div>{`Success deleted the book with id=>${id}`}</div>)})
-    .catch((err)=>{setStatus(<div>Some thing wrong</div>)})
-
+    }).then((result)=>{
+      getBooks()
+      setStatus(<div>{`deleted book`}</div>)})
+    .catch((err)=>{setStatus(<div>{`some thing wrong`}</div>)})
   }
-
   return (
     <div>
       {!book ? (
@@ -70,7 +83,9 @@ export const ShoppingCart = () => {
           })}
         </div>
       )}
-      <div><h1>`the total price is {price}`</h1></div>
+
+      {`The total price is => ${price}`}
+
     </div>
   );
 };
