@@ -41,7 +41,7 @@ const state={token,setToken}
 <Route path = '/search' component = {Search} />
 <Route path = '/cart' component = {ShoppingCart} />
 <Route path = '/logout' component = {Logout} />
-
+<Route path = '/favorite' component = {FavBage} />
 
 
 
@@ -50,6 +50,8 @@ const state={token,setToken}
 </Switch>
 
 </userContext.Provider>
+
+<footer/>
 	</div>)
 };
 
