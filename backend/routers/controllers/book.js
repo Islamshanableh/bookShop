@@ -1,6 +1,7 @@
 const bookModel = require("../../db/models/book");
 
 const CreatNewBook = (req, res) => {
+  const userId = req.token.userId
   const { image, name, type, author, description, language, price, rating } =
     req.body;
 
@@ -13,6 +14,7 @@ const CreatNewBook = (req, res) => {
     language,
     price,
     rating,
+    userId:userId
   });
   Book.save()
     .then((result) => {
@@ -165,5 +167,7 @@ module.exports = {
   getAllBooks,
   FindByCategory,
   getBookByName,
-  getBookByAuthor
+  getBookByAuthor,
+  updateBook,
+  getBookByUserId
 };
