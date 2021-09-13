@@ -21,6 +21,7 @@ const checkValid = ()=>{
         if(!res.data.success){
             return setStatus(<div>{res.data.message}</div>)
         }
+        localStorage.setItem('token',res.data.token)
         tokenContext.setToken(res.data.token);
         history.push("/home")
     

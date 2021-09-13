@@ -9,7 +9,7 @@ export const Rate = ({ bookId , rateCount }) => {
   const token = state.token;
   const value = rateCount.reduce(function (acc, number, index) {
     return acc + number;
-  });
+  },0);
   
   const [rating, setRating] = useState(0);
   const handleRating = (count) => {
