@@ -110,6 +110,29 @@ const getBookByAuthor = (req,res)=>{
      res.json("server error")
     });
 }
+const getBookByUserId=(req,res)=>{
+  const userId = req.token.userId
+  bookModel
+    .find({userId})
+    .then((result) => {
+      if(!result.length){
+       return res.json({
+          success:false,
+          message: "incorrect userId"
+        })
+      }
+      res.status(200);
+      res.json({
+        success: true,
+        massage: `all the books by userId`,
+        book: result,
+      });
+    })
+    .catch((err) => {
+     res.json("server error")
+    });
+
+}
 
 module.exports = {
   CreatNewBook,
