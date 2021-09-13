@@ -19,7 +19,7 @@ const Navigation = () => {
 
 </div>	)
 :(<div className="navigation">
-<Link to= "/signOut" >signOut</Link>
+<Link to= "/logOut" >logOut</Link>
 <Link to= "/home" >Home</Link>	
 <Link to= "/aboutUs" >aboutUs</Link>
 
