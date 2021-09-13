@@ -35,7 +35,6 @@ const state={token,setToken}
 <Route path = '/home' component = {AllBook} />
 <Route path = '/search' component = {Search} />
 <Route path = '/cart' component = {ShoppingCart} />
-
 <Route path = '/logout' component = {Logout} />
 
 
