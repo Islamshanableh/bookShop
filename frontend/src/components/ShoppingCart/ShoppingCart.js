@@ -18,7 +18,7 @@ export const ShoppingCart = () => {
      setPrice(result.data.message.reduce((acc,elem,i)=>{
        return acc + parseInt((elem.bookId.price),10)
      },0))
-    }).catch((err)=>{console.log("servr error");})
+    }).catch((err)=>{console.log("servr error")})
   }
   
   // useEffect(() => {
@@ -52,7 +52,7 @@ export const ShoppingCart = () => {
   }
   return (
     <div>
-      {! book ? (
+      {!book ? (
         <div>Shopping cart is Empty</div>
       ) : (
         <div>
