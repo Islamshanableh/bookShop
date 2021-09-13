@@ -20,7 +20,7 @@ export const ShoppingCart = () => {
       .then((res) => {
         setBook(res.data.message);
       });
-  }, [book]);
+  }, [status]);
 
   const deleteBook=(id)=>{
 
@@ -28,12 +28,12 @@ export const ShoppingCart = () => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
+    }) .then((result)={
+      setBook()
+    }) .catch((err)=>{
+      throw err
     })
-    .then((res)=>{setStatus(<div>{`Success deleted the book with id=>${id}`}</div>)})
-    .catch((err)=>{setStatus(<div>Some thing wrong</div>)})
-
   }
-
   return (
     <div>
       {!book ? (

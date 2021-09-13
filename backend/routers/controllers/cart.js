@@ -54,7 +54,7 @@ const FindByUserId = (req,res)=>{
   })
 }
 
-const deleteArticleById = (req, res) => {
+const deleteBookById = (req, res) => {
   const id = req.params.id; 
   cartModel
     .findByIdAndDelete(id)
@@ -79,6 +79,6 @@ const deleteArticleById = (req, res) => {
     });
 };
 
-module.exports = {addToCart,FindByUserId,deleteArticleById}
+module.exports = {addToCart,FindByUserId,deleteBookById}
 
 
