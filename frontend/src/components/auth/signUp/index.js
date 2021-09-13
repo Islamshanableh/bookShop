@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import PasswordChecklist from "react-password-checklist";
 
 import axios from "axios";
 
@@ -16,6 +17,7 @@ export const Register = () => {
   const [confirmP, setConfirmP] = useState("");
 
   const [isErorr, setIsErorr] = useState("");
+
   const addNewUser = async (e) => {
     e.preventDefault();
     try {
@@ -39,13 +41,16 @@ export const Register = () => {
     }
   };
 
-  const confirm = (e) => {
-    if (password === confirmP) {
-      setIsErorr("");
-    } else {
-      setIsErorr("Confirm Password not match!!");
-    }
-  };
+  // useEffect(()=>{confirm()} ,[confirmP , password])
+  //   const confirm = () => {
+  //     console.log(password);
+  //     console.log(confirmP);
+  //     if (password === confirmP) {
+  //       setIsErorr("");
+  //     } else {
+  //       setIsErorr("Confirm Password not match!!");
+  //     }
+  //   };
 
   var today = new Date();
   var date =
@@ -367,8 +372,14 @@ export const Register = () => {
             placeholder="Confirm Password"
             onChange={(e) => {
               setConfirmP(e.target.value);
-              confirm(e);
             }}
+          />
+          <PasswordChecklist
+            rules={["minLength", "specialChar", "number", "capital", "match"]}
+            minLength={5}
+            value={password}
+            valueAgain={confirmP}
+            onChange={(isValid) => {}}
           />
 
           <br />
