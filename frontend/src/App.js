@@ -31,6 +31,7 @@ const state={token,setToken}
 		
 <userContext.Provider value={state}>
 <Navigaion/>
+<Search/>
 
 <Switch>
 	
