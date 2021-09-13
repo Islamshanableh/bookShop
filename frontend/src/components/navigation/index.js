@@ -9,7 +9,7 @@ import { MdAddShoppingCart } from "react-icons/md";
 
 const Navigation = () => {
 	const token = useContext (userContext) 
-	
+	token.setToken(localStorage.getItem('token'))
 	return (<div className="App">
 {!token.token?(<div className="navigation">
 <Link to= "/login" >login </Link>
