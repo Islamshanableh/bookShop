@@ -56,5 +56,32 @@ const createNewUser = (req, res) => {
       });
     });
   }
+
+  const updateInfo = (req, res) => {
+    const id = req.token.userId
+  
+    userSchema
+      .findByIdAndUpdate(id, req.body, { new: true })
+      .then((result) => {
+        if (!result) {
+          return res.status(404).json({
+            success: false,
+            message: `The user => not found`,
+          });
+        }
+        res.status(202).json({
+          success: true,
+          message: ` Success user updated`,
+          userInfo: [result]
+        });
+      })
+      .catch((err) => {
+        res.status(500).json({
+          success: false,
+          message: `Server Error`,
+          // err: err,
+        });
+      });
+  };
   
 module.exports={createNewUser}
