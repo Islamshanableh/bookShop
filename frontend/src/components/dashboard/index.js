@@ -19,6 +19,22 @@ const Dashboard = () => {
 		  
 		});
 	  }
+	  useEffect(() => {
+		axios
+		  .get(
+			"http://localhost:5000/books/myBook",
+	
+			{
+			  headers: {
+				Authorization: `Bearer ${token}`,
+			  },
+			}
+		  )
+		  .then((res) => {
+			 setBook([...res.data.book]);
+			
+		  });
+	  }, []);
 	return <div className="App">Dashboard component</div>;
 };
 
