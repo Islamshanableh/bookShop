@@ -1,8 +1,8 @@
 const favoriteModel = require("../../db/models/favorite");
 
 const addToFavorite = (req, res) => {
-  const { userId, bookId } = req.body;
-
+  const { bookId } = req.body;
+const userId =req.token.userId
   const favorite = new favoriteModel({
     userId,
     bookId,
