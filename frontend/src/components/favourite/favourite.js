@@ -19,17 +19,13 @@ const adding = ()=>{
           Authorization: `Bearer ${token}`,
         },
       }
-    )
-
-
-
-
-
-
-
-
-
-
+    )   .then((res) => {
+        console.log(res.data)
+      setFavourite("the item added successfuly favourite")
+    })
+    .catch((err) => {
+      throw err 
+    });
 
 
 
