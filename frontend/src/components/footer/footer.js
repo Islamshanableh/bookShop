@@ -27,6 +27,7 @@ function Footer() {
         <FontAwesomeIcon icon={faInstagram} size="2x" />
        </a>
        </div> 
+       <div  className="contact" >contact us </div>
 
 
   </div>
