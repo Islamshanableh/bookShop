@@ -11,24 +11,58 @@ const Navigation = () => {
 	
 	const token = useContext (userContext) 
 	token.setToken(localStorage.getItem('token'))
-	return (<div className="header">
-	<div className="logo" ><img src={KERO} alt="Logo" ></img> </div>	
-{!token.token?(<div className="navigation">
-<Link  className="Link" to= "/login" >login </Link>
-<Link  className="Link"to= "/signUp" >Register</Link>
-<Link className="Link" to= "/home" >Home</Link>	
-<Link className="Link" to= "/aboutUs" >aboutUs</Link>
-
-</div>	)
-:(<div className="navigation">
-<Link  className="Link"to= "/logOut" >logOut</Link>
-<Link  className="Link"to= "/home" >Home</Link>	
-<Link  className="Link"to= "/aboutUs" >aboutUs</Link>
-<Link className="Link" to= "/cart" ><MdAddShoppingCart className="cart"/>Cart</Link>
-<Link  className="Link"to= "/favourite" >Favourite</Link>
-</div>)
+	return (
+	
+	<nav class="fixed">
+		{!token.token?(
+	<ul class="nav-list">
+	  <li class="nav-item">
+		<img src={KERO} alt="logo"></img>
+	  </li>
+	  <li class="nav-item">
+		<Link to="/login">login </Link>
+	  </li>
+	  <li class="nav-item">
+		<Link to="/signUp">Register</Link>
+	  </li>
+	  <li class="nav-item">
+		<Link to="/home">Home</Link>
+	  </li>
+	  <li class="nav-item">
+		<Link to="/aboutUs">aboutUs</Link>
+	  </li>
+	  <li class="nav-item">
+		<Link to="/cart">
+		  <MdAddShoppingCart />
+		  Shopping Cart
+		</Link>
+	  </li>
+	</ul>):(
+		<ul class="nav-list">
+		<li class="nav-item">
+		  <img src={KERO} alt="logo"></img>
+		</li>
+		<li class="nav-item">
+		<Link  className="Link"to= "/logOut" >logOut</Link>
+		</li>
+		<li class="nav-item">
+		<Link  className="Link"to= "/home" >Home</Link>	
+		</li>
+		<li class="nav-item">
+		<Link  className="Link"to= "/aboutUs" >aboutUs</Link>
+		</li>
+		<li class="nav-item">
+		<Link className="Link" to= "/cart" ><MdAddShoppingCart className="cart"/>Cart</Link>
+		</li>
+		<li class="nav-item">
+		<Link  className="Link"to= "/favourite" >Favourite</Link>
+		</li>
+	  </ul>
+	
+	)
 }
-	</div>)
+	</nav>
+	)
 };
 
 export default Navigation;
