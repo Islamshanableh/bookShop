@@ -11,7 +11,7 @@ import {FavBage}from "./components/FavBage/FavBage"
 
 
 import { Logout } from './components/logout/Logout';
-import Footer from './components/footer/Footer';
+import Footer from './components/footer/footer';
 
 
 
