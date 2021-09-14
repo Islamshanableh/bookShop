@@ -364,7 +364,7 @@ export const Register = () => {
               setConfirmP(e.target.value);
             }}
           />
-          <PasswordChecklist style={ {marginLeft:"10px" , marginTop:"20px"}}
+          <PasswordChecklist style={ {marginLeft:"20px" , marginTop:"20px"}}
             rules={["minLength", "specialChar", "number", "capital", "match"]}
             minLength={5}
             value={password}
