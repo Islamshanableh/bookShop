@@ -50,7 +50,7 @@ export const Register = () => {
   <div className="signUp">
      <div>
         <label>{isErorr && <div>{isErorr}</div>}</label>
-        <form onSubmit={addNewUser}>
+        <form  className="theForm" onSubmit={addNewUser}>
           <br />
           <input
             type="text"

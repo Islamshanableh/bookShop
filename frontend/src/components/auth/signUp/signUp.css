@@ -6,14 +6,28 @@
 }
 .signUp{
     width:  400px ;
-    height: 400px ;
+    height: 600px ;
     border: 2px solid  black ; 
-    background-color: brown;
+    background-color: rgb(247, 240, 240);
     display: grid;
     position : fixed;
     top: 200px;
-    left :40% ; 
+    left :35% ; 
     text-align: center;
+    gap: 10px
 
     
+}
+
+.theForm input{
+    width : 90%; 
+    height: 25px;
+border-radius: 5px;
+    gap: 10px
+
+}
+
+.theForm{
+    /* display: grid; */
+    gap:3px 
 }
