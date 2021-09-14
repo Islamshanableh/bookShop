@@ -14,7 +14,8 @@
     top: 200px;
     left :35% ; 
     text-align: center;
-    gap: 10px
+    gap: 10px;
+    border-radius: 20px;
 
     
 }
@@ -36,5 +37,9 @@ border-radius: 5px;
     height: 25px;
 border-radius: 5px;
     gap: 10px
+
+}
+
+.theForm button {
 
 }
