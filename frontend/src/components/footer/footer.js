@@ -6,7 +6,7 @@ import {
     faInstagram
   } from "@fortawesome/free-brands-svg-icons";
 
-function footer() {
+function Footer() {
     return (
   <div  className="footer " >
 
@@ -33,4 +33,4 @@ function footer() {
     )
 }
 
-export default footer
+export default Footer

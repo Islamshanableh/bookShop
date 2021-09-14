@@ -11,6 +11,7 @@ import {FavBage}from "./components/FavBage/FavBage"
 
 
 import { Logout } from './components/logout/Logout';
+import Footer from './components/footer/Footer';
 
 
 
@@ -51,7 +52,7 @@ const state={token,setToken}
 
 </userContext.Provider>
 
-<footer/>
+<Footer/>
 	</div>)
 };
 
