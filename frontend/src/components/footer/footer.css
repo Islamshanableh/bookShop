@@ -1,13 +1,15 @@
 .footer{
 display: flex;
-position :sticky ;
-bottom: 0px
+position: -webkit-sticky;
+position: sticky;
+bottom: 0;
 }
 .folllowUs{
     background: #eee;
     padding: 25px 50px;
-    position :sticky ;
-bottom: 0px
+    position: -webkit-sticky;
+    position: sticky;
+    bottom: 0;
 }
 .facebook{
     margin: 0 1rem;
