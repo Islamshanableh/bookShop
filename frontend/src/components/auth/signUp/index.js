@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PasswordChecklist from "react-password-checklist";
-
 import axios from "axios";
+import "./signUp.css"
 
 export const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -41,24 +41,14 @@ export const Register = () => {
     }
   };
 
-  // useEffect(()=>{confirm()} ,[confirmP , password])
-  //   const confirm = () => {
-  //     console.log(password);
-  //     console.log(confirmP);
-  //     if (password === confirmP) {
-  //       setIsErorr("");
-  //     } else {
-  //       setIsErorr("Confirm Password not match!!");
-  //     }
-  //   };
+
 
   var today = new Date();
-  var date =
-    today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
+  var date = today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
 
   return (
-    <div>
-      <>
+  <div className="signUp">
+     <div>
         <label>{isErorr && <div>{isErorr}</div>}</label>
         <form onSubmit={addNewUser}>
           <br />
@@ -387,7 +377,7 @@ export const Register = () => {
           <br />
         </form>
         {message && <div>{message}</div>}
-      </>
-    </div>
+        </div>
+</div>
   );
 };
