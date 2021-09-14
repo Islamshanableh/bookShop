@@ -42,7 +42,7 @@ const state={token,setToken}
 <Route path = '/search' component = {Search} />
 <Route path = '/cart' component = {ShoppingCart} />
 <Route path = '/logout' component = {Logout} />
-<Route path = '/favorite' component = {FavBage} />
+<Route path = '/favourite' component = {FavBage} />
 
 
 

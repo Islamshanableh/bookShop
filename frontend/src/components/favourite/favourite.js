@@ -20,7 +20,7 @@ const adding = ()=>{
         },
       }
     )   .then((res) => {
-        console.log(res.data)
+       
       setFavourite("the item added successfuly favourite")
     })
     .catch((err) => {
