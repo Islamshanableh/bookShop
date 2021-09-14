@@ -1,0 +1,36 @@
+.footer{
+display: flex;
+}
+.folllowUs{
+    background: #eee;
+    padding: 25px 50px;
+}
+.facebook{
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+}
+.facebook :hover  {
+    transform: translateY(-2px);
+}
+.Twitter{
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+}
+.Instagram{
+    margin: 0 1rem;
+    transition: transform 250ms;
+    display: inline-block;
+}
+a.facebook {
+    color: #4968ad;
+  }
+  
+  a.twitter {
+    color: #49a1eb;
+  }
+  
+  a.instagram {
+    color: black;
+  }

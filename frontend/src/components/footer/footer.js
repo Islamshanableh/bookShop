@@ -18,11 +18,12 @@ function footer() {
         <FontAwesomeIcon icon={faFacebook} size="2x" />
         </a>
         <a href=""
-         className="facebook">
+
+         className="Twitter">
         <FontAwesomeIcon icon={faTwitter} size="2x" />
         </a>
          <a href=""
-        className="facebook">
+        className="Instagram">
         <FontAwesomeIcon icon={faInstagram} size="2x" />
        </a>
        </div> 
