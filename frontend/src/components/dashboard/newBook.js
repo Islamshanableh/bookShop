@@ -79,7 +79,7 @@ export const NewBook = () => {
       ></input>
       <input
         type="textarea"
-        placeholder="book description "
+        placeholder="price here "
         onChange={(e) => {
           setPrice(e.target.value);
         }}

@@ -1,0 +1,23 @@
+.slider {
+    font-family: sans-serif;
+    scroll-snap-type: x mandatory;  
+    display: flex;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: scroll;
+}
+section {
+    border-right: 1px solid white;
+    padding: 1rem;
+    min-width: 20vw;
+    height: 50vh;
+    scroll-snap-align: end;
+    text-align: center;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+}
+.slider img{
+    height:200px;
+     width: 200px;
+     overflow: hidden;
+}
