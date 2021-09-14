@@ -30,4 +30,11 @@ border-radius: 5px;
 .theForm{
     /* display: grid; */
     gap:3px 
+} 
+.theForm select{
+    width : 90%; 
+    height: 25px;
+border-radius: 5px;
+    gap: 10px
+
 }
