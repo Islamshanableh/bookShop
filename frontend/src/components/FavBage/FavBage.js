@@ -20,7 +20,7 @@ export const  FavBage =()=> {
         },
       })
       .then((res) => {
-          console.log(res.data)
+          console.log( `hi ${res.data}`)
         setBook(res.data.message);
       })
       .catch((err)=>{setBook([])
@@ -29,7 +29,7 @@ export const  FavBage =()=> {
     }
    
       useEffect((
-        )=>{getAllFavo()},[book])
+        )=>{ getAllFavo()},[book])
 
       const deleteBook=(id)=>{
 
