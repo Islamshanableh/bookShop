@@ -41,5 +41,10 @@ border-radius: 5px;
 }
 
 .theForm button {
-
+background-color: gray;
+font-size: 15px ;
+font-weight: bold;
+border-radius: 3px ;
+width: 70px;
+height: 40px;
 }
