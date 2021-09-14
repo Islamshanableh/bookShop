@@ -1,7 +1,6 @@
 .footer{
 display: flex;
-position: -webkit-sticky;
-position: sticky;
+position: relative;
 bottom: 0;
 width: 700px;
 height: 200px;
