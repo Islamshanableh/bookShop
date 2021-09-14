@@ -5,7 +5,7 @@ import {
     faTwitter,
     faInstagram
   } from "@fortawesome/free-brands-svg-icons";
-
+import "./footer.css"
 function Footer() {
     return (
   <div  className="footer " >
