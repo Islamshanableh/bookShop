@@ -35,7 +35,7 @@ export const AllBook =  () => {
               <div className="desc">
                 <h3>Description</h3>
                 {element.description}
-                <div className="price">{element.price}JD</div>
+                <div className="price">Price: {element.price}JD</div>
                 
               
               <div className="cart"> <Route
