@@ -11,9 +11,9 @@ export const Rate = ({ bookId , rateCount }) => {
     return acc + number;
   },0);
   
-  const [rating, setRating] = useState(0);
+ 
   const handleRating = (count) => {
-    setRating(count);
+    
     axios
       .post(
         "http://localhost:5000/rate",

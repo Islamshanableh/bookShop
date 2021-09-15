@@ -1,10 +1,12 @@
 import React, { useState,useContext } from "react";
 import { Route } from "react-router-dom";
 import { userContext } from "../../App";
+import { MdAddShoppingCart } from "react-icons/md"
 import axios from "axios";
+import "./cart.css"
 
 export const AddCart =({bookId})=>{
-    const [cart, setCart] = useState(0);
+    const [cart, setCart] = useState();
     const state = useContext(userContext);
     const token = state.token;
     
@@ -29,11 +31,11 @@ export const AddCart =({bookId})=>{
       });
     } 
     return(
-        <div>
-            <button onClick ={adding}>
-                add
-            </button>
-            {cart}
+        <div className="cart1">
+            
+            <MdAddShoppingCart size="3em" className="c" onClick ={adding} />
+            
+           <div className="succ">{cart}</div>
         </div>
     )
 }

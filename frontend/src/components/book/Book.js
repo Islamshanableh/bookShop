@@ -16,60 +16,39 @@ export const AllBook =  () => {
   }, []);
   return (
     <div>
-    <div className="slider">
+    <div id="main">
       {books &&
         books.map((element, index) => {
           return (
-            element.type==="Satire"&&
-            <section key={element._id} >
-              <br></br> <img src={element.image} onClick={()=>{
-                console.log("hello");
-              }}></img>,<br></br> {element.name}
-              <br></br>
-              {element.language}<br></br>
-              {element.price},<br></br>
-              <Route
+           <div className="book">
+           <img className="img" src={element.image}/>
+
+           <div className="book-info">
+             <h3>{element.name}</h3>
+             <span><Route
                 exact
                 path="/home"
                 render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
-              />
-               <Route
+              /></span>
+              </div>
+
+              <div className="desc">
+                <h3>Description</h3>
+                {element.description}
+                <div className="price">Price: {element.price}JD</div>
+                
+              
+              <div className="cart"> <Route
                 exact
                 path="/home"
                 render={() => <AddCart bookId={element._id} />}
-              />
-            </section>
-            
+              /></div>
+             </div>
+            </div>
           );
         })}
              </div>
-             <div className="slider"> {books &&
-        books.map((element, index) => {
-          return (
-            
-            <section key={element._id} >
-              <br></br> <img src={element.image} onClick={()=>{
-                console.log("hello");
-              }}></img>,<br></br> {element.name}
-              <br></br>
-              {element.language},<br></br>
-              {element.price},<br></br>
-              <Route
-                exact
-                path="/home"
-                render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
-              />
-               <Route
-                exact
-                path="/home"
-                render={() => <AddCart bookId={element._id} />}
-              />
-            </section>
-            
-          );
-        })}
-        
-    </div>
+           
     </div>
   );
 };

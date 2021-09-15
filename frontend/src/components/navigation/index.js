@@ -17,7 +17,7 @@ const Navigation = () => {
 		{!token.token?(
 	<ul class="nav-list">
 	  <li class="nav-item">
-		<img src={KERO} alt="logo"></img>
+	  <h3 class="kero">KERO BOOK</h3>
 	  </li>
 	  <li class="nav-item">
 		<Link to="/login">login </Link>
@@ -31,19 +31,11 @@ const Navigation = () => {
 	  <li class="nav-item">
 		<Link to="/aboutUs">aboutUs</Link>
 	  </li>
-	  <li class="nav-item">
-		<Link to="/cart">
-		  <MdAddShoppingCart />
-		  Shopping Cart
-		</Link>
-	  </li>
+
 	</ul>):(
 		<ul class="nav-list">
 		<li class="nav-item">
-		  <img src={KERO} alt="logo"></img>
-		</li>
-		<li class="nav-item">
-		<Link  className="Link"to= "/logOut" >logOut</Link>
+		<h3 class="kero">KERO BOOK</h3>
 		</li>
 		<li class="nav-item">
 		<Link  className="Link"to= "/home" >Home</Link>	
@@ -52,10 +44,13 @@ const Navigation = () => {
 		<Link  className="Link"to= "/aboutUs" >aboutUs</Link>
 		</li>
 		<li class="nav-item">
-		<Link className="Link" to= "/cart" ><MdAddShoppingCart className="cart"/>Cart</Link>
+		<Link  className="Link"to= "/favourite" >Favourite</Link>
 		</li>
 		<li class="nav-item">
-		<Link  className="Link"to= "/favourite" >Favourite</Link>
+		<Link className="Link" to= "/cart" ><MdAddShoppingCart size="2em"/></Link>
+		</li>
+		<li class="nav-item">
+		<Link  className="Link"to= "/logOut" >logOut</Link>
 		</li>
 	  </ul>
 	
