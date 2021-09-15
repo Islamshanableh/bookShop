@@ -36,15 +36,14 @@ export const AllBook =  () => {
                 <h3>Description</h3>
                 {element.description}
                 <div className="price">{element.price}JD</div>
-                <div className="Lang">{element.language}</div>
-
-              </div>
-               <Route
+                
+              
+              <div className="cart"> <Route
                 exact
                 path="/home"
                 render={() => <AddCart bookId={element._id} />}
-              />
-         
+              /></div>
+             </div>
             </div>
           );
         })}
