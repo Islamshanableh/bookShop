@@ -49,8 +49,12 @@ export const Search = () => {
         <option value="author">Author</option>
       </select>
 
-<input className="searchInput"type="text" name="" placeholder="Search"/>
-<button className="searchButton" href="#">
+<input className="searchInput"type="text" name="" placeholder="Search"
+onChange = {searchVal}/>
+<button className="searchButton" onClick={()=>{
+  goSearch()
+
+}}>
 <svg
           xmlns="http://www.w3.org/2000/svg"
           width="16"
