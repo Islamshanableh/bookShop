@@ -43,6 +43,11 @@ export const AllBook =  () => {
                 path="/home"
                 render={() => <AddCart bookId={element._id} />}
               /></div>
+              <div className="cart"> <Route
+                exact
+                path="/home"
+                render={() => <Favourite bookId={element._id} />}
+              /></div>
              </div>
             </div>
           );

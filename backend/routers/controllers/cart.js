@@ -1,5 +1,5 @@
 const cartModel = require("../../db/models/cart");
-
+const userModel = require("../../db/models/user")
 const addToCart = (req,res)=>{
  
     const {bookId} = req.body;
@@ -11,7 +11,8 @@ const addToCart = (req,res)=>{
 
     });
 
-    cart.save().then((result)=>{
+    cart.save().then(async(result)=>{
+     await userModel.findByIdAndUpdate(userId,{$push:{"cart" : bookId}})
         res.status(201).json({
             success: true,
             message: `Success book Added`,
@@ -58,6 +59,7 @@ const deleteBookById = (req, res) => {
   cartModel
     .findByIdAndDelete(id)
     .then((result) => {
+    //  await userModel.findByIdAndUpdate(userId,{$pull:{"cart" : id}})
       if (!result) {
         return res.status(404).json({
           success: false,
