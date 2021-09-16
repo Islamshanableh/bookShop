@@ -28,20 +28,15 @@ function Footer() {
        </a>
        </div> 
        <div  className="contact" >
-       <h1>contact us</h1>
-       <p>
-         phone number : +9625851111
-         fax: +9625852222
-       </p>
-       <p>
-         email address: kero@book.com.jo
-       </p>
+       <h1>contact us             
+       </h1>
+       <h2> phone number : +9625851111</h2>
+       <p>fax: +9625852222</p>
+       <p>email address: kero@book.com.jo</p>
         </div>
-        <div>
+        <div className="Payments">
        <p> Payments Accepted: American Express, Discover, Mastercard and Visa</p> 
         </div>
-
-
   </div>
     )
 }

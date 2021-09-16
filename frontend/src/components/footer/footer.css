@@ -52,3 +52,22 @@ background: rgb(221, 15, 15);
     text-align: center;
     /* line-height: 120px; */
 }
+.phone{
+    display: grid;
+text-align: center;
+margin: 0;
+padding: 0;
+}
+.email{
+    display: grid;
+    text-align: center;
+    margin: 0;
+padding: 0;
+}
+.Payments{
+    display: grid;
+    text-align: center;
+    background: rgb(186, 204, 23);
+    margin: 0;
+padding: 0;
+}
