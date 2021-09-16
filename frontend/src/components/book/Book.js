@@ -21,16 +21,10 @@ export const AllBook =  () => {
         books.map((element, index) => {
           return (
            <div className="book">
-           <img className="img" src={element.image}/>
-
-           <div className="book-info">
-             <h3>{element.name}</h3>
-             <span><Route
-                exact
-                path="/home"
-                render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
-              /></span>
-              </div>
+          <div className="book1">
+           <img className="imgooooooo" src={element.image}/>
+            
+          
 
               <div className="desc">
                 <h3>Description</h3>
@@ -38,17 +32,26 @@ export const AllBook =  () => {
                 <div className="price">Price: {element.price}JD</div>
                 
               
-              <div className="cart"> <Route
+              <div > <Route
                 exact
                 path="/home"
                 render={() => <AddCart bookId={element._id} />}
               /></div>
-              <div className="cart"> <Route
+              <div > <Route
                 exact
                 path="/home"
                 render={() => <Favourite bookId={element._id} />}
               /></div>
+              </div>
              </div>
+              <div className="book-info">
+             <h3 className="hover">{element.name}</h3>
+             <span><Route
+                exact
+                path="/home"
+                render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
+              /></span>
+              </div>
             </div>
           );
         })}
