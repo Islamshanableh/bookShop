@@ -29,7 +29,7 @@ export const ShoppingCart = () => {
 
 
   useEffect((
-  )=>{getBooks()},[book])
+  )=>{getBooks()},[])
   
   const deleteBook=(id)=>{
     cart.setNumber((cart.number)-1)
@@ -38,8 +38,10 @@ export const ShoppingCart = () => {
         Authorization: `Bearer ${token}`,
       },
     }).then((result)=>{
-      getBooks()
-      setStatus(<div>{`deleted book`}</div>)})
+      if(result.data.success){
+        getBooks()
+      }
+     })
     .catch((err)=>{setStatus(<div>{`some thing wrong`}</div>)})
   }
   return (
@@ -54,14 +56,14 @@ export const ShoppingCart = () => {
               <div className="book">
            <img className="img" src={element.bookId.image}/>
 
-           <div className="book-info">
+           {/* <div className="book-info">
              <h3>{element.name}</h3>
              <span><Route
                 exact
                 path="/home"
                 render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
               /></span>
-              </div>
+              </div> */}
                 <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
               </div>
             );

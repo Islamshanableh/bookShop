@@ -32,11 +32,12 @@ const FindByUserId = (req,res)=>{
   .populate("bookId","image name type author description language price-_id")
   .exec()
   .then((result)=>{
+    console.log(result);
     if(!result.length){
+      console.log("fffffffffffffffffffffffffffffffff");
       return res.status(409).json({
         success: false,
         message: result,
-        err: err,
       })
     }
     res.json({
@@ -60,12 +61,12 @@ const deleteBookById = (req, res) => {
       if (!result) {
         return res.status(404).json({
           success: false,
-          message: `The Article => ${id} not found`,
+          message: `The book => ${id} not found`,
         });
       }
       res.status(200).json({
         success: true,
-        message: `Success Delete atricle with id => ${id}`,
+        message: `Success Delete book with id => ${id}`,
       });
     })
     .catch((err) => {
