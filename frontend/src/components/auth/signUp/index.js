@@ -4,6 +4,7 @@ import axios from "axios";
 import "./signUp.css"
 
 export const Register = () => {
+  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [country, setCountry] = useState("");
@@ -17,6 +18,8 @@ export const Register = () => {
   const [confirmP, setConfirmP] = useState("");
 
   const [isErorr, setIsErorr] = useState("");
+
+  const [statusPassword , setStatusPassword] = useState();
 
   const addNewUser = async (e) => {
     e.preventDefault();
@@ -45,6 +48,11 @@ export const Register = () => {
 
   var today = new Date();
   var date = today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
+
+  const v = (isValid) => {
+    setStatusPassword(true)
+  }
+  
 
   return (
   <div className="signUp">
@@ -351,14 +359,14 @@ export const Register = () => {
           />
           <br />
           <input
-            type="password"
+            type="text"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
 
           <input
-            type="password"
+            type="text"
             placeholder="Confirm Password"
             onChange={(e) => {
               setConfirmP(e.target.value);
@@ -369,11 +377,11 @@ export const Register = () => {
             minLength={5}
             value={password}
             valueAgain={confirmP}
-            onChange={(isValid) => {}}
-          />
+            onChange={v }
+          /> 
 
           <br />
-          <button>Register</button>
+          <button disabled={!statusPassword}>Register {console.log(!statusPassword)}</button>
           <br />
         </form>
         {message && <div>{message}</div>}

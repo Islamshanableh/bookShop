@@ -11,7 +11,7 @@ import {FavBage}from "./components/FavBage/FavBage"
 
 
 import { Logout } from './components/logout/Logout';
-import Footer from './components/footer/footer';
+import Footer from './components/footer/Footer';
 
 
 
@@ -42,7 +42,7 @@ const state={token,setToken}
 <Route path = '/search' component = {Search} />
 <Route path = '/cart' component = {ShoppingCart} />
 <Route path = '/logout' component = {Logout} />
-<Route path = '/favourite' component = {FavBage} />
+<Route path = '/favorite' component = {FavBage} />
 
 
 

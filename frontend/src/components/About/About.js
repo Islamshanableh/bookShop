@@ -9,6 +9,8 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    borderRadius:"5px",
+    backgroundColor:"#F7F6F2",
   },
 };
 
@@ -21,7 +23,10 @@ export const About = () => {
   }
 
   function afterOpenModal() {
-    subtitle.style.color = "#f00";
+    subtitle.style.color = "black";
+    subtitle.style.textAlign = "center";
+    subtitle.style.fontFamily = "bold";
+
   }
 
   function closeModal() {
@@ -29,7 +34,7 @@ export const About = () => {
   }
   return (
     <div>
-      <button onClick={openModal}>About Us</button>
+      <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>About</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -43,8 +48,8 @@ export const About = () => {
         <div>
           
           <p>Better Books for everyone,is an online book retailer based in Amman that ships to readers throughout the Middle East.</p>
-           <p> It was founded in October 2021 by entrepreneur Ala' Alsallal with the support of Shadow Team.</p>
-          <button onClick={closeModal}>close</button>
+           <p> It was founded in October 2021 by entrepreneur Meraki Academy with the support of Shadow Team.</p>
+          <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"30px"}}>close</button>
         </div>
       </Modal>
     </div>
