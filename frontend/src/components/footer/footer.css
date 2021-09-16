@@ -10,12 +10,13 @@ div {
 }
 
 .footer{
+    color: #F7F6F2;
     flex-grow: 1;
     margin: 0 auto;
     position: relative;
     width: auto;
     height: 200px;
-    background: #C400FF;
+    background: black;
     display:flex;
     font-family: IBM Plex Sans, sans-serif;
     font-weight: bold;
@@ -33,10 +34,10 @@ height: 200px;
 background: #C400FF;
 } */ 
  .folllowUs{
-   
+    color: #F7F6F2;
     /* background: rgb(226, 218, 218); */
     width: 25%;
-    margin: 10px auto; 
+    margin: 70px 3px ; 
 
 } 
 .facebook{
@@ -56,7 +57,7 @@ background: #C400FF;
     margin: 0 1rem;
     transition: transform 250ms;
     display: inline-block;
-    color: black;
+    color: #F7F6F2;
 }
 
   .Twitter :hover  {
@@ -69,30 +70,28 @@ background: #C400FF;
     transform: translateY(-2px);
 }
 .contact{
-    display: grid;
+    color: #F7F6F2;
     width: 25%;
     height: 200px;
     /* background: rgb(186, 204, 23); */
     text-align: center;
-    overflow:visible
+    overflow:auto
     /* line-height: 120px; */
 }
-/* .phone{
-    display: grid;
-text-align: center;
-margin: 0;
-padding: 0;
-}
-.email{
-    display: grid;
-    text-align: center;
-    margin: 0;
-padding: 0;
-} */
 .Payments{
+    color: #F7F6F2;
     display: grid;
     text-align: center;
     /* background: rgb(186, 204, 23); */
-    margin: 0;
+    margin: 70px 3px ; 
 padding: 0;
+width: 25%;
+
+}
+
+.Rights{
+    color: #F7F6F2;
+    width: 25%;
+float: right;
+    margin: 90px 4px ; 
 }
