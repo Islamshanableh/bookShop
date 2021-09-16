@@ -1,13 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
+import { numberContext } from "../cart/cart";
 export const ShoppingCart = () => {
   const [book, setBook] = useState([]);
   const [price, setPrice] = useState(0);
   const [status, setStatus] = useState();
   const state  = useContext(userContext);
   const token = state.token;
-
+ const cart = useContext(numberContext)
   const getBooks = ()=>{
     axios.get("http://localhost:5000/cart",{headers:{Authorization: `Bearer ${token}` }})
     .then((result)=>{
@@ -22,21 +23,11 @@ export const ShoppingCart = () => {
  }
 
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/cart",{
-  //     headers: {
-  //       Authorization: `Bearer ${token}`,
-  //     },
-  //   }))
-  //   .then((res) => {
-  //    setBook(res.data.message) 
-  //    console.log(res.data.message)
-  //   });
-  // }, [book]);
   useEffect((
   )=>{getBooks()},[book])
   
   const deleteBook=(id)=>{
+    cart.setNumber((cart.number)-1)
     axios.delete(`http://localhost:5000/cart/${id}`,{
       headers: {
         Authorization: `Bearer ${token}`,
@@ -70,7 +61,7 @@ export const ShoppingCart = () => {
                 <br></br>
                 {element.bookId.price}
                 <br></br>
-                <button onClick={()=>{deleteBook(element._id)}}>X</button>
+                <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
               </div>
             );
           })}
