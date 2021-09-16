@@ -10,7 +10,7 @@ div {
 }
 
 .footer{
-    color: #F7F6F2;
+    color: #f0e7f2;
     flex-grow: 1;
     margin: 0 auto;
     position: relative;
@@ -34,7 +34,7 @@ height: 200px;
 background: #C400FF;
 } */ 
  .folllowUs{
-    color: #F7F6F2;
+    color: #f0e7f2;
     /* background: rgb(226, 218, 218); */
     width: 25%;
     margin: 70px 3px ; 
@@ -57,7 +57,7 @@ background: #C400FF;
     margin: 0 1rem;
     transition: transform 250ms;
     display: inline-block;
-    color: #F7F6F2;
+    color: #f0e7f2;
 }
 
   .Twitter :hover  {
@@ -70,7 +70,7 @@ background: #C400FF;
     transform: translateY(-2px);
 }
 .contact{
-    color: #F7F6F2;
+    color: #f0e7f2;
     width: 25%;
     height: 200px;
     /* background: rgb(186, 204, 23); */
@@ -79,7 +79,7 @@ background: #C400FF;
     /* line-height: 120px; */
 }
 .Payments{
-    color: #F7F6F2;
+    color: #f0e7f2;
     display: grid;
     text-align: center;
     /* background: rgb(186, 204, 23); */
@@ -90,7 +90,7 @@ width: 25%;
 }
 
 .Rights{
-    color: #F7F6F2;
+    color: #f0e7f2;
     width: 25%;
     margin: 80px 4px ;
     font-size: smaller; 
