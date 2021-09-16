@@ -1,9 +1,48 @@
 import React, { useEffect, useState } from "react";
 import PasswordChecklist from "react-password-checklist";
 import axios from "axios";
+import Modal from "react-modal";
 import "./signUp.css"
 
+const customStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    borderRadius:"5px",
+    backgroundColor:"#F7F6F2",
+    
+  },
+};
+
+
+
 export const Register = () => {
+
+  let subtitle;
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // subtitle.style.color = "black";
+    // subtitle.style.textAlign = "center";
+    // subtitle.style.fontFamily = "bold";
+
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+
+
+
   
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -18,6 +57,7 @@ export const Register = () => {
   const [confirmP, setConfirmP] = useState("");
 
   const [isErorr, setIsErorr] = useState("");
+  const [item , setItem]= useState(false)
 
   const [statusPassword , setStatusPassword] = useState();
 
@@ -49,35 +89,56 @@ export const Register = () => {
   var today = new Date();
   var date = today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  const v = (isValid) => {
-    setStatusPassword(true)
-  }
+  
   
 
   return (
-  <div className="signUp">
+  <div >
+   
+    <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>Register</button>
+    
+     <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+        ariaHideApp={false}
+      >
+         <div >
+
+        <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"30px"}}>x</button>
+        <h3 class="kero">KERO BOOK</h3>
+        </div>
      <div>
         <label>{isErorr && <div>{isErorr}</div>}</label>
         <form  className="theForm" onSubmit={addNewUser}>
           <br />
+          <div style={{display:"flex"}}>
           <input
             type="text"
             placeholder="First name"
             onChange={(e) => setFirstName(e.target.value)}
+            style={{width:"150px"}}
           />
-          <br />
+          
           <input
             type="text"
             placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
+            style={{width:"150px"}}
           />
+          </div>
           <br />
+          <div style={{display:"flex"}}>
           <select
             name="Country"
             defaultValue={"Jordan"}
             onChange={(e) => {
               setCountry(e.target.value);
+
             }}
+            style={{width:"158px" ,height:"28px" , borderWidth:"2px" , borderColor:"black"}}
           >
             <option value="Afganistan">Afghanistan</option>
             <option value="Albania">Albania</option>
@@ -336,6 +397,18 @@ export const Register = () => {
             <option value="Zambia">Zambia</option>
             <option value="Zimbabwe">Zimbabwe</option>
           </select>
+          
+
+          <input
+            type="date"
+            min="1960-01-01"
+            max={date}
+            onChange={(e) => setBirthDate(e.target.value)}
+            style={{width:"150px"}}
+          />
+
+          </div>
+
 
           <br />
           <input
@@ -349,14 +422,7 @@ export const Register = () => {
             placeholder="Phone Number"
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
-          <br />
-
-          <input
-            type="date"
-            min="1960-01-01"
-            max={date}
-            onChange={(e) => setBirthDate(e.target.value)}
-          />
+          
           <br />
           <input
             type="text"
@@ -377,15 +443,18 @@ export const Register = () => {
             minLength={5}
             value={password}
             valueAgain={confirmP}
-            onChange={v }
+            onChange={(isValid)=>{
+              setItem(isValid)
+            }}
           /> 
 
           <br />
-          <button disabled={!statusPassword}>Register {console.log(!statusPassword)}</button>
+          <button disabled={!item} style={{color:"white"}}>Register {console.log(!item , "!item")}</button>
           <br />
         </form>
         {message && <div>{message}</div>}
         </div>
+        </Modal>
 </div>
   );
 };

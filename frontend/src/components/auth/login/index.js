@@ -74,6 +74,7 @@ const checkValid = ()=>{
     <>
   
         <div >
+          
         <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>Login</button>
         <Modal
         isOpen={modalIsOpen}
@@ -84,7 +85,9 @@ const checkValid = ()=>{
         contentLabel="Example Modal"
         ariaHideApp={false}
        >
+         
                <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"1px"}}>X</button>
+               <h3 class="kero">KERO BOOK</h3>
 <div style={{textAlign:"center" , display:"grid" }}>
        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Login</h2>
             
@@ -96,7 +99,7 @@ const checkValid = ()=>{
             setPassword(e.target.value);
         }}/>
       <br />
-      <button onClick={checkValid} style={{width:"60px" , borderRadius:"3px"  , marginLeft:"160px"}}>Login</button>
+      <button onClick={checkValid} style={{width:"60px" , borderRadius:"3px"  , marginLeft:"160px" , color:"white"}} className="logBtn">Login</button>
       </div>
 
       </Modal>
