@@ -56,8 +56,8 @@ const FindByUserId = (req,res)=>{
 }
 
 const deleteBookById = (req, res) => {
-  const id = req.params.id; 
-  const userId = req.token.userId
+const id = req.params.id; 
+ const userId = req.token.userId
   cartModel
     .findByIdAndDelete(id)
     .then(async(result) => {
