@@ -21,7 +21,7 @@ console.log(cart);
 	  <h3 class="kero">KERO BOOK</h3>
 	  </li>
 	  <li class="nav-item">
-		<Link to="/login">login </Link>
+		<Link to="/login">Login </Link>
 	  </li>
 	  <li class="nav-item">
 		<Link to="/signUp">Register</Link>
@@ -30,7 +30,7 @@ console.log(cart);
 		<Link to="/home">Home</Link>
 	  </li>
 	  <li class="nav-item">
-		<Link to="/aboutUs">aboutUs</Link>
+		<Link to="/aboutUs">AboutUs</Link>
 	  </li>
 
 	</ul>):(
@@ -42,7 +42,7 @@ console.log(cart);
 		<Link  className="Link"to= "/home" >Home</Link>	
 		</li>
 		<li class="nav-item">
-		<Link  className="Link"to= "/aboutUs" >aboutUs</Link>
+		<Link  className="Link"to= "/aboutUs" >AboutUs</Link>
 		</li>
 		<li class="nav-item">
 		<Link  className="Link"to= "/favourite" >Favourite</Link>
@@ -51,7 +51,7 @@ console.log(cart);
 		<Link className="Link odai" to= "/cart" ><MdAddShoppingCart size="2em"/> <div className="n">{cart.number}</div></Link>
 		</li>
 		<li class="nav-item">
-		<Link  className="Link"to= "/logOut" >logOut</Link>
+		<Link  className="Link"to= "/logOut" >LogOut</Link>
 		</li>
 	  </ul>
 	

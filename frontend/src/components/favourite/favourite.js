@@ -5,7 +5,7 @@ import axios from "axios";
 
 
 const  Favourite=({bookId}) =>{
-const [favourite, setFavourite] = useState(0);
+const [favourite, setFavourite] = useState();
 const state = useContext(userContext);
 const token = state.token;
 const adding = ()=>{

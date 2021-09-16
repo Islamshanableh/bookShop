@@ -29,8 +29,12 @@ const userId =req.token.userId
 
 const FindByUserId = (req, res) => {
   const userId = req.token.userId;
-  favoriteModel.find({userId}).populate("bookId","image name type author description language price-_id")
-  .exec().then((result) => {
+  favoriteModel.find({userId})
+  // .populate("bookId","image name type author description language price-_id")
+  // .exec()
+    .populate("bookId","image name type author description language price-_id")
+  .exec()
+  .then((result) => {
     if(!result.length){
       return res.status(409).json({
         success: false,

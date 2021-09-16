@@ -56,8 +56,8 @@ export const  FavBage =()=> {
                 
               return (
                 <div key={element._id}>
-                  {element.bookId.image}
-                  <br></br> 
+                  {/* {element.bookId.image}
+                  <br></br>  */}
                   {element.bookId.name}
                   <br></br>
                   {element.bookId.type}
