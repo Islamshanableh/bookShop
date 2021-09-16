@@ -54,3 +54,9 @@
     margin-top: 35px;
     color: blue;
 }
+
+.style {
+    text-align: "center";
+    padding: "100px 0.8";
+    font-size: "30px";
+  }
