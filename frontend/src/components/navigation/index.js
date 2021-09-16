@@ -4,6 +4,7 @@ import {userContext} from "../../App"
 import { MdAddShoppingCart } from "react-icons/md"
 import "./navigation.css"
 import { numberContext } from '../../App';
+import { Register } from '../auth/signUp';
 
 // import {userContext} from "../../App"
 
@@ -24,7 +25,7 @@ console.log(cart);
 		<Link to="/login">Login </Link>
 	  </li>
 	  <li class="nav-item">
-		<Link to="/signUp">Register</Link>
+		<Register/>
 	  </li>
 	  <li class="nav-item">
 		<Link to="/home">Home</Link>

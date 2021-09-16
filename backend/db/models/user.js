@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     lastName:{type:String,required:true},
     country:{type:String},
     phoneNumber:{type:Number},
-    BirthDate:{type:Number},
+    BirthDate:{type:Date},
     email:{type:String , unique: true },
     password:{type:String},
     favorite :[{type:mongoose.Schema.Types.ObjectId,ref:"Favorite"}],
