@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
 import { numberContext } from "../../App";
-import { Route } from "react-router-dom";
-import { Rate } from "../rate/rate";
+import { MdAddShoppingCart } from "react-icons/md"
+import "./ShoppingCart.css"
 
 export const ShoppingCart = () => {
   const [book, setBook] = useState([]);
@@ -47,7 +47,11 @@ export const ShoppingCart = () => {
   return (
     <div>
       {!book.length ? (
-        <div>Shopping cart is Empty</div>
+        
+        <div>
+          <div><MdAddShoppingCart size="5em" className="p"/> </div>
+          Shopping cart is Empty
+          </div>
       ) : (
         <div>
           {book.map((element, i) => {
@@ -56,21 +60,18 @@ export const ShoppingCart = () => {
               <div className="book">
            <img className="img" src={element.bookId.image}/>
 
-           {/* <div className="book-info">
-             <h3>{element.name}</h3>
-             <span><Route
-                exact
-                path="/home"
-                render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
-              /></span>
-              </div> */}
+           <div className="book-info">
+             <h3>{element.bookId.name}</h3>
+            
+              </div>
                 <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
               </div>
             );
           })}
+            {`The total price is => ${price}`}
         </div>
       )}
-      {`The total price is => ${price}`}
+    
     </div>
   );
 };
