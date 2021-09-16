@@ -1,0 +1,19 @@
+.p{
+    color: blue;
+}
+.cart{
+    width: 300px;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0.2px 4px 5px rgba(red, green, blue, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+.imgCart{
+    width: 40%;
+}
+
+.Cart-book-info{
+    margin: 0;
+    padding:0;
+}

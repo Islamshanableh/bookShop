@@ -1,14 +1,15 @@
-import React, { useState,useContext } from "react";
-import { Route } from "react-router-dom";
+import React, { useState,useContext} from "react";
 import { userContext } from "../../App";
 import { MdAddShoppingCart } from "react-icons/md"
 import axios from "axios";
-import "./cart.css"
-
+import "./cart.css";
+import { numberContext } from "../../App";
 export const AddCart =({bookId})=>{
     const [cart, setCart] = useState();
     const state = useContext(userContext);
+    const cartD=useContext(numberContext)
     const token = state.token;
+   
     
     const adding = ()=>{
         axios
@@ -23,6 +24,7 @@ export const AddCart =({bookId})=>{
       )
       .then((res) => {
         setCart("the item added successfuly to the cart")
+        cartD.setNumber(cartD.number+1)
       })
       .catch((err) => {
          console.log(
@@ -30,6 +32,7 @@ export const AddCart =({bookId})=>{
          );
       });
     } 
+  
     return(
         <div className="cart1">
             
