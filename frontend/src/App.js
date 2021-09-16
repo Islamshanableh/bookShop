@@ -45,6 +45,8 @@ const App = () => {
 <Route path = '/cart' component = {ShoppingCart} />
 <Route path = '/logout' component = {Logout} />
 <Route path = '/favorite' component = {FavBage} />
+<Route path = '/profile' component = {Profile} />
+<Route path = '/myProfile' component = {Info} />
 
 
 
