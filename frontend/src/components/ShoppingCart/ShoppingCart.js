@@ -57,14 +57,16 @@ export const ShoppingCart = () => {
           {book.map((element, i) => {
               
             return (
-              <div className="book">
-           <img className="img" src={element.bookId.image}/>
+              <div className="cart">
 
-           <div className="book-info">
-             <h3>{element.bookId.name}</h3>
-            
-              </div>
+           <img className="imgCart" src={element.bookId.image}/>
+
+           <div className="Cart-book-info">
+             <h3>{element.bookId.name}</h3></div>
+             <div className="price">Price: {element.bookId.price}JD</div>
+              
                 <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
+
               </div>
             );
           })}
