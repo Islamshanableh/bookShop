@@ -57,7 +57,7 @@ console.log(cart);
 		<li class="nav-item">
 		<Link  className="Link"to= "/logOut" >LogOut</Link>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item search">
 		<Search/>
 	  </li>
 	  </ul>
