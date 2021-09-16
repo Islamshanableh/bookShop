@@ -6,10 +6,7 @@ import { Register } from './components/auth/signUp';
 import { AllBook } from './components/book/Book';
 import { Search } from './components/search/Search';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
-
 import {FavBage}from "./components/FavBage/FavBage"
-
-
 import { Logout } from './components/logout/Logout';
 import Footer from './components/footer/footer';
 
@@ -20,16 +17,21 @@ import Footer from './components/footer/footer';
 
 
 
-
+export const numberContext = createContext()
 export const userContext = createContext();
 
 
 
 const App = () => {
+
+	const [number,setNumber]=useState(0)
+	const cartNumber = {number,setNumber}
 	const [token,setToken]=useState()
-const state={token,setToken}
+    const state={token,setToken}
 	return (<div>
-		
+<numberContext.Provider value={cartNumber}>
+ 
+    
 <userContext.Provider value={state}>
 <Navigaion/>
 <Search/>
@@ -51,7 +53,7 @@ const state={token,setToken}
 </Switch>
 
 </userContext.Provider>
-
+</numberContext.Provider>
 <Footer/>
 	</div>)
 };

@@ -2,13 +2,14 @@ import React ,{useContext} from 'react';
 import { Link } from 'react-router-dom';
 import {userContext} from "../../App"
 import { MdAddShoppingCart } from "react-icons/md"
-import KERO from '../images/KERO.gif';
 import "./navigation.css"
+import { numberContext } from '../../App';
 
 // import {userContext} from "../../App"
 
 const Navigation = () => {
-	
+const cart = useContext(numberContext)
+console.log(cart);
 	const token = useContext (userContext) 
 	token.setToken(localStorage.getItem('token'))
 	return (
@@ -47,7 +48,7 @@ const Navigation = () => {
 		<Link  className="Link"to= "/favourite" >Favourite</Link>
 		</li>
 		<li class="nav-item">
-		<Link className="Link" to= "/cart" ><MdAddShoppingCart size="2em"/></Link>
+		<Link className="Link odai" to= "/cart" ><MdAddShoppingCart size="2em"/> <div className="n">{cart.number}</div></Link>
 		</li>
 		<li class="nav-item">
 		<Link  className="Link"to= "/logOut" >logOut</Link>

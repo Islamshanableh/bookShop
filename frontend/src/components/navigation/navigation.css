@@ -40,3 +40,11 @@
     font-size: 25px;
    margin: 0 15px 0 15px;
 }
+.odai{
+  display: flex;
+  justify-content: space-between;
+}
+.n{
+padding-top: 6px;
+color:red;
+}

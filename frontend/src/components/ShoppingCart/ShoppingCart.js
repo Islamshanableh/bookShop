@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
-import { numberContext } from "../cart/cart";
+import { numberContext } from "../../App";
+
 export const ShoppingCart = () => {
   const [book, setBook] = useState([]);
   const [price, setPrice] = useState(0);
