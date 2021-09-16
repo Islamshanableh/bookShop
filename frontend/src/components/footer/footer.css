@@ -4,34 +4,24 @@ display:flex;
 margin-top: 100px;
 bottom: 0;
 width: 100%;
-height: 120px;
+height: 150px;
 background: rgb(221, 15, 15);
 }
  .folllowUs{
    
     background: rgb(226, 218, 218);
-    width: 50%;
+    width: 25%;
 
     margin: 10px auto; 
 
 } 
-
-.contact{
-    width: 50%;
-    height: 120px;
-    background: rgb(186, 204, 23);
-    text-align: center;
-    line-height: 120px;
-}
 .facebook{
     margin: 0 1rem;
     transition: transform 250ms;
     display: inline-block;
     color: #4968ad;
 }
-.facebook :hover  {
-    transform: translateY(-2px);
-}
+
 .Twitter{
     margin: 0 1rem;
     transition: transform 250ms;
@@ -43,8 +33,6 @@ background: rgb(221, 15, 15);
     transition: transform 250ms;
     display: inline-block;
     color: black;
-    
-
 }
 
   .Twitter :hover  {
@@ -52,4 +40,15 @@ background: rgb(221, 15, 15);
 }
 .Instagram :hover  {
     transform: translateY(-2px);
+}
+.facebook :hover  {
+    transform: translateY(-2px);
+}
+.contact{
+    display: grid;
+    width: 25%;
+    height: 150px;
+    background: rgb(186, 204, 23);
+    text-align: center;
+    /* line-height: 120px; */
 }

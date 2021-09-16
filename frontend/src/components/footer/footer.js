@@ -13,21 +13,33 @@ function Footer() {
         <div className="folllowUs">
             follow Us on 
            
-        <a href=""
+        <a href="https://www.facebook.com/"
         className="facebook">
         <FontAwesomeIcon icon={faFacebook} size="2x" />
         </a>
-        <a href=""
+        <a href="https://twitter.com/"
 
          className="Twitter">
         <FontAwesomeIcon icon={faTwitter} size="2x" />
         </a>
-         <a href=""
+         <a href="https://www.instagram.com/"
         className="Instagram">
         <FontAwesomeIcon icon={faInstagram} size="2x" />
        </a>
        </div> 
-       <div  className="contact" >contact us </div>
+       <div  className="contact" >
+       <h1>contact us</h1>
+       <p>
+         phone number : +9625851111
+         fax: +9625852222
+       </p>
+       <p>
+         email address: kero@book.com.jo
+       </p>
+        </div>
+        <div>
+       <p> Payments Accepted: American Express, Discover, Mastercard and Visa</p> 
+        </div>
 
 
   </div>
