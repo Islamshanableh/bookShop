@@ -7,7 +7,7 @@ import { numberContext } from '../../App';
 import { Register } from '../auth/signUp';
 import { Search } from '../search/Search';
 // import {userContext} from "../../App"
-
+import { Profile } from '../profile/profile';
 const Navigation = () => {
 const cart = useContext(numberContext)
 console.log(cart);
@@ -22,6 +22,9 @@ console.log(cart);
 	  <h3 class="kero">KERO BOOK</h3>
 	  </li>
 	  <li class="nav-item">
+		<Search/>
+	  </li>
+	  <li class="nav-item">
 		<Link to="/login">Login </Link>
 	  </li>
 	  <li class="nav-item">
@@ -33,15 +36,16 @@ console.log(cart);
 	  <li class="nav-item">
 		<Link to="/aboutUs">AboutUs</Link>
 	  </li>
-	  <li class="nav-item">
-		<Search/>
-	  </li>
+	  
 
 	</ul>):(
 		<ul class="nav-list">
 		<li class="nav-item">
 		<h3 class="kero">KERO BOOK</h3>
 		</li>
+		<li class="nav-item search">
+		<Search/>
+	  </li>
 		<li class="nav-item">
 		<Link  className="Link"to= "/home" >Home</Link>	
 		</li>
@@ -57,9 +61,9 @@ console.log(cart);
 		<li class="nav-item">
 		<Link  className="Link"to= "/logOut" >LogOut</Link>
 		</li>
-		<li class="nav-item search">
-		<Search/>
-	  </li>
+		<li className="nav-item">
+		<Profile/>
+		</li>
 	  </ul>
 	
 	)

@@ -4,6 +4,7 @@ import { Rate } from "../rate/rate";
 import { AddCart } from "../cart/cart";
 import Favourite from "../favourite/favourite";
 import axios from "axios";
+import SlideShow from "./slide";
 import "./book.css"
 
 export const AllBook =  () => {
@@ -16,6 +17,7 @@ export const AllBook =  () => {
   }, []);
   return (
     <div>
+      <SlideShow/>
     <div id="main">
       {books &&
         books.map((element, index) => {
