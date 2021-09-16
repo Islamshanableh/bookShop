@@ -21,7 +21,9 @@ export const Contact = () => {
   }
 
   function afterOpenModal() {
-    subtitle.style.color = "#f00";
+    subtitle.style.color = "black";
+    subtitle.style.textAlign = "center";
+    subtitle.style.fontFamily = "bold";
   }
 
   function closeModal() {
@@ -30,7 +32,7 @@ export const Contact = () => {
 
   return (
     <div>
-      <button onClick={openModal}>Contact Us</button>
+      <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>Contact us</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -39,19 +41,20 @@ export const Contact = () => {
         contentLabel="Example Modal"
         ariaHideApp={false}
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Contact Us</h2>
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>For Reach us :</h2>
 
         <div>
           
-          <p> Contact Phone:+962-555-555-555 Email:Shadow.team@Shadow.org</p>
-          <p>Authors :</p>
-          <p> Rashed Migdady https://github.com/RashedMigdady</p>
-          <p> Islam Shanableh https://github.com/Islamshanableh</p>
-          <p>Odai Jawabreh https://github.com/OdaiJawabreh </p>
-          <p> um Kalthoum Radi https://github.com/KulthumRadi </p>
+          <p> Contact Phone:+962-555-555-555 </p>
+              <p>Email:Shadow.team@Shadow.org</p>
+          <p>Created by :</p>
+          <p> Rashed Migdady , github.com/RashedMigdady</p>
+          <p> Islam Shanableh , github.com/Islamshanableh</p>
+          <p>Odai Jawabreh , github.com/OdaiJawabreh </p>
+          <p> Um Kulthoum Radi , github.com/KulthumRadi </p>
 
 
-          <button onClick={closeModal}>X</button>
+          <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"130px" , marginTop:"30px"}}>close</button>
         </div>
       </Modal>
     </div>
