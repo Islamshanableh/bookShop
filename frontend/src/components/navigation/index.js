@@ -5,7 +5,7 @@ import { MdAddShoppingCart } from "react-icons/md"
 import "./navigation.css"
 import { numberContext } from '../../App';
 import { Register } from '../auth/signUp';
-
+import { Search } from '../search/Search';
 // import {userContext} from "../../App"
 
 const Navigation = () => {
@@ -33,6 +33,9 @@ console.log(cart);
 	  <li class="nav-item">
 		<Link to="/aboutUs">AboutUs</Link>
 	  </li>
+	  <li class="nav-item">
+		<Search/>
+	  </li>
 
 	</ul>):(
 		<ul class="nav-list">
@@ -54,6 +57,9 @@ console.log(cart);
 		<li class="nav-item">
 		<Link  className="Link"to= "/logOut" >LogOut</Link>
 		</li>
+		<li class="nav-item search">
+		<Search/>
+	  </li>
 	  </ul>
 	
 	)
