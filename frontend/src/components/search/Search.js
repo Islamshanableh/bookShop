@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "../../App.css";
+import "./search.css";
 import { Route, useHistory} from "react-router-dom";
 import { Rate } from "../rate/rate";
 import { AddCart } from "../cart/cart";

@@ -36,7 +36,7 @@ const App = () => {
     
 <userContext.Provider value={state}>
 <Navigaion/>
-<Search/>
+
 
 <Switch>
 	
