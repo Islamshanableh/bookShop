@@ -1,7 +1,7 @@
 .nav-list {
-    background-color: #F7F6F2;
-
-    box-shadow: 0px 0px 10px #cfd8dc;
+    background-color: #f0e7f2;
+color: #72147E;
+    box-shadow: 0px 0px 10px #e2d0e5;
     padding: 1rem 0;
     border-radius: 0.2rem;
     display: flex;
@@ -17,28 +17,32 @@
   .nav-item {
     list-style: none;
     margin-right: 2rem;
+    color: #72147E;
   }
   
   .nav-item a {
     text-decoration: none;
-    color: black;
+    color: #72147E;
     font-weight: bold;
     transition: all 200ms ease-in;
   }
   
   .nav-item a:hover {
-    color: #002366;
+  
+    font-size: large;
   }
   
   .nav-item:first-child {
     margin-right: auto;
     margin-left: 2rem;
+    color: #72147E;
   }
 
   .kero{
     font-family: 'Style Script', cursive;
     font-size: 25px;
    margin: 0 15px 0 15px;
+   color: #72147E;
 }
 .odai{
   display: flex;
