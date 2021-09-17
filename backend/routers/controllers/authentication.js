@@ -26,7 +26,8 @@ const Login = (req, res) => {
             userId : result._id,
             firstName: result.firstName,
             email: result.email,
-            dateOfBirthday: result.BirthDate
+            dateOfBirthday: result.BirthDate,
+            cart: result.cart
         }
         const options = {
          expiresIn: "10000000h",

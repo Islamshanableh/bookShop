@@ -44,6 +44,17 @@ export const ShoppingCart = () => {
      })
     .catch((err)=>{setStatus(<div>{`some thing wrong`}</div>)})
   }
+
+  const disc=(code)=>{
+    console.log(code);
+    if(code.toLowerCase()=="meraki"){
+    setPrice(price/2)
+    } else{
+           setPrice(book.reduce((acc,elem,i)=>{
+       return acc + parseInt((elem.bookId.price),10)
+     },0))
+    }
+  }
   return (
     <div>
       {!book.length ? (
@@ -60,17 +71,17 @@ export const ShoppingCart = () => {
               <div className="cart">
 
            <img className="imgCart" src={element.bookId.image}/>
-
-           <div className="Cart-book-info">
-             <h3>{element.bookId.name}</h3></div>
-             <div className="price">Price: {element.bookId.price}JD</div>
-              
-                <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
+           <div>Price: {element.bookId.price}JD</div>
+             <h3>{element.bookId.name}</h3>
+              <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
 
               </div>
             );
+            
           })}
-            {`The total price is => ${price}`}
+           <div className="l"> The total price is {price}JD</div>
+           <div><input type="text" placeholder="enter youre discount code" onChange={(e)=>{disc(e.target.value)}}></input></div>
+           <div><button>Bay Now</button></div>
         </div>
       )}
     
