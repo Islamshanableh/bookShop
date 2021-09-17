@@ -6,6 +6,9 @@
     position: relative;
     overflow: hidden;
     padding:5px;
+    color: #72147e;
+    
+    
 }
 .book img{
     width: 100%;
@@ -44,14 +47,17 @@
     padding: 4px;
     transform: translateY(101%);
     transition: transform 0.8s ;
-    background-color: #72147E;
+    background-color: #f0e7f2;
+    letter-spacing: 0.03cm;
 }
 .book1:hover .desc{
     transform: translateY(0);
 }
 .price{
 
-    color:white;
-    margin-top: 3px;
+    color:rgb(77, 77, 191);
+    margin-top: 20px;
 }
+
+
 

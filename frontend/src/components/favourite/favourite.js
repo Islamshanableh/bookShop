@@ -29,8 +29,8 @@ const adding = ()=>{
     });
   }
 return (
-    <div>
-            <button onClick ={adding}>
+    <div className="bb">
+            <button className="btnfav" onClick ={adding}>
             addToFavourite 
         </button>
         <div>
