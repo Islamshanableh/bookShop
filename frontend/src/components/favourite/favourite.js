@@ -2,12 +2,13 @@ import React, { useState,useContext } from "react";
 import { Route } from "react-router-dom";
 import { userContext } from "../../App";
 import axios from "axios";
-
+import { useHistory } from "react-router-dom";
 
 const  Favourite=({bookId}) =>{
 const [favourite, setFavourite] = useState();
 const state = useContext(userContext);
 const token = state.token;
+ const history = useHistory()
 const adding = ()=>{
 
     axios
@@ -24,7 +25,7 @@ const adding = ()=>{
       setFavourite("the item added successfuly favourite")
     })
     .catch((err) => {
-      throw err 
+      history.push("/signUp")
     });
   }
 return (

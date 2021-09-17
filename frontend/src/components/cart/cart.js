@@ -4,7 +4,9 @@ import { MdAddShoppingCart } from "react-icons/md"
 import axios from "axios";
 import "./cart.css";
 import { numberContext } from "../../App";
+import { useHistory } from "react-router-dom";
 export const AddCart =({bookId})=>{
+  const history = useHistory()
     const [cart, setCart] = useState();
     const state = useContext(userContext);
     const cartD=useContext(numberContext)
@@ -27,9 +29,7 @@ export const AddCart =({bookId})=>{
         cartD.setNumber(cartD.number+1)
       })
       .catch((err) => {
-         console.log(
-         "Error happened while creating a new rate, please try again"
-         );
+          history.push("/signUp")
       });
     } 
   
