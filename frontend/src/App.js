@@ -1,4 +1,5 @@
-import React ,{useState,createContext}from 'react';
+import React ,{useState,createContext,useEffect}from 'react';
+import axios from "axios"
 import { Route ,Switch} from 'react-router-dom';
 import Navigaion from "./components/navigation/index"
 import Login from './components/auth/login/index';
@@ -28,6 +29,9 @@ const App = () => {
 	const cartNumber = {number,setNumber}
 	const [token,setToken]=useState()
     const state={token,setToken}
+
+
+	
 	return (<div>
 <numberContext.Provider value={cartNumber}>
  
