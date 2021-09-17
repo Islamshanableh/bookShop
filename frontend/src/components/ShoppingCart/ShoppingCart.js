@@ -71,13 +71,17 @@ export const ShoppingCart = () => {
           Shopping cart is Empty
           </div>
       ) : (
-        <div className="naif">
+        <div>
           {book.map((element, i) => {
               
             return (
-              <div className="cont">
 
-              <div className="cart5">
+              <div className="contaner">
+              <div className="card"> 
+              <img src={element.bookId.image} className="img9"/>
+              <h1>{element.bookId.name}</h1>
+              <p><button>Remove Item</button></p>
+              {/* <div className="cart5">
             <div className="imm">
            <img className="imgCart" src={element.bookId.image}/>
            </div>
@@ -88,6 +92,7 @@ export const ShoppingCart = () => {
            <div className="X">
               <button onClick={()=>{deleteBook(element._id , element.bookId._id)}}>Remove Item</button>
               </div>
+              </div> */}
               </div>
               </div>
             );

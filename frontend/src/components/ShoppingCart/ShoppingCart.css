@@ -1,38 +1,37 @@
-/* .p{
-    color: blue;
+.contaner{
+    display: flex;
+    flex-wrap: wrap;
 }
-.cart{
-    width: 300px;
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    text-align: center;
+    font-family: arial;
     margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0.2px 4px 5px rgba(red, green, blue, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-.imgCart{
-    width: 40%;
-}
- */
- .cart5{
-    margin: 10px;
-     display: flex;
-     flex-direction: column;
- }
- .imm{
-    width: 300px;
-    max-height:300px;
- }
- .imgCart{
-     object-fit: cover;
- }
- .bok{
-     display: flex;
-     
- }
- .cont{
-     margin: 10px;
- }
-.naif{
+    overflow-wrap: break-word;
+  }
+  
+  .price {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
     width: 100%;
-    
-}
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  .img9{
+      width: 100%;
+  }
