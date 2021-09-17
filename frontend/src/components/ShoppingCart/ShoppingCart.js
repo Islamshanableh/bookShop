@@ -33,9 +33,9 @@ export const ShoppingCart = () => {
   )=>{getBooks()},[])
   
   const deleteBook=(id,bookId)=>{
-    console.log(bookId);
-    console.log(id);
-    console.log(token);
+    // console.log(bookId);
+    // console.log(id);
+    // console.log(token);
     cart.setNumber((cart.number)-1)
    axios.delete(
     `http://localhost:5000/cart/${id}`,

@@ -5,6 +5,7 @@ import { userContext } from "../../App";
 
 
 export const  FavBage =()=> {
+
     const [book, setBook] = useState();
     const [status, setStatus] = useState();
 
@@ -13,6 +14,7 @@ export const  FavBage =()=> {
 
 
     const getAllFavo =()=>{
+      console.log("ssssssssssss");
       axios
       .get("http://localhost:5000/favorite/getAllFav/", {
         headers: {
@@ -20,7 +22,6 @@ export const  FavBage =()=> {
         },
       })
       .then((res) => {
-          console.log( `hi ${res.data}`)
         setBook(res.data.message);
       })
       .catch((err)=>{setBook([])
@@ -29,7 +30,7 @@ export const  FavBage =()=> {
     }
    
       useEffect((
-        )=>{ getAllFavo()},[book])
+        )=>{ getAllFavo()},[])
 
       const deleteBook=(id)=>{
 
