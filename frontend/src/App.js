@@ -10,6 +10,8 @@ import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 import {FavBage}from "./components/FavBage/FavBage"
 import { Logout } from './components/logout/Logout';
 import Footer from './components/footer/footer';
+import { Profile } from './components/profile/profile';
+import { Info } from './components/profile/info';
 
 
 
@@ -38,7 +40,7 @@ const App = () => {
     
 <userContext.Provider value={state}>
 <Navigaion/>
-<Search/>
+
 
 <Switch>
 	
@@ -49,6 +51,8 @@ const App = () => {
 <Route path = '/cart' component = {ShoppingCart} />
 <Route path = '/logout' component = {Logout} />
 <Route path = '/favorite' component = {FavBage} />
+<Route path = '/profile' component = {Profile} />
+<Route path = '/myProfile' component = {Info} />
 
 
 

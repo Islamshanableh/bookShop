@@ -13,4 +13,13 @@
     opacity: 0;
     transform: translateX(-100px);
   }
-  
+
+  .logBtn{
+    background-color: gray;
+    font-size: 15px ;
+    font-weight: bold;
+    border-radius: 3px ;
+    width: 80px;
+    height: 30px;
+    margin: auto;
+  }
