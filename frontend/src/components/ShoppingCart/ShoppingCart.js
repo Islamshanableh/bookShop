@@ -14,7 +14,7 @@ export const ShoppingCart = () => {
  const cart = useContext(numberContext)
 
   const getBooks = ()=>{
-    console.log(token);
+    
     axios.get("http://localhost:5000/cart",{headers:{Authorization: `Bearer ${token}` }})
     .then((result)=>{
      setBook(result.data.message)
@@ -25,7 +25,7 @@ export const ShoppingCart = () => {
     })
     .catch((err)=>{setBook([])
       setPrice(0)
-      console.log(err)})
+     })
  }
 
 
@@ -33,9 +33,7 @@ export const ShoppingCart = () => {
   )=>{getBooks()},[])
   
   const deleteBook=(id,bookId)=>{
-    // console.log(bookId);
-    // console.log(id);
-    // console.log(token);
+
     cart.setNumber((cart.number)-1)
    axios.delete(
     `http://localhost:5000/cart/${id}`,
@@ -44,7 +42,7 @@ export const ShoppingCart = () => {
       headers: {
         authorization: `Bearer ${token}`,
       },
-    data:{bookId} },
+    data:   {bookId} },
   ) 
 .then((result)=>{
       if(result.data.success){
@@ -55,7 +53,7 @@ export const ShoppingCart = () => {
   }
 
   const disc=(code)=>{
-    console.log(code);
+
     if(code.toLowerCase()=="meraki"){
     setPrice(price/2)
     } else{

@@ -2,6 +2,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
+import { AddCart } from "../cart/cart";
+import { Route } from "react-router-dom";
+import { Rate } from "../rate/rate";
 
 
 export const  FavBage =()=> {
@@ -56,23 +59,31 @@ export const  FavBage =()=> {
             {book.map((element, i) => {
                 
               return (
-                <div key={element._id}>
-                  {/* {element.bookId.image}
-                  <br></br>  */}
-                  {element.bookId.name}
-                  <br></br>
-                  {element.bookId.type}
-                  <br></br>
-                  {element.bookId.author}
-                  <br></br>
-                  {element.bookId.description}
-                  <br></br>
-                  {element.bookId.language}
-                  <br></br>
-                  {element.bookId.price}
-                  <br></br>
-                  <button onClick={()=>{deleteBook(element._id)}}>X</button>
-                </div>
+                <div className="book">
+                <div className="book1">
+                 <img className="imgooooooo" src={element.bookId.image}/>
+                  
+                
+      
+                    <div className="desc">
+                      <h3>Description</h3>
+                      {element.bookId.description}
+                      <div className="price">Price: {element.bookId.price}JD</div>
+                      
+                    
+                    <div > <Route
+                      exact
+                      path="/favorite"
+                      render={() => <AddCart bookId={element.bookId._id} />}
+                    /></div>
+                   
+                    </div>
+                   </div>
+                    <div className="book-info">
+                   <h3 className="hover">{element.bookId.name}</h3>
+                
+                    </div>
+                  </div>
               );
             })}
           </div>
