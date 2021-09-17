@@ -13,6 +13,9 @@ import { Search } from '../search/Search';
 
 // import {userContext} from "../../App"
 import { Profile } from '../profile/profile';
+import { About } from '../About/About';
+import { Contact } from '../Contact/Contact';
+import { red } from '@material-ui/core/colors';
 const Navigation = () => {
 const cart = useContext(numberContext)
 console.log(cart);
@@ -47,52 +50,58 @@ console.log(cart);
 
 	return (
 	
-	<nav class="fixed">
+	<nav className="fixed">
 		{!token.token?(
-	<ul class="nav-list">
-	  <li class="nav-item">
-	  <h3 class="kero">KERO BOOK</h3>
+	<ul className="nav-list">
+	  <li className="nav-item">
+	  <h3 className="kero">KERO BOOK</h3>
 	  </li>
-	  <li class="nav-item">
-
+	  <li className="nav-item">
 		<Search/>
 	  </li>
-	  <li class="nav-item">
+	  <li className="nav-item">
 			<Login/>
 
 	  </li>
-	  <li class="nav-item">
+	  <li className="nav-item">
 		<Register/>
 	  </li>
-	  <li class="nav-item">
+	  <li className="nav-item">
 		<Link to="/home">Home</Link>
 	  </li>
-	  <li class="nav-item">
-		<Link to="/aboutUs">AboutUs</Link>
+	  <li className="nav-item">
+		<About/>
+	  </li>
+	  <li className="nav-item">
+		<Contact/>
 	  </li>
 	  
 
 	</ul>):(
-		<ul class="nav-list">
-		<li class="nav-item">
-		<h3 class="kero">KERO BOOK</h3>
+		<ul className="nav-list">
+		<li className="nav-item">
+		<h3 className="kero">KERO BOOK</h3>
 		</li>
 		<li class="nav-item search">
 		<Search/>
 	  </li>
-		<li class="nav-item">
+		<li className="nav-item">
 		<Link  className="Link"to= "/home" >Home</Link>	
 		</li>
-		<li class="nav-item">
-		<Link  className="Link"to= "/aboutUs" >AboutUs</Link>
-		</li>
-		<li class="nav-item">
+		
+		<li className="nav-item">
 		<Link  className="Link"to= "/favourite" >Favourite</Link>
 		</li>
 		<li class="nav-item">
 		<Link className="Link odai" to= "/cart" ><MdAddShoppingCart size="2em"/> <div className="n">{cart.number}</div></Link>
 		</li>
-		<li class="nav-item">
+		<li className="nav-item">
+		<About/>
+		</li>
+		<li className="nav-item">
+		<Contact/>
+	  </li>
+		<li className="nav-item">
 		<Link  className="Link"to= "/logOut" >LogOut</Link>
 		</li>
 		<li className="nav-item">
