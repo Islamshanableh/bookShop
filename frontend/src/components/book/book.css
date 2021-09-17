@@ -44,12 +44,12 @@
     padding: 4px;
     transform: translateY(101%);
     transition: transform 0.8s ;
-    background-color: green;
+    background-color: #72147E;
 }
 .book1:hover .desc{
     transform: translateY(0);
 }
 .price{
-    color:blue;
+    color:white;
     margin-top: 3px;
 }

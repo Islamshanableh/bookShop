@@ -21,6 +21,7 @@ export const AllBook =  () => {
       {books &&
         books.map((element, index) => {
           return (
+            
            <div className="book">
           <div className="book1">
            <img className="imgooooooo" src={element.image}/>
