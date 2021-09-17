@@ -63,7 +63,7 @@ const FindByCategory = (req, res) => {
     }
     res.json({
       succes: true,
-      message: result
+      book: result
     });
   }).catch((err)=>{
     res.json({
@@ -83,7 +83,7 @@ const getBookByName =(req,res)=>{
       })}
     res.json({
       succes: true,
-      message: result
+      book: result
     });
   }).catch((err)=>{
     res.json("server error")
@@ -105,7 +105,7 @@ const getBookByAuthor = (req,res)=>{
       res.json({
         success: true,
         massage: `all the books by${author}`,
-        articles: result,
+        book: result,
       });
     })
     .catch((err) => {

@@ -20,19 +20,19 @@ export const Search = () => {
       axios
         .get(`http://localhost:5000/books/typeOfBook/${searchVal}`)
         .then((res) => {
-          setBooks([...res.data.message]);
+          setBooks([...res.data.book]);
         });
     } else if (value === "name") {
       axios
         .get(`http://localhost:5000/books/nameOfBook/${searchVal}`)
         .then((res) => {
-          setBooks([...res.data.message]);
+          setBooks([...res.data.book]);
         });
     } else if (value === "author") {
       axios
         .get(`http://localhost:5000/books/nameOfAuthor/${searchVal}`)
         .then((res) => {
-          setBooks([...res.data.articles]);
+          setBooks([...res.data.book]);
         });
     } else {
       setMessage("no books found");
