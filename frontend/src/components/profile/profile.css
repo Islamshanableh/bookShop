@@ -1,0 +1,6 @@
+.myprofile {
+    margin-top: 200px;
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+  }
