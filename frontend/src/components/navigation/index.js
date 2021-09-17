@@ -96,7 +96,7 @@ console.log(cart);
 		</li>
 		
 		<li className="nav-item">
-		<Link  className="Link"to= "/favourite" >Favourite</Link>
+		<Link  className="Link"to= "/favorite" >Favourite</Link>
 		</li>
 		<li class="nav-item">
 		<Link className="Link odai" to= "/cart" ><MdAddShoppingCart size="2em"/> <div className="n">{cart.number}</div></Link>

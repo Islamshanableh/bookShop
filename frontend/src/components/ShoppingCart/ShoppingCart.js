@@ -2,8 +2,10 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
 import { numberContext } from "../../App";
+import { BsCheckCircle } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md"
 import "./ShoppingCart.css"
+
 
 export const ShoppingCart = () => {
   const [book, setBook] = useState([]);
@@ -14,7 +16,7 @@ export const ShoppingCart = () => {
  const cart = useContext(numberContext)
 
   const getBooks = ()=>{
-    console.log(token);
+    
     axios.get("http://localhost:5000/cart",{headers:{Authorization: `Bearer ${token}` }})
     .then((result)=>{
      setBook(result.data.message)
@@ -25,7 +27,7 @@ export const ShoppingCart = () => {
     })
     .catch((err)=>{setBook([])
       setPrice(0)
-      console.log(err)})
+     })
  }
 
 
@@ -33,9 +35,7 @@ export const ShoppingCart = () => {
   )=>{getBooks()},[])
   
   const deleteBook=(id,bookId)=>{
-    console.log(bookId);
-    console.log(id);
-    console.log(token);
+
     cart.setNumber((cart.number)-1)
    axios.delete(
     `http://localhost:5000/cart/${id}`,
@@ -44,7 +44,7 @@ export const ShoppingCart = () => {
       headers: {
         authorization: `Bearer ${token}`,
       },
-    data:{bookId} },
+    data:   {bookId} },
   ) 
 .then((result)=>{
       if(result.data.success){
@@ -55,17 +55,17 @@ export const ShoppingCart = () => {
   }
 
   const disc=(code)=>{
-    console.log(code);
+
     if(code.toLowerCase()=="meraki"){
     setPrice(price/2)
+    setStatus(<BsCheckCircle></BsCheckCircle>)
     } else{
-           setPrice(book.reduce((acc,elem,i)=>{
-       return acc + parseInt((elem.bookId.price),10)
-     },0))
+          return 
     }
   }
   return (
-    <div>
+    <>
+    <div className="contaner">
       {!book.length ? (
         
         <div>
@@ -73,34 +73,34 @@ export const ShoppingCart = () => {
           Shopping cart is Empty
           </div>
       ) : (
-        <div className="naif">
+<>
           {book.map((element, i) => {
               
             return (
-              <div className="cont">
-
-              <div className="cart5">
-            <div className="imm">
-           <img className="imgCart" src={element.bookId.image}/>
-           </div>
-           <div className="bok">
-           <h3>{element.bookId.name}</h3>
-           <span>Price: {element.bookId.price}JD</span>
-           </div>
-           <div className="X">
-              <button onClick={()=>{deleteBook(element._id , element.bookId._id)}}>Remove Item</button>
+              <div className="card"> 
+              <img src={element.bookId.image} className="img9"/>
+              <h3>{element.bookId.name}</h3>
+              <p class="price231">Price: {element.bookId.price}JD</p>
+              <p><button  onClick={()=>{deleteBook(element._id , element.bookId._id)}}>Remove Item</button></p>
+           
               </div>
-              </div>
-              </div>
+               
             );
             
           })}
-           <div className="l"> The total price is {price}JD</div>
-           <div><input type="text" placeholder="enter youre discount code" onChange={(e)=>{disc(e.target.value)}}></input></div>
-           <div><button>Bay Now</button></div>
-        </div>
+
+      </>
       )}
     
     </div>
+    <div className="devider">
+    <div className="total_Price">
+    <span className="span"> The total price is {price}JD</span><br/>
+           <input className="pppp" type="text" placeholder="Enter youre discount code" onChange={(e)=>{disc(e.target.value)}}></input><div className="ll">{status}</div><br/>
+           <button className="oooo">Bay Now</button>
+           </div>
+    </div>
+ 
+           </>
   );
 };

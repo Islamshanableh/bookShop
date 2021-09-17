@@ -1,38 +1,81 @@
-/* .p{
-    color: blue;
+.contaner{
+    display: flex;
+    flex-wrap: wrap;
 }
-.cart{
-    width: 300px;
+.card {
+    box-shadow: 0 8px 8px 0 #72147e;
+    max-width: 250px;
+    text-align: center;
+    font-family: arial;
     margin: 10px;
-    border-radius: 5px;
-    box-shadow: 0.2px 4px 5px rgba(red, green, blue, 0.2);
-    position: relative;
-    overflow: hidden;
-}
-.imgCart{
-    width: 40%;
-}
- */
- .cart5{
-    margin: 10px;
-     display: flex;
-     flex-direction: column;
- }
- .imm{
-    width: 300px;
-    max-height:300px;
- }
- .imgCart{
-     object-fit: cover;
- }
- .bok{
-     display: flex;
-     
- }
- .cont{
-     margin: 10px;
- }
-.naif{
+    overflow-wrap: break-word;
+  }
+  
+  .price231 {
+    color: grey;
+    font-size: 22px;
+  }
+  
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #72147e;
+    text-align: center;
+    cursor: pointer;
     width: 100%;
+    font-size: 18px;
+  }
+  
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  .img9{
+      width: 100%;
+      overflow: hidden;
+  }
+.total_Price{
+    display: flex;
+    justify-items: center; 
+    padding: 30px; 
+    flex-direction: column;
+    width: 500px;
+    text-align: center;
+}
+.l{
+    font-size: 50px;
+}
+.devider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.span{
+    font-size: 35px;
+}
+.pppp{
+    padding: 20px;
+    border-radius: 20px;
+    font-size:35px ;
+
+}
+.oooo{
+    padding: 20px;
+    border-radius: 20px;
+    background-color:#72147e ;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
     
 }
+
+.oooo:hover {
+    background-color:green ;
+  }
+
+  .ll{
+      font-size: 100px;
+      color: green;
+  }

@@ -32,7 +32,7 @@ const FindByUserId = (req, res) => {
   favoriteModel.find({userId})
   // .populate("bookId","image name type author description language price-_id")
   // .exec()
-    .populate("bookId","image name type author description language price-_id")
+    .populate("bookId","image name type author description language price _id")
   .exec()
   .then((result) => {
     if(!result.length){
