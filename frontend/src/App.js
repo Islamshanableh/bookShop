@@ -38,7 +38,7 @@ const App = () => {
 
 <Switch>
 	
-<Route path="/login" component={Login}/>
+{/* <Route path="/login" component={Login}/> */}
 <Route path = "/signUp" component = {Register}/>
 <Route path = '/home' component = {AllBook} />
 <Route path = '/search' component = {Search} />
