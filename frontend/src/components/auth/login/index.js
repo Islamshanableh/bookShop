@@ -75,7 +75,7 @@ const checkValid = ()=>{
   
         <div >
           
-        <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>Login</button>
+        <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>Login</button>
         <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -86,7 +86,7 @@ const checkValid = ()=>{
         ariaHideApp={false}
        >
          
-               <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"1px"}}>X</button>
+               <button onClick={closeModal} style={{backgroundColor:"#72147e" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"1px" ,color:"white"}}>X</button>
                <h3 class="kero">KERO BOOK</h3>
 <div style={{textAlign:"center" , display:"grid" }}>
        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Login</h2>
@@ -99,13 +99,13 @@ const checkValid = ()=>{
             setPassword(e.target.value);
         }}/>
       <br />
-      <button onClick={checkValid} style={{width:"60px" , borderRadius:"3px"  , marginLeft:"160px" , color:"white"}} className="logBtn">Login</button>
+      <button onClick={checkValid} style={{width:"60px" , borderRadius:"3px"  , marginLeft:"160px" , color:"white" , backgroundColor:"#72147e"}} className="logBtn">Login</button>
       </div>
-
+        <p style={{textAlign:"center" , fontWeight:"bold"}}>{status}</p>
       </Modal>
         </div>
         
-        {status}
+        
         
         </>
     )

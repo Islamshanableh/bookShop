@@ -27,6 +27,7 @@ border-radius: 5px;
 text-align: center;
 font-weight: bold;
 margin: auto;
+border-color: #72147e;
 }
 
 .theForm{
@@ -43,6 +44,7 @@ border-radius: 5px;
     /* gap: 10px */
     text-align: center;
     margin: auto;
+    border-color: #72147e;
 
 }
 
