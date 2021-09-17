@@ -54,7 +54,9 @@ export const Search = () => {
           type="text"
           name=""
           placeholder="Search"
-          onChange={setSearchVal}
+          onChange={(e)=>{
+            setSearchVal(e.target.value)
+          }}
         />
         <button
           className="searchButton"
