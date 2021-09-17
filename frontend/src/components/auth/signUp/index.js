@@ -95,7 +95,7 @@ export const Register = () => {
   return (
   <div >
    
-    <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>Register</button>
+    <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>Register</button>
     
      <Modal
         isOpen={modalIsOpen}
@@ -107,7 +107,7 @@ export const Register = () => {
       >
          <div >
 
-        <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"30px"}}>x</button>
+        <button onClick={closeModal} style={{backgroundColor:"#72147e" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"30px" ,color:"white"}}>x</button>
         <h3 class="kero">KERO BOOK</h3>
         </div>
      <div>
@@ -449,7 +449,7 @@ export const Register = () => {
           /> 
 
           <br />
-          <button disabled={!item} style={{color:"white"}}>Register {console.log(!item , "!item")}</button>
+          <button disabled={!item} style={{color:"white" ,backgroundColor:"#72147e"}}>Register {console.log(!item , "!item")}</button>
           <br />
         </form>
         {message && <div>{message}</div>}

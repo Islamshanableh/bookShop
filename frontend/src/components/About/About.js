@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
+import { useBetween } from 'use-between';
 
 const customStyles = {
   content: {
@@ -16,10 +17,11 @@ const customStyles = {
 
 export const About = () => {
   let subtitle;
-  const [modalIsOpen, setIsOpen] = React.useState(false);
+  const [modalIsOpen, setIsOpenAbout] = React.useState(false);
 
   function openModal() {
-    setIsOpen(true);
+    setIsOpenAbout(true);
+
   }
 
   function afterOpenModal() {
@@ -30,11 +32,11 @@ export const About = () => {
   }
 
   function closeModal() {
-    setIsOpen(false);
+    setIsOpenAbout(false);
   }
   return (
     <div>
-      <button onClick={openModal} style={{backgroundColor:'#F7F6F2' , color:"black" , border:"0px" , fontWeight:"bold"}}>About</button>
+      <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>About</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
