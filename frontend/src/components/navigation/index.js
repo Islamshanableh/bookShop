@@ -6,7 +6,11 @@ import { MdAddShoppingCart } from "react-icons/md"
 import "./navigation.css"
 import { numberContext } from '../../App';
 import { Register } from '../auth/signUp';
+
+import Login from '../auth/login';
+
 import { Search } from '../search/Search';
+
 // import {userContext} from "../../App"
 import { Profile } from '../profile/profile';
 const Navigation = () => {
@@ -50,10 +54,12 @@ console.log(cart);
 	  <h3 class="kero">KERO BOOK</h3>
 	  </li>
 	  <li class="nav-item">
+
 		<Search/>
 	  </li>
 	  <li class="nav-item">
-		<Link to="/login">Login </Link>
+			<Login/>
+
 	  </li>
 	  <li class="nav-item">
 		<Register/>
