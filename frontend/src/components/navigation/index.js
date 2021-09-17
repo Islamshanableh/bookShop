@@ -13,9 +13,13 @@ import { Search } from '../search/Search';
 
 // import {userContext} from "../../App"
 import { Profile } from '../profile/profile';
+
+
+
 import { About } from '../About/About';
 import { Contact } from '../Contact/Contact';
 import { red } from '@material-ui/core/colors';
+
 const Navigation = () => {
 const cart = useContext(numberContext)
 console.log(cart);
@@ -24,29 +28,31 @@ console.log(cart);
 
 
 
-// 	 useEffect( async () => {
-// 		 try {
-// 	  axios
-//       .get(
-//         "http://localhost:5000/users",
+	 useEffect( async () => {
+		 try {
+	  axios
+      .get(
+        "http://localhost:5000/users",
 
-//         {
-//           headers: {
-//             Authorization: `Bearer ${token.token}`,
-//           },
-//         }
-//       )
-//       .then(async(res) => {
+        {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
+        }
+      )
+      .then(async(res) => {
 		 
-//        const numberOfCart= await (res.data.userInfo[0].cart.length)
-// 	  cart.setNumber(numberOfCart)
-// 	  localStorage.setItem('cart',res.data.userInfo[0].cart.length)
-//       });
-// 		 } catch (error) {
-// 			 throw error 
-// 		 }
+       const numberOfCart= await (res.data.userInfo[0].cart.length)
+	  cart.setNumber(numberOfCart)
+	  console.log("sss");
+	  console.log(res.data.userInfo[0].cart.length);
+	//   localStorage.setItem('cart',res.data.userInfo[0].cart.length)
+      });
+		 } catch (error) {
+			 throw error 
+		 }
 
-//   }, []);
+  }, );
 
 	return (
 	
