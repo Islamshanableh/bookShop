@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt');
 
 const authentication = (req, res, next) => {
     try {
+      console.log(`token=>${req.headers.authorization}`,  req.orginalUrl);
       if (!req.headers.authorization) {
         return res.status(403).json({
           success: false,

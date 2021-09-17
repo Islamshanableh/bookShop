@@ -1,6 +1,6 @@
 const cartModel = require("../../db/models/cart");
 const userModel = require("../../db/models/user")
-
+const x = 1
 const addToCart = (req,res)=>{
  
     const {bookId} = req.body;
@@ -13,7 +13,7 @@ const addToCart = (req,res)=>{
     });
 
     cart.save().then(async(result)=>{
-     await userModel.findByIdAndUpdate(userId,{$push:{"cart" : userId}})
+     await userModel.findByIdAndUpdate(userId,{$push:{"cart" : bookId}})
         res.status(201).json({
             success: true,
             message: `Success book Added`,
@@ -31,7 +31,7 @@ const addToCart = (req,res)=>{
 const FindByUserId = (req,res)=>{
   const userId = req.token.userId
   cartModel.find({userId})
-  .populate("bookId","image name type author description language price-_id")
+  .populate("bookId","image name type author description language price _id")
   .exec()
   .then((result)=>{
     console.log(result);
@@ -56,13 +56,15 @@ const FindByUserId = (req,res)=>{
 }
 
 const deleteBookById = (req, res) => {
+  
 const id = req.params.id; 
+const {bookId }= req.body
  const userId = req.token.userId
   cartModel
     .findByIdAndDelete(id)
     .then(async(result) => {
       console.log(`1=>${result}`);
-   await userModel.findByIdAndUpdate(userId,{$pull:{"cart" : userId}})
+   await userModel.findByIdAndUpdate(userId,{$pull:{"cart" : bookId}})
    .then((result)=>{console.log(`2=>${result}`);})
       if (!result) {
         return res.status(404).json({

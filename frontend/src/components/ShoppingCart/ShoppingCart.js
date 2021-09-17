@@ -18,6 +18,7 @@ export const ShoppingCart = () => {
     axios.get("http://localhost:5000/cart",{headers:{Authorization: `Bearer ${token}` }})
     .then((result)=>{
      setBook(result.data.message)
+
      setPrice(result.data.message.reduce((acc,elem,i)=>{
        return acc + parseInt((elem.bookId.price),10)
      },0))
@@ -31,13 +32,21 @@ export const ShoppingCart = () => {
   useEffect((
   )=>{getBooks()},[])
   
-  const deleteBook=(id)=>{
+  const deleteBook=(id,bookId)=>{
+    console.log(bookId);
+    console.log(id);
+    console.log(token);
     cart.setNumber((cart.number)-1)
-    axios.delete(`http://localhost:5000/cart/${id}`,{
+   axios.delete(
+    `http://localhost:5000/cart/${id}`,
+    
+    {
       headers: {
-        Authorization: `Bearer ${token}`,
+        authorization: `Bearer ${token}`,
       },
-    }).then((result)=>{
+    data:{bookId} },
+  ) 
+.then((result)=>{
       if(result.data.success){
         getBooks()
       }
@@ -64,17 +73,24 @@ export const ShoppingCart = () => {
           Shopping cart is Empty
           </div>
       ) : (
-        <div>
+        <div className="naif">
           {book.map((element, i) => {
               
             return (
-              <div className="cart">
+              <div className="cont">
 
+              <div className="cart5">
+            <div className="imm">
            <img className="imgCart" src={element.bookId.image}/>
-           <div>Price: {element.bookId.price}JD</div>
-             <h3>{element.bookId.name}</h3>
-              <button onClick={()=>{deleteBook(element._id)}}>Remove Item</button>
-
+           </div>
+           <div className="bok">
+           <h3>{element.bookId.name}</h3>
+           <span>Price: {element.bookId.price}JD</span>
+           </div>
+           <div className="X">
+              <button onClick={()=>{deleteBook(element._id , element.bookId._id)}}>Remove Item</button>
+              </div>
+              </div>
               </div>
             );
             
