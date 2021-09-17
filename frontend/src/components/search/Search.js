@@ -1,46 +1,29 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext  } from "react";
 import "./search.css";
-import { Route, useHistory} from "react-router-dom";
-import { Rate } from "../rate/rate";
-import { AddCart } from "../cart/cart";
-import axios from "axios";
+import { Route, useHistory } from "react-router-dom";
+import { Result } from "./result";
+import { resultContext,resultS } from "../../App";
+
 
 export const Search = () => {
-  const [books, setBooks] = useState([]);
-  const [value, setValue] = useState("");
-  const [message, setMessage] = useState("");
-  const [searchVal, setSearchVal] = useState("");
- const history = useHistory();
+  
+ 
+  const setSearch=useContext(resultContext)
+  const valueOfSearch=useContext(resultS) 
+
+
+  const history = useHistory();
   const handleChange = (e) => {
-    setValue(e.target.value);
+    setSearch.setValue(e.target.value);
+    
+    
+    
   };
 
-  const goSearch = () => {
-    if (value === "type") {
-      axios
-        .get(`http://localhost:5000/books/typeOfBook/${searchVal}`)
-        .then((res) => {
-          setBooks([...res.data.book]);
-        });
-    } else if (value === "name") {
-      axios
-        .get(`http://localhost:5000/books/nameOfBook/${searchVal}`)
-        .then((res) => {
-          setBooks([...res.data.book]);
-        });
-    } else if (value === "author") {
-      axios
-        .get(`http://localhost:5000/books/nameOfAuthor/${searchVal}`)
-        .then((res) => {
-          setBooks([...res.data.book]);
-        });
-    } else {
-      setMessage("no books found");
-    }
-  };
+  
 
   return (
-    <div className="App">
+    <div className="">
       <div className="searchBox">
         <select onChange={handleChange}>
           <option value="Select">Select</option>
@@ -55,14 +38,13 @@ export const Search = () => {
           name=""
           placeholder="Search"
           onChange={(e)=>{
-            setSearchVal(e.target.value)
+            valueOfSearch.setSearchVal(e.target.value)
           }}
         />
         <button
           className="searchButton"
           onClick={() => {
-            goSearch();
-            history.push("/search")
+            history.push("/result");
           }}
         >
           <svg
@@ -77,37 +59,8 @@ export const Search = () => {
           </svg>
         </button>
       </div>
-      <div>
-        <p>{message}</p>
-      </div>
-      <div>
-        {books &&
-          books.map((element, index) => {
-            return (
-              <div key={element._id}>
-                <br></br> {element.image},<br></br> {element.name}
-                <br></br>
-                {element.type},<br></br>
-                {element.author},<br></br>
-                {element.description},<br></br>
-                {element.language},<br></br>
-                {element.price},<br></br>
-                <Route
-                  exact
-                  path="/"
-                  render={() => (
-                    <Rate bookId={element._id} rateCount={element.rating} />
-                  )}
-                />
-                <Route
-                  exact
-                  path="/"
-                  render={() => <AddCart bookId={element._id} />}
-                />
-              </div>
-            );
-          })}
-      </div>
+     
+     
     </div>
   );
 };
