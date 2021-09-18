@@ -20,3 +20,9 @@ Reading is important because it develops our thoughts, gives us endless knowledg
 
 **Home Page** 
 From this page you can browse the books on our shelves.. rate the books according to your opinion.. add the book you want to your favorite list or to the shopping cart to buy it
+
+**Favorite Page**
+From this page, you can view your favorite books and delete any of them from the list at any time
+
+**Cart Page**
+From this page you can view the books that you have added to the shopping cart ... Know the number of books you have added and their total price and you can remove any book from the cart
