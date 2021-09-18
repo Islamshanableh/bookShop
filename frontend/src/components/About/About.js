@@ -1,6 +1,7 @@
 import React from "react";
 import Modal from "react-modal";
 import { useBetween } from 'use-between';
+import './About.css'
 
 const customStyles = {
   content: {
@@ -36,7 +37,7 @@ export const About = () => {
   }
   return (
     <div>
-      <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>About</button>
+      <button onClick={openModal} className="openAbout" style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>About</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}

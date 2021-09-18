@@ -32,7 +32,7 @@ const SlideShow = () => {
         books.map((element, index) => {
           return(
             
-          <div className="style"><img src= {element.image}></img></div>
+          <div className="style" ><img src= {element.image} style={{borderRadius:"5px"}}></img></div>
         
          
         );

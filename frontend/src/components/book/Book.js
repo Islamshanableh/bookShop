@@ -31,7 +31,7 @@ export const AllBook =  () => {
             
            <div className="book">
           <div className="book1">
-           <img className="imgooooooo" src={element.image}/>
+           <img className="imgooooooo" src={element.image} style={{borderRadius:"5px"}}/>
             
           
 
@@ -53,7 +53,7 @@ export const AllBook =  () => {
               /></div>
               </div>
              </div>
-              <div className="book-info">
+              <div className="book-info" >
              <h3 className="hover">{element.name}</h3>
              <span><Route
                 exact
