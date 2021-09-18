@@ -42,6 +42,8 @@ export const About = () => {
           color: "#72147e",
           border: "0px",
           fontWeight: "bold",
+          fontSize:"17px",
+          cursor: "pointer",
         }}
       >
         About

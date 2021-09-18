@@ -15,6 +15,7 @@ const customStyles = {
     transform: "translate(-50%, -50%)",
     borderRadius: "5px",
     backgroundColor: "#F7F6F2",
+   
   },
 };
 
@@ -89,6 +90,8 @@ export const Register = () => {
           color: "#72147e",
           border: "0px",
           fontWeight: "bold",
+          fontSize:"17px",
+          cursor: "pointer",
         }}
       >
         Register
