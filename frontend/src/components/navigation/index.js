@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext,useEffect } from "react";
+import axios from "axios";
 import { Link, Route } from "react-router-dom";
 import { userContext } from "../../App";
 import { MdAddShoppingCart } from "react-icons/md";
@@ -17,6 +18,21 @@ const Navigation = () => {
   console.log(cart);
   const token = useContext(userContext);
   token.setToken(localStorage.getItem("token"));
+  useEffect(() => {
+    axios
+      .get(
+        "http://localhost:5000/users",
+
+        {
+          headers: {
+            Authorization: `Bearer ${token.token}`,
+          },
+        }
+      )
+      .then((res) => {
+        cart.setNumber([...res.data.userInfo.cart[0].length]);
+      });
+  }, [cart.number]);
   return (
     <nav className="fixed">
       {!token.token ? (
