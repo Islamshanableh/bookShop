@@ -32,3 +32,5 @@ From this page you can view the books that you have added to the shopping cart .
 You can search  about any book you want according  to the type , auther or name of the book 
 
 
+**About Us page** 
+You can read about  our Who we are
