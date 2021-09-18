@@ -13,6 +13,7 @@ import { Profile } from './components/profile/profile';
 import { Info } from './components/profile/info';
 import Dashboard from './components/dashboard';
 import { Result } from './components/search/result';
+import "./App.css"
 
 
 
@@ -47,8 +48,8 @@ const App = () => {
 
 <Switch>
 	
-{/* <Route path="/login" component={Login}/> 
-<Route path = "/signUp" component = {Register}/> */}
+<Route path="/login" component={Login}/> 
+<Route path = "/signUp" component = {Register}/>
 <Route path = '/home' component = {AllBook} />
 <Route path = '/search' component = {Search} />
 <Route path = '/cart' component = {ShoppingCart} />
@@ -67,7 +68,7 @@ const App = () => {
 </resultS.Provider>  
 </resultContext.Provider>
 </numberContext.Provider>
-<Footer/>
+<div className="footer1"><Footer></Footer></div>
 	</div>)
 };
 

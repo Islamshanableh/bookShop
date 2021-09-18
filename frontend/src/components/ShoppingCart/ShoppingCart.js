@@ -32,7 +32,7 @@ export const ShoppingCart = () => {
 
 
   useEffect((
-  )=>{getBooks()},[])
+  )=>{getBooks()},[cart.number])
   
   const deleteBook=(id,bookId)=>{
 
@@ -69,8 +69,8 @@ export const ShoppingCart = () => {
       {!book.length ? (
         
         <div>
-          <div><MdAddShoppingCart size="5em" className="p"/> </div>
-          Shopping cart is Empty
+          <div><MdAddShoppingCart size="5em" className="pssss"/> </div>
+         <div className="iiiiii"> <h3 >Shopping cart is Empty</h3></div>
           </div>
       ) : (
 <>

@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import { userContext } from "../../App";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./Fav.css"
 
 const  Favourite=({bookId}) =>{
 const [favourite, setFavourite] = useState();
@@ -22,18 +23,18 @@ const adding = ()=>{
       }
     )   .then((res) => {
        
-      setFavourite("the item added successfuly favourite")
+      setFavourite("the item added successfuly to the favourite")
     })
     .catch((err) => {
       history.push("/signUp")
     });
   }
 return (
-    <div className="bb">
+       <div>
             <button className="btnfav" onClick ={adding}>
-            addToFavourite 
+            add To Favourite 
         </button>
-        <div>
+        <div className="ttt">
         {favourite}
         </div>
     </div>
