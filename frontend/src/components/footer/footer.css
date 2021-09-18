@@ -16,11 +16,12 @@ div {
     position: relative;
     width: auto;
     height: 200px;
-    background: #72147E;
+    background-color: rgba(114, 20, 126, 0.8);
     display:flex;
     font-family: IBM Plex Sans, sans-serif;
     font-weight: bold;
     font-style: italic;
+    
     
 }
     /* -webkit-font-smoothing: antialiased;

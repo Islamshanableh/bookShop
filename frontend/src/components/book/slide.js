@@ -25,7 +25,7 @@ const SlideShow = () => {
   };
 
   return (
-    <div className="slide">
+    <div className="slide" style={{marginTop:"80px"}}>
       <div>
       <Slide {...properties}>
         {books &&
