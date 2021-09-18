@@ -8,7 +8,7 @@ import {
 import "./footer.css"
 function Footer() {
     return (
-  <div  className="footer " >
+  <div  className="footer" >
 
         <div className="folllowUs">
             follow Us on 
