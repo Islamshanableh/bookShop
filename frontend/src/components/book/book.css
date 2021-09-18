@@ -10,8 +10,9 @@
     
     
 }
-.book img{
+.book1 img{
     width: 100%;
+    height: 500px;
 }
 
 #main{
@@ -52,6 +53,7 @@
 }
 .book1:hover .desc{
     transform: translateY(0);
+   
 }
 .price{
 
