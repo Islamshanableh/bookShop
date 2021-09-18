@@ -36,7 +36,7 @@ export const Contact = () => {
 
   return (
     <div>
-      <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>Contact us</button>
+      <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold",fontSize:"17px", cursor: "pointer",}}>Contact us</button>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}

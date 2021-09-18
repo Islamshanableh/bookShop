@@ -6,6 +6,7 @@ import Modal from "react-modal";
 import "./login.css";
 import { Register } from "../signUp";
 
+
 const customStyles = {
   content: {
     top: "50%",
@@ -22,13 +23,17 @@ const customStyles = {
   },
 };
 
-const Login = () => {
+const Login = ({value}) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
-
+ if(value){
+   console.log(value);
+  
+ }
   function openModal() {
     setIsOpen(true);
   }
+
 
   function afterOpenModal() {
     subtitle.style.color = "black";
@@ -74,6 +79,8 @@ const Login = () => {
             color: "#72147e",
             border: "0px",
             fontWeight: "bold",
+            fontSize:"17px",
+            cursor: "pointer",
           }}
         >
           Login
