@@ -34,3 +34,26 @@ You can search  about any book you want according  to the type , auther or name 
 
 **About Us page** 
 You can read about  our Who we are
+
+
+**Contact**
+phone number : +9625851111
+fax: +9625852222
+email address: kero@book.com.jo
+
+
+
+**Authors**
+
+**omkulthm radi**
+github.com/KulthumRadi 
+
+**Rashed Migdady** 
+github.com/RashedMigdady
+
+**Islam Shanableh** 
+github.com/Islamshanableh
+
+**Odai Jawabreh** 
+github.com/OdaiJawabreh 
+
