@@ -4,6 +4,7 @@ import { userContext } from "../../../App";
 import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
 import './login.css'
+import { Register } from "../signUp";
 
 const customStyles = {
   content: {
@@ -101,7 +102,14 @@ const checkValid = ()=>{
       <br />
       <button onClick={checkValid} style={{width:"60px" , borderRadius:"3px"  , marginLeft:"160px" , color:"white" , backgroundColor:"#72147e"}} className="logBtn">Login</button>
       </div>
+
+      <div style={{display:"flex" , marginLeft:"130px" , marginTop:"30px"}}>
+
+      <p> Login or </p><p><Register/></p>
+      </div>
         <p style={{textAlign:"center" , fontWeight:"bold"}}>{status}</p>
+
+        
       </Modal>
         </div>
         

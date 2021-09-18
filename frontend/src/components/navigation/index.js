@@ -8,6 +8,8 @@ import { Profile } from "../profile/profile";
 import { Search } from "../search/Search";
 import Login from "../auth/login";
 import { Register } from "../auth/signUp";
+import { About } from "../About/About";
+import { Contact } from "../Contact/Contact";
 // import {userContext} from "../../App"
 
 const Navigation = () => {
@@ -35,7 +37,10 @@ const Navigation = () => {
             <Link to="/home">Home</Link>
           </li>
           <li className="nav-item">
-            <Link to="/aboutUs">AboutUs</Link>
+            <About/>
+          </li>
+		  <li className="nav-item">
+            <Contact/>
           </li>
         </ul>
       ) : (
@@ -51,11 +56,7 @@ const Navigation = () => {
               Home
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="Link" to="/aboutUs">
-              AboutUs
-            </Link>
-          </li>
+          
           <li className="nav-item">
             <Link className="Link" to="/favorite">
               Favourite
@@ -66,6 +67,12 @@ const Navigation = () => {
               <MdAddShoppingCart size="2em" />{" "}
               <div className="n">{cart.number}</div>
             </Link>
+          </li>
+		  <li className="nav-item">
+            <About/>
+          </li>
+		  <li className="nav-item">
+            <Contact/>
           </li>
           <li className="nav-item">
             <Link className="Link" to="/logOut">

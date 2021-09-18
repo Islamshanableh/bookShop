@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import PasswordChecklist from "react-password-checklist";
 import axios from "axios";
 import Modal from "react-modal";
-import "./signUp.css"
+import "./signUp.css";
+import { AddCart } from "../../cart/cart";
 
 const customStyles = {
   content: {

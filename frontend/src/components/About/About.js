@@ -25,7 +25,7 @@ export const About = () => {
   }
 
   function afterOpenModal() {
-    subtitle.style.color = "black";
+    subtitle.style.color = "#72147e";
     subtitle.style.textAlign = "center";
     subtitle.style.fontFamily = "bold";
 
@@ -45,13 +45,15 @@ export const About = () => {
         contentLabel="Example Modal"
         ariaHideApp={false}
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>About Us</h2>
+        <h2 ref={(_subtitle) => (subtitle = _subtitle) } >About Us</h2>
 
         <div>
-          
+          <h3 style={{color:"#72147e"}}>Who we are ?</h3>
+          <p>We are web developer from Meraki Academy.</p>
+          <h3 style={{color:"#72147e"}}>Our vision :</h3>
           <p>Better Books for everyone,is an online book retailer based in Amman that ships to readers throughout the Middle East.</p>
            <p> It was founded in October 2021 by entrepreneur Meraki Academy with the support of Shadow Team.</p>
-          <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"30px"}}>close</button>
+          <button onClick={closeModal} style={{color:"white" ,backgroundColor:"#72147e" , borderRadius:"5px" , marginLeft:"350px" , marginTop:"30px"}}>close</button>
         </div>
       </Modal>
     </div>

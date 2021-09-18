@@ -25,7 +25,7 @@ export const Contact = () => {
   }
 
   function afterOpenModal() {
-    subtitle.style.color = "black";
+    subtitle.style.color = "#72147e";
     subtitle.style.textAlign = "center";
     subtitle.style.fontFamily = "bold";
   }
@@ -45,7 +45,7 @@ export const Contact = () => {
         contentLabel="Example Modal"
         ariaHideApp={false}
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>For Reach us :</h2>
+        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>to reach us :</h2>
 
         <div>
           
@@ -58,7 +58,7 @@ export const Contact = () => {
           <p> Um Kulthoum Radi , github.com/KulthumRadi </p>
 
 
-          <button onClick={closeModal} style={{backgroundColor:"gray" , borderRadius:"5px" , marginLeft:"130px" , marginTop:"30px"}}>close</button>
+          <button onClick={closeModal} style={{color:"white" ,backgroundColor:"#72147e" , borderRadius:"5px" , marginLeft:"130px" , marginTop:"30px"}}>close</button>
         </div>
       </Modal>
     </div>
