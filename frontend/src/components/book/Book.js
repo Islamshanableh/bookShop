@@ -17,7 +17,12 @@ export const AllBook =  () => {
   }, []);
   
   return (
-    <div>
+    <div  className="homepageK" >
+        <div className="INTRO">
+        <div className="intrtolkk" > <h1>TODAY A READER ,, TOMORROW A LEADER</h1>
+        <h4>lets make you tomorrow's leader  :) </h4> </div>
+        <div className="intrpick" > <img src="https://c.tenor.com/GrKqz4mmq_0AAAAd/spiritual-book-glow.gif" ></img>   </div>      
+      </div>
       <SlideShow/>
     <div id="main">
       {books &&
