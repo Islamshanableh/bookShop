@@ -10,7 +10,7 @@ export const Logout=()=>{
     const history = useHistory()
     localStorage.clear()
     state.setToken("");
-    history.push("/login")
+    history.push("/home")
     
     return (<div>
         

@@ -47,7 +47,6 @@ const Dashboard = () => {
   }, []);
 
   const updateBook = (element) => {
-    console.log(element);
     axios
       .put(
         `http://localhost:5000/books/update/${element}`,

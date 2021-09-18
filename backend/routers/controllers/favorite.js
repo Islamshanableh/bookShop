@@ -2,7 +2,7 @@ const favoriteModel = require("../../db/models/favorite");
 
 const addToFavorite = (req, res) => {
   const { bookId } = req.body;
-const userId =req.token.userId
+  const userId = req.token.userId;
   const favorite = new favoriteModel({
     userId,
     bookId,
@@ -26,35 +26,36 @@ const userId =req.token.userId
     });
 };
 
-
 const FindByUserId = (req, res) => {
   const userId = req.token.userId;
-  favoriteModel.find({userId})
-  // .populate("bookId","image name type author description language price-_id")
-  // .exec()
-    .populate("bookId","image name type author description language price _id")
-  .exec()
-  .then((result) => {
-    if(!result.length){
-      return res.status(409).json({
-        success: false,
-        message: `no favourites yet `,
-        err: err,
-      })
-    }
-    res.json({
-      succes: true,
-      message: result
-    });
-  }).catch((err)=>{
-    res.json({
-      success:false,
-      message: "server error"
+  favoriteModel
+    .find({ userId })
+    // .populate("bookId","image name type author description language price-_id")
+    // .exec()
+    .populate("bookId", "image name type author description language price _id")
+    .exec()
+    .then((result) => {
+      if (!result.length) {
+        return res.status(409).json({
+          success: false,
+          message: `no favourites yet `,
+          err: err,
+        });
+      }
+      res.json({
+        succes: true,
+        message: result,
+      });
     })
-  })
-}
+    .catch((err) => {
+      res.json({
+        success: false,
+        message: "server error",
+      });
+    });
+};
 const deleteBookById = (req, res) => {
-  const id = req.params.id; 
+  const id = req.params.id;
   favoriteModel
     .findByIdAndDelete(id)
     .then((result) => {
@@ -68,13 +69,13 @@ const deleteBookById = (req, res) => {
         success: true,
         message: `Success Delete book with id => ${id}`,
       });
-    }) .catch((err) => {
+    })
+    .catch((err) => {
       res.status(500).json({
         success: false,
         message: `Server Error`,
-        // err: err, 
+        // err: err,
       });
     });
-
-}
-module.exports = { addToFavorite ,FindByUserId ,deleteBookById };
+};
+module.exports = { addToFavorite, FindByUserId, deleteBookById };
