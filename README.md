@@ -26,3 +26,9 @@ From this page, you can view your favorite books and delete any of them from the
 
 **Cart Page**
 From this page you can view the books that you have added to the shopping cart ... Know the number of books you have added and their total price and you can remove any book from the cart
+
+
+ **Search bar**
+You can search  about any book you want according  to the type , auther or name of the book 
+
+
