@@ -6,7 +6,8 @@ import "./navigation.css";
 import { numberContext } from "../../App";
 import { Profile } from "../profile/profile";
 import { Search } from "../search/Search";
-
+import Login from "../auth/login";
+import { Register } from "../auth/signUp";
 // import {userContext} from "../../App"
 
 const Navigation = () => {
@@ -25,10 +26,10 @@ const Navigation = () => {
             <Search />
           </li>
           <li className="nav-item">
-            <Link to="/login">Login </Link>
+            <Login/>
           </li>
           <li className="nav-item">
-            <Link to="/signUp">Register</Link>
+            <Register/>
           </li>
           <li className="nav-item">
             <Link to="/home">Home</Link>
@@ -56,7 +57,7 @@ const Navigation = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="Link" to="/favourite">
+            <Link className="Link" to="/favorite">
               Favourite
             </Link>
           </li>
