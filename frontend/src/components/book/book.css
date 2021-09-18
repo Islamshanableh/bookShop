@@ -59,5 +59,9 @@
     margin-top: 20px;
 }
 
-
+.INTRO{
+    margin:50px 0px 5px 0px  ;
+    display: flex;
+    justify-content: space-between;
+}
 
