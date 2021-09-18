@@ -79,3 +79,8 @@
     text-align:left;
 }
 
+.introPick img {
+    width: 500px;
+    height: 500px;
+    /* padding: 0px 0px 0px 20px ; */
+}
