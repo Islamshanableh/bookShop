@@ -17,7 +17,7 @@ export const AllBook =  () => {
   }, []);
   
   return (
-    <div>
+    <div  className="homepageK" >
         <div className="INTRO">
         <div className="intrtolkk" > TODAY A READER ,, TOMMOROW A LEADER </div>
         <div className="intrpick" > <img src="https://c.tenor.com/GrKqz4mmq_0AAAAd/spiritual-book-glow.gif" ></img>   </div>      
