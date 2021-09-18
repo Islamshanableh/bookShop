@@ -32,7 +32,7 @@ export const ShoppingCart = () => {
 
 
   useEffect((
-  )=>{getBooks()},[])
+  )=>{getBooks()},[cart.number])
   
   const deleteBook=(id,bookId)=>{
 

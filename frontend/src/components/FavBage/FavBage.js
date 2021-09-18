@@ -7,6 +7,7 @@ import { Route } from "react-router-dom";
 import { Rate } from "../rate/rate";
 
 
+
 export const  FavBage =()=> {
 
     const [book, setBook] = useState();
@@ -51,44 +52,36 @@ export const  FavBage =()=> {
       }
 
       return (
+        <>
+    <div className="contaner">
+      {!book ? (
+        
         <div>
-          {!book ? (
-            <div> favourite is Empty</div>
-          ) : (
-            <div>
-            {book.map((element, i) => {
-                
-              return (
-                <div className="book">
-                <div className="book1">
-                 <img className="imgooooooo" src={element.bookId.image}/>
-                  
-                
-      
-                    <div className="desc">
-                      <h3>Description</h3>
-                      {element.bookId.description}
-                      <div className="price">Price: {element.bookId.price}JD</div>
-                      
-                    
-                    <div > <Route
-                      exact
-                      path="/favorite"
-                      render={() => <AddCart bookId={element.bookId._id} />}
-                    /></div>
-                   
-                    </div>
-                   </div>
-                    <div className="book-info">
-                   <h3 className="hover">{element.bookId.name}</h3>
-                
-                    </div>
-                  </div>
-              );
-            })}
+          Shopping cart is Empty
           </div>
-        )}
-      </div>
+      ) : (
+<>
+          {book.map((element, i) => {
+              
+            return (
+              <div className="card"> 
+              <img src={element.bookId.image} className="img9"/>
+              <h3>{element.bookId.name}</h3>
+              <p class="price231">Price: {element.bookId.price}JD</p>
+              <p><button  onClick={()=>{deleteBook(element._id , element.bookId._id)}}>Remove Item</button></p>
+           
+              </div>
+               
+            );
+            
+          })}
+
+      </>
+      )}
+    </div>
+    
+ 
+           </>
     );
   };
 
