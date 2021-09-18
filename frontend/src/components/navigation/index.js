@@ -30,9 +30,9 @@ const Navigation = () => {
         }
       )
       .then((res) => {
-        cart.setNumber([...res.data.userInfo.cart[0].length]);
+        cart.setNumber(res.data.userInfo[0].cart.length);
       });
-  }, [cart.number]);
+  }, );
   return (
     <nav className="fixed">
       {!token.token ? (
