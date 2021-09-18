@@ -96,6 +96,7 @@ export const Result = () => {
             );
           })}
       </div>
+      <div>{message}</div>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import React from "react";
 import Modal from "react-modal";
-import { useBetween } from "use-between";
 import "./About.css";
 
 const customStyles = {

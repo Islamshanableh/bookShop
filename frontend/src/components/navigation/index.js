@@ -1,6 +1,6 @@
 import React, { useContext,useEffect } from "react";
 import axios from "axios";
-import { Link, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { userContext } from "../../App";
 import { MdAddShoppingCart } from "react-icons/md";
 import "./navigation.css";
