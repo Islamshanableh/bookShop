@@ -31,7 +31,7 @@ export const AllBook =  () => {
             
            <div className="book">
           <div className="book1">
-           <img className="imgooooooo" src={element.image} style={{borderRadius:"5px"}}/>
+           <img className="imgooooooo"  src={element.image} style={{borderRadius:"5px"}}/>
             
           
 
