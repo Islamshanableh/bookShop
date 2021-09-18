@@ -6,7 +6,6 @@ import { userContext } from "../../App";
 import axios from "axios";
 
 export const Profile = () => {
- 
   const history = useHistory();
   const onProfile = () => {
     history.push("/myProfile");
@@ -17,7 +16,6 @@ export const Profile = () => {
         <IconButton
           onClick={() => {
             onProfile();
-            
           }}
           color="inherit"
         >

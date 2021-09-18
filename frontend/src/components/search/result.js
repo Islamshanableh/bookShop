@@ -16,19 +16,16 @@ export const Result = () => {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    console.log("dvadfavaaew");
     goSearch();
   }, []);
 
   const goSearch = () => {
-    console.log(setSearch.value);
     if (setSearch.value === "type") {
       axios
         .get(
           `http://localhost:5000/books/typeOfBook/${valueOfSearch.searchVal}`
         )
         .then((res) => {
-          console.log(res.data);
           setBooks([...res.data.book]);
         });
     } else if (setSearch.value === "name") {
@@ -45,7 +42,6 @@ export const Result = () => {
           `http://localhost:5000/books/nameOfAuthor/${valueOfSearch.searchVal}`
         )
         .then((res) => {
-          console.log(res.data.book);
           setBooks([...res.data.book]);
         });
     } else {

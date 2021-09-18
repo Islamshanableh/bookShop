@@ -4,16 +4,14 @@ import { userContext } from "../../App";
 
 import axios from "axios";
 
-export const Rate = ({ bookId , rateCount }) => {
+export const Rate = ({ bookId, rateCount }) => {
   const state = useContext(userContext);
   const token = state.token;
   const value = rateCount.reduce(function (acc, number, index) {
     return acc + number;
-  },0);
-  
- 
+  }, 0);
+
   const handleRating = (count) => {
-    
     axios
       .post(
         "http://localhost:5000/rate",
@@ -38,7 +36,7 @@ export const Rate = ({ bookId , rateCount }) => {
     <div className="App">
       <Rating
         onClick={handleRating}
-        ratingValue={value/rateCount.length}
+        ratingValue={value / rateCount.length}
         size={20}
         label
         transition
@@ -46,7 +44,6 @@ export const Rate = ({ bookId , rateCount }) => {
         emptyColor="gray"
         className="foo" // Will remove the inline style if applied
       />
-      
     </div>
   );
 };
