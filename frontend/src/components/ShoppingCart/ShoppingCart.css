@@ -57,7 +57,7 @@
     justify-content: center;
 }
 .span{
-    font-size: 20px;
+    font-size: 35px;
 }
 .pppp{
     padding: 20px;
@@ -87,13 +87,15 @@
 
   .pssss{
 color: #72147e;
+
   }
 
 .iiiiii{
     color: red;
-    font-size: 30px;
-    text-align: center;
-    margin-left: 640px;
+    font-size: 20px;
+    margin-bottom: 40px;
+    
+    
     
 }
 

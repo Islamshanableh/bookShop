@@ -37,8 +37,8 @@ export const AddCart =({bookId})=>{
     return(
         <div className="cart1">
             
-            {/* <MdAddShoppingCart size="3em" className="c" onClick ={adding} /> */}
-            <p className="buy" onClick={adding}> Buy +</p>
+            <MdAddShoppingCart size="3em" className="c" onClick ={adding} />
+            {/* <p className="buy" onClick={adding}> Buy +</p> */}
             
            <div className="succ">{cart}</div>
         </div>
