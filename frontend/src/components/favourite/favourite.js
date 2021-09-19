@@ -23,7 +23,7 @@ const adding = ()=>{
       }
     )   .then((res) => {
        
-      setFavourite("the item added successfuly to the favourite")
+      setFavourite("Done!🌟")
     })
     .catch((err) => {
       history.push("/signUp")
@@ -31,11 +31,14 @@ const adding = ()=>{
   }
 return (
        <div>
-            <button className="btnfav" onClick ={adding}>
-            add To Favourite 
-        </button>
-        <div className="ttt">
-        {favourite}
+            <h2 className="btnfav" onClick ={adding}>⭐</h2>
+             
+        
+        <div style={{display:"flex" , marginLeft:"-150px"}}>
+        <h2 className="ttt">
+         {favourite}
+        </h2>
+        
         </div>
     </div>
 )

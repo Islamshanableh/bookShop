@@ -73,13 +73,13 @@ export const ShoppingCart = () => {
     <>
       <div className="contaner">
         {!book.length ? (
-          <div>
-            <div>
+          <div style={{textAlign:"center"}}>
+            {/* <div>
               <MdAddShoppingCart size="5em" className="pssss" />{" "}
-            </div>
+            </div> */}
             <div className="iiiiii">
               {" "}
-              <h3>Shopping cart is Empty</h3>
+              <h3>Shopping cart is Empty !</h3>
             </div>
           </div>
         ) : (
@@ -91,13 +91,18 @@ export const ShoppingCart = () => {
                   <h3>{element.bookId.name}</h3>
                   <p class="price231">Price: {element.bookId.price}JD</p>
                   <p>
-                    <button
+                    {/* <button
                       onClick={() => {
                         deleteBook(element._id, element.bookId._id);
                       }}
                     >
                       Remove Item
-                    </button>
+                    </button> */}
+
+
+                    <h1 onClick={() => {
+                        deleteBook(element._id, element.bookId._id);
+                      }} className="trash">🗑️</h1>
                   </p>
                 </div>
               );
@@ -107,7 +112,7 @@ export const ShoppingCart = () => {
       </div>
       <div className="devider">
         <div className="total_Price">
-          <span className="span"> The total price is {price}JD</span>
+          <span className="span">Total price : {price} JD</span>
           <br />
           <input
             className="pppp"
@@ -119,7 +124,7 @@ export const ShoppingCart = () => {
           ></input>
           <div className="ll">{status}</div>
           <br />
-          <button className="oooo">Bay Now</button>
+          <button className="oooo">Buy Now</button>
         </div>
       </div>
     </>
