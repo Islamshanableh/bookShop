@@ -109,10 +109,9 @@ export const Register = () => {
       </button>
 
 
-  return (
-  <div >
+  
    
-    <button onClick={openModal} style={{backgroundColor:'#f0e7f2' , color:"#72147e" , border:"0px" , fontWeight:"bold"}}>Register</button>
+    
     
      <Modal
         isOpen={modalIsOpen}

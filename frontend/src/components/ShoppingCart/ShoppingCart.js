@@ -73,10 +73,10 @@ export const ShoppingCart = () => {
     <>
       <div className="contaner">
         {!book.length ? (
-          <div style={{textAlign:"center"}}>
-            {/* <div>
+          <div >
+            <div>
               <MdAddShoppingCart size="5em" className="pssss" />{" "}
-            </div> */}
+            </div>
             <div className="iiiiii">
               {" "}
               <h3>Shopping cart is Empty !</h3>
