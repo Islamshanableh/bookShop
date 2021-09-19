@@ -31,18 +31,19 @@
   list-style: none;
   margin-right: 2rem;
   color: #72147e;
+  font-size: 20px;
 }
 
 .nav-item a {
   text-decoration: none;
   color: #72147e;
+  font-size: 17px;
   font-weight: bold;
   transition: all 200ms ease-in;
+  cursor: pointer;
 }
 
-.nav-item a:hover {
-  font-size: large;
-}
+
 
 .nav-item:first-child {
   margin-right: auto;

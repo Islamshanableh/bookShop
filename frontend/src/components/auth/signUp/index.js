@@ -13,10 +13,10 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    borderRadius:"5px",
-    backgroundColor:"#F7F6F2",
-    zIndex:"60",
-    
+    borderRadius: "5px",
+    backgroundColor: "#F7F6F2",
+   
+
   },
 };
 
@@ -91,8 +91,23 @@ export const Register = () => {
   var today = new Date();
   var date = today.getFullYear() + "-0" + (today.getMonth() + 1) + "-" + today.getDate();
 
-  
-  
+
+  return (
+    <div>
+      <button
+        onClick={openModal}
+        style={{
+          backgroundColor: "#f0e7f2",
+          color: "#72147e",
+          border: "0px",
+          fontWeight: "bold",
+          fontSize:"17px",
+          cursor: "pointer",
+        }}
+      >
+        Register
+      </button>
+
 
   return (
   <div >
