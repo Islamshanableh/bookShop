@@ -68,6 +68,7 @@ const App = () => {
 </resultS.Provider>  
 </resultContext.Provider>
 </numberContext.Provider>
+<div style={{height:"400px" , color:"white"}}>.</div>
 <div className="footer1"><Footer></Footer></div>
 	</div>)
 };

@@ -34,23 +34,35 @@ export const AllBook =  () => {
            <img className="imgooooooo"  src={element.image} style={{borderRadius:"5px"}}/>
             
           
-
-              <div className="desc">
-                <h3>Description</h3>
-                {element.description}
-                <div className="price">Price: {element.price}JD</div>
-                
               
-              <div > <Route
+              <div className="desc">
+                <div style={{display:"flex" , height:"80px" , width:"100%"}}>
+                <h3>Description</h3>
+                 <div style={{marginLeft:"150px" , marginBottom:"50px"}}> <Route
+                exact
+                path="/home"
+                render={() => <Favourite bookId={element._id} />}
+              /></div></div>
+                {element.description}
+
+               <p className="author"> Author: {element.author} </p>
+
+
+                <div style={{display:"flex" ,  width:"300px" , height:"60px" , marginTop:"50px"}}>
+                  <div > <Route
                 exact
                 path="/home"
                 render={() => <AddCart bookId={element._id} />}
               /></div>
-              <div > <Route
-                exact
-                path="/home"
-                render={() => <Favourite bookId={element._id} />}
-              /></div>
+
+                <div className="price"> {element.price} JD</div>
+                
+              
+              
+              </div>
+
+
+              
               </div>
              </div>
               <div className="book-info" >

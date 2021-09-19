@@ -50,6 +50,7 @@
     transition: transform 0.8s ;
     background-color: #f0e7f2;
     letter-spacing: 0.03cm;
+    border-radius: 5px;
 }
 .book1:hover .desc{
     transform: translateY(0);
@@ -57,8 +58,11 @@
 }
 .price{
 
-    color:rgb(77, 77, 191);
+    color:#72147e;
     margin-top: 20px;
+    font-weight: bold;
+    margin-left: 120px;
+    margin-top: 30px;
 }
 
 .INTRO{
@@ -87,4 +91,10 @@
     height: 500px;
     border-radius: 3px;
     /* padding: 0px 0px 0px 20px ; */
+}
+
+.author{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular';
+    font-weight: bold;
+    margin-left: 5px;
 }
