@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const app = require("./main");
 const request = require("supertest");
-
+//connection 
 const User = require("./db/models/users");
 afterAll(async () => {
   await Posts.remove();
