@@ -13,7 +13,7 @@ const {
 
 const booksRouter = express.Router();
 
-booksRouter.post("/createbook", authentication, CreatNewBook);
+booksRouter.post("/createbook", authentication , CreatNewBook);
 booksRouter.get("/", getAllBooks);
 booksRouter.get("/typeOfBook/:type", FindByCategory);
 booksRouter.get("/nameOfBook/:name", getBookByName);
