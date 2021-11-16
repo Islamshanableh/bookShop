@@ -14,6 +14,7 @@ import { Info } from './components/profile/info';
 import Dashboard from './components/dashboard';
 import { Result } from './components/search/result';
 import "./App.css"
+import { OneBook } from './components/book/onebook';
 
 
 
@@ -59,6 +60,7 @@ const App = () => {
 <Route path = '/myProfile' component = {Info} />
 <Route path = '/result' component = {Result} />
 <Route path = '/dash' component = {Dashboard} />
+<Route exact path="/Book/:id" component={OneBook} />
 
 
 

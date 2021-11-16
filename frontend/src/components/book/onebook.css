@@ -1,0 +1,40 @@
+.imgDetails{
+    display: grid;
+    width: 400px;
+    height: 500px;
+    text-align: center;
+    gap: 20px;
+}
+
+.ratingBook{
+    margin: auto;
+}
+
+.nameBook{
+    margin: auto;
+    font-size: 22px;
+    font-family:"Poppins" , sans-serif
+    ;
+}
+
+.descriptionBook{
+    width: 500px;
+    font-family:"Poppins" , sans-serif
+    ;
+}
+
+.labelBook{
+    font-size: 19px;
+    font-family:"Poppins" , sans-serif
+    ;
+
+
+}
+
+.detailss{
+    margin-top: 100px;
+    display: grid;
+    font-family: "Poppins" , sans-serif;
+    height: 300px;
+
+}

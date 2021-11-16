@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
+import { useHistory } from "react-router";
 import { Rate } from "../rate/rate";
 import { AddCart } from "../cart/cart";
 import Favourite from "../favourite/favourite";
@@ -9,10 +10,13 @@ import "./book.css"
 
 export const AllBook =  () => {
   const [books, setBooks] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/books/").then((res) => {
+    axios.get("http://localhost:5000/books/").then((res)=>{
       setBooks([...res.data.books]);
+      console.log("ffff",res.data.books);
+      //6140e46e199d98197804c19c
     });
   }, []);
   
@@ -29,8 +33,9 @@ export const AllBook =  () => {
         books.map((element, index) => {
           return (
             
-           <div className="book">
-          <div className="book1">
+           <div className="book" >
+            
+          <div className="book1" onClick={()=>{history.push(`/Book/${element._id}`)}}>
            <img className="imgooooooo"  src={element.image} style={{borderRadius:"5px"}}/>
             
           
@@ -38,7 +43,8 @@ export const AllBook =  () => {
               <div className="desc">
                 <div style={{display:"flex" , height:"80px" , width:"100%"}}>
                 <h3>Description</h3>
-                 <div style={{marginLeft:"150px" , marginBottom:"50px"}}> <Route
+                 <div style={{marginLeft:"150px" , marginBottom:"50px"}}> 
+                 <Route
                 exact
                 path="/home"
                 render={() => <Favourite bookId={element._id} />}
