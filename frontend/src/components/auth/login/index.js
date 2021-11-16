@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 import Modal from "react-modal";
 import "./login.css";
 import { Register } from "../signUp";
-
+import GoogleLogin from "react-google-login";
 
 const customStyles = {
   content: {
@@ -23,17 +23,16 @@ const customStyles = {
   },
 };
 
-const Login = ({value}) => {
+const Login = ({ value }) => {
+  const token = useContext(userContext);
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
- if(value){
-   console.log(value);
-  
- }
+  if (value) {
+    console.log(value);
+  }
   function openModal() {
     setIsOpen(true);
   }
-
 
   function afterOpenModal() {
     subtitle.style.color = "black";
@@ -50,6 +49,7 @@ const Login = ({value}) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [status, setStatus] = useState();
+  const [message, setMessage] = useState();
 
   const tokenContext = useContext(userContext);
 
@@ -69,6 +69,31 @@ const Login = ({value}) => {
       });
   };
 
+  const responsesuccessGoogle = (response) => {
+    // console.log(response.profileObj);
+    axios
+      .post("http://localhost:5000/login/google", { tokenId: response.tokenId })
+      .then((res) => {
+        console.log(res);
+        if (res.data) {
+          localStorage.setItem("token", res.data.token);
+          tokenContext.setToken(res.data.token);
+          history.push("/home");
+        } else throw Error;
+      })
+      .catch((err) => {
+        if (err.message) {
+          setMessage("Error happened while Login, please try again");
+          console.log(message);
+        }
+      });
+  };
+  const responseErrorGoogle = (response) => {
+    setMessage(
+      "responseErrorGoogle => Error happened while Login, please try again"
+    );
+    console.log(message);
+  };
   return (
     <>
       <div>
@@ -79,7 +104,7 @@ const Login = ({value}) => {
             color: "#72147e",
             border: "0px",
             fontWeight: "bold",
-            fontSize:"17px",
+            fontSize: "17px",
             cursor: "pointer",
           }}
         >
@@ -149,6 +174,19 @@ const Login = ({value}) => {
             <p>
               <Register />
             </p>
+
+            <div className="social-login mt-0">
+              <span className="social-label">Or login with</span>
+              <ul className="socials">
+                <GoogleLogin
+                  clientId="517614289407-55p7q5bogii5ln2l6qevnribl05519kn.apps.googleusercontent.com"
+                  buttonText="Login"
+                  onSuccess={(response) => responsesuccessGoogle(response)}
+                  onFailure={(response) => responseErrorGoogle(response)}
+                  cookiePolicy={"single_host_origin"}
+                />
+              </ul>
+            </div>
           </div>
           <p style={{ textAlign: "center", fontWeight: "bold" }}>{status}</p>
         </Modal>

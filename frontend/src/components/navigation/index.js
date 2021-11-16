@@ -1,4 +1,4 @@
-import React, { useContext,useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { userContext } from "../../App";
@@ -32,7 +32,7 @@ const Navigation = () => {
       .then((res) => {
         cart.setNumber(res.data.userInfo[0].cart.length);
       });
-  }, );
+  });
   return (
     <nav className="fixed">
       {!token.token ? (
@@ -44,19 +44,19 @@ const Navigation = () => {
             <Search />
           </li>
           <li className="nav-item">
-            <Login/>
+            <Login />
           </li>
           <li className="nav-item">
-            <Register/>
+            <Register />
           </li>
           <li className="nav-item">
             <Link to="/home">Home</Link>
           </li>
           <li className="nav-item">
-            <About/>
+            <Link to="/about">About</Link>
           </li>
-		  <li className="nav-item">
-            <Contact/>
+          <li className="nav-item">
+          <Link to="/contact">Contact</Link>
           </li>
         </ul>
       ) : (
@@ -72,7 +72,7 @@ const Navigation = () => {
               Home
             </Link>
           </li>
-          
+
           <li className="nav-item">
             <Link className="Link" to="/favorite">
               Favourite
@@ -84,11 +84,11 @@ const Navigation = () => {
               <div className="n">{cart.number}</div>
             </Link>
           </li>
-		  <li className="nav-item">
-            <About/>
+          <li className="nav-item">
+            <Link to="/about">About</Link>
           </li>
-		  <li className="nav-item">
-            <Contact/>
+          <li className="nav-item">
+          <Link to="/contact">Contact</Link>
           </li>
           <li className="nav-item">
             <Link className="Link" to="/logOut">

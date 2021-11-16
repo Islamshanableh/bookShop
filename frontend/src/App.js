@@ -14,11 +14,8 @@ import { Info } from './components/profile/info';
 import Dashboard from './components/dashboard';
 import { Result } from './components/search/result';
 import "./App.css"
-
-
-
-
-
+import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
 
 
 
@@ -59,6 +56,8 @@ const App = () => {
 <Route path = '/myProfile' component = {Info} />
 <Route path = '/result' component = {Result} />
 <Route path = '/dash' component = {Dashboard} />
+<Route path = '/about' component = {About} />
+<Route path = '/contact' component = {Contact} />
 
 
 
