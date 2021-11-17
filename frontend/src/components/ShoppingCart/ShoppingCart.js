@@ -91,7 +91,7 @@ export const ShoppingCart = () => {
         <Row xs={1} md={4} className="g-4">
             {book.map((element, i) => {
               return (
-                
+                <div className="container">
                    <Col key={element.bookId.id}>
                   <Card
                     style={{ textAlign: "left", width: "100%", height: "100%" }}
@@ -102,7 +102,7 @@ export const ShoppingCart = () => {
                       height="200px"
                       width="200px"
                     />
-                    <Card.Body>
+                    <Card.Body style={{ height: "200px" }}>
                       <Card.Title style={{ fontSize: "18px", display: "flex" }}>
                         {element.bookId.name}{" "}
                        
@@ -125,7 +125,7 @@ export const ShoppingCart = () => {
                   </Card>
                 </Col>
 
-               
+                </div>
                 
               );
             })}
