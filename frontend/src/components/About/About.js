@@ -1,90 +1,37 @@
 import React from "react";
-import Modal from "react-modal";
-import "./About.css";
-
-const customStyles = {
-  content: {
-    top: "50%",
-    left: "50%",
-    right: "auto",
-    bottom: "auto",
-    marginRight: "-50%",
-    transform: "translate(-50%, -50%)",
-    borderRadius: "5px",
-    backgroundColor: "#F7F6F2",
-  },
-};
 
 export const About = () => {
-  let subtitle;
-  const [modalIsOpen, setIsOpenAbout] = React.useState(false);
-
-  function openModal() {
-    setIsOpenAbout(true);
-  }
-
-  function afterOpenModal() {
-    subtitle.style.color = "#72147e";
-    subtitle.style.textAlign = "center";
-    subtitle.style.fontFamily = "bold";
-  }
-
-  function closeModal() {
-    setIsOpenAbout(false);
-  }
   return (
     <div>
-      <button
-        onClick={openModal}
-        className="openAbout"
-        style={{
-          backgroundColor: "#f0e7f2",
-          color: "#72147e",
-          border: "0px",
-          fontWeight: "bold",
-          fontSize:"17px",
-          cursor: "pointer",
-        }}
-      >
-        About
-      </button>
-      <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-        ariaHideApp={false}
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>About Us</h2>
-
+      <center>
         <div>
-          <h3 style={{ color: "#72147e" }}>Who we are ?</h3>
-          <p>We are web developer from Meraki Academy.</p>
-          <h3 style={{ color: "#72147e" }}>Our vision :</h3>
-          <p>
-            Better Books for everyone,is an online book retailer based in Amman
-            that ships to readers throughout the Middle East.
-          </p>
-          <p>
-            {" "}
-            It was founded in October 2021 by entrepreneur Meraki Academy with
-            the support of Shadow Team.
-          </p>
-          <button
-            onClick={closeModal}
-            style={{
-              color: "white",
-              backgroundColor: "#72147e",
-              borderRadius: "5px",
-              marginLeft: "350px",
-              marginTop: "30px",
-            }}
-          >
-            close
-          </button>
+          <div>
+            <h1 style={{ color: "#72147e" }}>
+              Welcome To <span style={{ color: "#72147e" , fontFamily:"Style Script , cursive"}}>KERO BOOK</span>
+            </h1>
+            <div>
+              <div style={{ width: "650px" }}>
+                <img
+                  style={{ width: "650px" }}
+                  src="https://www.wantedinmilan.com/i/preview/storage/uploads/2020/01/italys-bookshop-crisis.jpg"
+                  alt=""
+                />
+                <p style={{ color: "#72147e" }}>
+                  We believe that bookstores are essential to a healthy culture.
+                  They’re where authors can connect with readers, where we
+                  discover new writers, where children get hooked on the thrill
+                  of reading that can last a lifetime. They’re also anchors for
+                  our downtowns and communities.
+                </p>
+                <p style={{ color: "#72147e" }}>
+                  It was founded in september 2021 by entrepreneur Meraki Academy
+                  with the support of Shadow team .
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </Modal>
+      </center>
     </div>
   );
 };
