@@ -22,6 +22,7 @@ booksRouter.get("/nameOfAuthor/:author", getBookByAuthor);
 booksRouter.get("/myBook", authentication,getBookByUserId);
 booksRouter.put("/update/:id", authentication,updateBook);
 booksRouter.get('/Book/:id' , getBookById);
+booksRouter.get("/typeOfBook", FindByCategory);
 
 
 module.exports = booksRouter;

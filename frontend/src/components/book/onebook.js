@@ -9,18 +9,32 @@ import { Rate } from "../rate/rate";
 export const OneBook = () => {
   let idd = useParams().id;
   const [book, setBook] = useState();
-
+  const [type , setType] = useState();
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/books/Book/${idd}`)
       .then((result) => {
         setBook(result.data.book[0]);
-        console.log(result.data.book[0]);
+        
+        console.log("typeee",result.data.book[0].type);
       })
       .catch((err) => {
-        console.log("errorrr", err);
+        console.log("Error", err);
       });
   }, []);
+
+
+  useEffect( async ()=>{
+      await axios.get(`http://localhost:5000/books/typeOfBook/${book && book.type}`).then((result) => {
+        setType(result.data);
+        console.log("cta",result.data);
+        
+      })
+      .catch((err) => {
+        console.log("Error", err);
+      });
+  } , [])
 
   return (
     <div style={{display:"flex"}}>
@@ -46,6 +60,12 @@ export const OneBook = () => {
           <p className="descriptionBook">{book && book.description}</p>
           <label> Book type</label>
           <p>{book && book.type} </p>
+      </div>
+      <div className="SimilaBooks">
+         {/* {type && type.book}  */}
+         
+         {"mmmmmmmmmmmm"}
+ 
       </div>
 
            

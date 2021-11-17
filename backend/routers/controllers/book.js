@@ -52,9 +52,9 @@ const getAllBooks = (req, res) => {
     });
 };
 
-const FindByCategory = (req, res) => {
+const FindByCategory =async (req, res) => {
   const type = req.params.type;
-  bookModel.find({ type }).then((result) => {
+ await bookModel.find({ type }).then((result) => {
     if(!result.length){
   return    res.json({
         success:false,
@@ -68,7 +68,8 @@ const FindByCategory = (req, res) => {
   }).catch((err)=>{
     res.json({
       success:false,
-      message: "server error"
+      message: "server error",
+      Error:err
     })
   })
 };
