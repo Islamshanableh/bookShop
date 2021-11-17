@@ -19,7 +19,8 @@
     "google-auth-library": "^7.10.2",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.9",
-    "nodemon": "^2.0.14"
+    "nodemon": "^2.0.14",
+    "twilio": "^3.71.1"
   },
   "devDependencies": {
     "jest": "^27.3.1",

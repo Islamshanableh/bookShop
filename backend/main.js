@@ -8,6 +8,7 @@ const favoriteRouter=require("../backend/routers/routes/favourite")
 const booksRouter = require("../backend/routers/routes/book")
 const ratingRouter = require("../backend/routers/routes/rate")
 const cartRouter = require("../backend/routers/routes/cart")
+const messageRouter = require("../backend/routers/routes/sendMsg")
 const app = express();
 
 //routers
@@ -26,6 +27,7 @@ app.use("/books",booksRouter)
 app.use("/favorite",favoriteRouter)
 app.use("/rate",ratingRouter)
 app.use("/cart",cartRouter)
+app.use("/sendMsg", messageRouter);
 
 
 module.exports = app;

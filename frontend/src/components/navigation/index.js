@@ -41,7 +41,7 @@ const Navigation = () => {
             <h3 className="kero">KERO BOOK</h3>
           </li>
           <li className="nav-item search">
-            <Search />
+            <Search/>
           </li>
           <li className="nav-item">
             <Login />
@@ -75,7 +75,7 @@ const Navigation = () => {
 
           <li className="nav-item">
             <Link className="Link" to="/favorite">
-              Favourite
+              Favourite 
             </Link>
           </li>
           <li className="nav-item">

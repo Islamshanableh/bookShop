@@ -1,5 +1,5 @@
 const userSchema = require("../../db/models/user");
-
+////////////////
 const createNewUser = (req, res) => {
   const {
     firstName,
@@ -35,7 +35,7 @@ const createNewUser = (req, res) => {
       res.json({ success: false, message: "The email already exists" });
     });
 };
-
+/////////////////////
 const getInfo = (req, res) => {
   const id = req.token.userId;
   userSchema

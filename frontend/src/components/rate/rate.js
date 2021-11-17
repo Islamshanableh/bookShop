@@ -1,7 +1,7 @@
 import React, {  useContext } from "react";
 import { Rating } from "react-simple-star-rating";
 import { userContext } from "../../App";
-
+import swal from "sweetalert";
 import axios from "axios";
 
 export const Rate = ({ bookId, rateCount }) => {
@@ -12,6 +12,13 @@ export const Rate = ({ bookId, rateCount }) => {
   }, 0);
 
   const handleRating = (count) => {
+    if(!token){
+      swal({
+        title: "You have to login first so you can rate",
+        icon: "error",
+        button: "OK",
+      });
+    }
     axios
       .post(
         "http://localhost:5000/rate",
@@ -23,6 +30,11 @@ export const Rate = ({ bookId, rateCount }) => {
         }
       )
       .then((res) => {
+        swal({
+          title: "Thank you for rating ",
+          icon: "success",
+          button: "OK",
+        });
         //console.log("The rating has been created successfully");
       })
       .catch((err) => {

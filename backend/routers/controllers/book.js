@@ -52,9 +52,9 @@ const getAllBooks = (req, res) => {
     });
 };
 
-const FindByCategory = (req, res) => {
+const FindByCategory =async (req, res) => {
   const type = req.params.type;
-  bookModel.find({ type }).then((result) => {
+ await bookModel.find({ type }).then((result) => {
     if(!result.length){
   return    res.json({
         success:false,
@@ -68,7 +68,8 @@ const FindByCategory = (req, res) => {
   }).catch((err)=>{
     res.json({
       success:false,
-      message: "server error"
+      message: "server error",
+      Error:err
     })
   })
 };
@@ -162,6 +163,34 @@ const updateBook = (req, res) => {
     });
 };
 
+/// Get book by Id
+
+const getBookById = (req ,res)=>{
+  let id = req.params.id;
+
+  bookModel.findById(id).then((result) => {
+    if (!result) {
+      return res.status(404).json({
+        success: false,
+        message: `The book => not found`,
+      });
+    }
+    res.status(202).json({
+      success: true,
+      message: ` Success book got`,
+      book: [result]
+    });
+  })
+  .catch((err) => {
+    res.status(500).json({
+      success: false,
+      message: `Server Error`,
+      Error:err
+     
+    });
+  });
+}
+
 module.exports = {
   CreatNewBook,
   getAllBooks,
@@ -169,5 +198,6 @@ module.exports = {
   getBookByName,
   getBookByAuthor,
   updateBook,
-  getBookByUserId
+  getBookByUserId,
+  getBookById
 };

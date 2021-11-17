@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useContext } from "react";
+import { Route } from "react-router-dom";
 import axios from "axios";
 import { userContext } from "../../App";
 import { numberContext } from "../../App";
 import { BsCheckCircle } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
+import { Col, Card, Row, Button, Nav,InputGroup,FormControl } from "react-bootstrap";
+import Payment from "../payment/payment";
 import "./ShoppingCart.css";
 
 export const ShoppingCart = () => {
@@ -84,36 +87,59 @@ export const ShoppingCart = () => {
           </div>
         ) : (
           <>
+          <div className="container">
+        <Row xs={1} md={4} className="g-4">
             {book.map((element, i) => {
               return (
-                <div className="card">
-                  <img src={element.bookId.image} className="img9" />
-                  <h3>{element.bookId.name}</h3>
-                  <p class="price231">Price: {element.bookId.price}JD</p>
-                  <p>
-                    {/* <button
-                      onClick={() => {
-                        deleteBook(element._id, element.bookId._id);
-                      }}
-                    >
-                      Remove Item
-                    </button> */}
+                <div className="container">
+                   <Col key={element.bookId.id}>
+                  <Card
+                    style={{ textAlign: "left", width: "100%", height: "100%" }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src={element.bookId.image}
+                      height="200px"
+                      width="200px"
+                    />
+                    <Card.Body style={{ height: "200px" }}>
+                      <Card.Title style={{ fontSize: "18px", display: "flex" }}>
+                        {element.bookId.name}{" "}
+                       
+                      </Card.Title>
+                      
+                      
 
-
-                    <h1 onClick={() => {
+                      <Card.Text style={{ fontSize: "16px" }}>
+                        Price: {element.bookId.price} $
+                      </Card.Text>
+                      <Card.Text style={{ fontSize: "16px" , textAlign: "center"}} >
+                      <h1 onClick={() => {
                         deleteBook(element._id, element.bookId._id);
                       }} className="trash">🗑️</h1>
-                  </p>
+                      </Card.Text>
+
+                      
+
+                    </Card.Body>
+                  </Card>
+                </Col>
+
                 </div>
+                
               );
             })}
+            </Row>
+        </div>
           </>
         )}
       </div>
+      <div className="container">
       <div className="devider">
         <div className="total_Price">
           <span className="span">Total price : {price} JD</span>
           <br />
+         
           <input
             className="pppp"
             type="text"
@@ -124,8 +150,21 @@ export const ShoppingCart = () => {
           ></input>
           <div className="ll">{status}</div>
           <br />
-          <button className="oooo">Buy Now</button>
+          <div >
+          <Route
+            exact
+            path="/cart"
+            render={() => (
+              <Payment
+              
+              />
+            )}
+          />
         </div>
+          
+        </div>
+       
+      </div>
       </div>
     </>
   );
