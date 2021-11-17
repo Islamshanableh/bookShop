@@ -31,15 +31,9 @@ const adding = ()=>{
   }
 return (
        <div>
-            <h2 className="btnfav" onClick ={adding}>⭐</h2>
+            <p className="btnfav" onClick ={adding}>⭐</p>
              
-        
-        <div style={{display:"flex" , marginLeft:"-150px"}}>
-        <h2 className="ttt">
-         {favourite}
-        </h2>
-        
-        </div>
+       
     </div>
 )
 }

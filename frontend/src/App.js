@@ -8,17 +8,16 @@ import { Search } from './components/search/Search';
 import { ShoppingCart } from './components/ShoppingCart/ShoppingCart';
 import {FavBage}from "./components/FavBage/FavBage"
 import { Logout } from './components/logout/Logout';
-import Footer from './components/footer/footer';
+import Footer from "./components/footer/footer";
 import { Profile } from './components/profile/profile';
 import { Info } from './components/profile/info';
 import Dashboard from './components/dashboard';
 import { Result } from './components/search/result';
+import Payment from './components/payment/payment';
 import "./App.css"
 import { OneBook } from './components/book/onebook';
-
-
-
-
+import { About } from './components/About/About';
+import { Contact } from './components/Contact/Contact';
 
 
 
@@ -48,7 +47,7 @@ const App = () => {
 
 
 <Switch>
-	
+<Route path="/payment" component={Payment} />	
 <Route path="/login" component={Login}/> 
 <Route path = "/signUp" component = {Register}/>
 <Route path = '/home' component = {AllBook} />
@@ -61,6 +60,9 @@ const App = () => {
 <Route path = '/result' component = {Result} />
 <Route path = '/dash' component = {Dashboard} />
 <Route exact path="/Book/:id" component={OneBook} />
+<Route path = '/about' component = {About} />
+<Route path = '/contact' component = {Contact} />
+
 
 
 
