@@ -19,7 +19,13 @@ const Payment = () => {
     "your subscribtion has been confirmed check your profile to see your subscribtion ";
 
   function sendMsg() {
-    axios.post(`https://c3megalodon.herokuapp.com/sendMsg`, { confirm });
+    swal({
+      title: "Success !! ",
+      text: "Thank you for Payment you will receive an sms that confirm your payment ",
+      icon: "success",
+      button: "OK",
+    });
+    axios.post(`http://localhost:5000/sendMsg`, { confirm });
   }
  
 

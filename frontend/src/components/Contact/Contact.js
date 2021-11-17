@@ -35,7 +35,7 @@ export const Contact = () => {
   };
   return (
     <div className="odaiyy">
-    <div className="container">
+    <div className="containers">
     <div className="content">
       <div className="left-side">
         <div className="address details">

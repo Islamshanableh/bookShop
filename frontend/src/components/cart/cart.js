@@ -6,6 +6,7 @@ import "./cart.css";
 import Login from "../auth/login";
 import { numberContext } from "../../App";
 import {Route, useHistory } from "react-router-dom";
+import swal from "sweetalert";
 export const AddCart =({bookId})=>{
   const history = useHistory()
     const [cart, setCart] = useState();
@@ -15,6 +16,13 @@ export const AddCart =({bookId})=>{
    
     
     const adding = ()=>{
+      if(!token){
+        swal({
+          title: "You have to login first so you can buy",
+          icon: "error",
+          button: "OK",
+        });
+      }
         axios
       .post(
         "http://localhost:5000/cart",
@@ -26,7 +34,12 @@ export const AddCart =({bookId})=>{
         }
       )
       .then((res) => {
-        setCart("the item added successfuly to the cart")
+        swal({
+          title: "success added to cart ",
+          icon: "success",
+          button: "OK",
+        });
+        
         cartD.setNumber(cartD.number+1)
       })
       .catch((err) => {
@@ -40,7 +53,7 @@ export const AddCart =({bookId})=>{
             <MdAddShoppingCart size="3em" className="c" onClick ={adding} />
             {/* <p className="buy" onClick={adding}> Buy +</p> */}
             
-           <div className="succ">{cart}</div>
+           
         </div>
     )
 }

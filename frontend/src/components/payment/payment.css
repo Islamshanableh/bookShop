@@ -38,7 +38,7 @@
     border-style: none;
     will-change: opacity, transform;
     box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
-      inset 0 1px 0 #829fff;
+      inset 0 1px 0 #72147e;
     border-radius: 4px;
   }
   
@@ -48,7 +48,7 @@
     -ms-flex-align: center;
     align-items: center;
     margin-left: 15px;
-    border-top: 1px solid #819efc;
+    border-top: 1px solid #72147e;
   }
   
   .FormRow:first-child {
@@ -87,7 +87,7 @@
   }
   
   .FormRowInput::placeholder {
-    color: #87bbfd;
+    color: #7795f8;
   }
   
   .StripeElement--webkit-autofill {
@@ -105,7 +105,7 @@
     width: calc(100% - 30px);
     height: 40px;
     margin: 40px 15px 0;
-    background-color: black;
+    background-color: #72147e;
     box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08),
       inset 0 1px 0 #ffb9f6;
     border-radius: 4px;
