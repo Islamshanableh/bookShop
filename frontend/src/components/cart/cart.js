@@ -7,6 +7,8 @@ import Login from "../auth/login";
 import { numberContext } from "../../App";
 import {Route, useHistory } from "react-router-dom";
 import swal from "sweetalert";
+
+
 export const AddCart =({bookId})=>{
   const history = useHistory()
     const [cart, setCart] = useState();
@@ -51,7 +53,7 @@ export const AddCart =({bookId})=>{
         <div className="cart1">
             
             <MdAddShoppingCart size="3em" className="c" onClick ={adding} />
-            {/* <p className="buy" onClick={adding}> Buy +</p> */}
+            
             
            
         </div>

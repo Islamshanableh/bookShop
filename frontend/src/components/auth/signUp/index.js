@@ -441,14 +441,14 @@ export const Register = () => {
           
           <br />
           <input
-            type="text"
+            type="password"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
 
           <input
-            type="text"
+            type="password"
             placeholder="Confirm Password"
             onChange={(e) => {
               setConfirmP(e.target.value);

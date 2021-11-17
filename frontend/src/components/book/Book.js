@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
+import { useHistory } from "react-router";
 import { Rate } from "../rate/rate";
 import { AddCart } from "../cart/cart";
 import Favourite from "../favourite/favourite";
@@ -7,17 +8,14 @@ import axios from "axios";
 import SlideShow from "./slide";
 import { Col, Card, Row, Button, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-
 export const AllBook = () => {
   const [books, setBooks] = useState([]);
-
+  const history = useHistory();
   useEffect(() => {
     axios.get("http://localhost:5000/books/").then((res) => {
       setBooks([...res.data.books]);
     });
   }, []);
-
   return (
     <div className="">
       <div className="INTRO">
@@ -41,7 +39,7 @@ export const AllBook = () => {
             books.map((element, index) => {
               return (
                 <Col key={element.id}>
-                  <Card
+                  <Card onClick={()=>{history.push(`/Book/${element._id}`)}}
                     style={{ textAlign: "left", width: "100%", height: "100%" }}
                   >
                     <Card.Img
@@ -78,17 +76,14 @@ export const AllBook = () => {
                       >
                         <a href="home">more</a>
                       </Card.Text>
-
                       <Card.Text style={{ fontSize: "16px" }}>
                         Price: {element.price} $
                       </Card.Text>
-
                       <Route
                         exact
                         path="/home"
                         render={() => <AddCart bookId={element._id} />}
                       />
-
                       <Card.Text style={{ fontSize: "13px" }}>
                         <p>
                           <Route
@@ -106,69 +101,6 @@ export const AllBook = () => {
                     </Card.Body>
                   </Card>
                 </Col>
-
-                // <div className="book">
-                //   <div className="book1">
-                //     <img
-                //       className="imgooooooo"
-                //       src={element.image}
-                //       style={{ borderRadius: "5px" }}
-                //     />
-
-                //     <div className="desc">
-                //       <div
-                //         style={{ display: "flex", height: "80px", width: "100%" }}
-                //       >
-                //         <h3>Description</h3>
-                //         <div
-                //           style={{ marginLeft: "150px", marginBottom: "50px" }}
-                //         >
-                //           {" "}
-                //           <Route
-                //             exact
-                //             path="/home"
-                //             render={() => <Favourite bookId={element._id} />}
-                //           />
-                //         </div>
-                //       </div>
-                //       {element.description}
-
-                //       <p className="author"> Author: {element.author} </p>
-
-                //       <div
-                //         style={{
-                //           display: "flex",
-                //           width: "300px",
-                //           height: "60px",
-                //           marginTop: "50px",
-                //         }}
-                //       >
-                //         <div>
-                //           {" "}
-                //           <Route
-                //             exact
-                //             path="/home"
-                //             render={() => <AddCart bookId={element._id} />}
-                //           />
-                //         </div>
-
-                //         <div className="price"> {element.price} JD</div>
-                //       </div>
-                //     </div>
-                //   </div>
-                //   <div className="book-info">
-                //     <h3 className="hover">{element.name}</h3>
-                //     <span>
-                //       <Route
-                //         exact
-                //         path="/home"
-                //         render={() => (
-                //           <Rate bookId={element._id} rateCount={element.rating} />
-                //         )}
-                //       />
-                //     </span>
-                //   </div>
-                // </div>
               );
             })}
         </Row>

@@ -75,7 +75,7 @@ const Navigation = () => {
 
           <li className="nav-item">
             <Link className="Link" to="/favorite">
-              Favourite
+              Favourite 
             </Link>
           </li>
           <li className="nav-item">
