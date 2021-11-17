@@ -5,9 +5,11 @@ import { AddCart } from "../cart/cart";
 import Favourite from "../favourite/favourite";
 import axios from "axios";
 import SlideShow from "./slide";
-import "./book.css"
+import { Col, Card, Row, Button, Nav } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-export const AllBook =  () => {
+
+export const AllBook = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -15,69 +17,162 @@ export const AllBook =  () => {
       setBooks([...res.data.books]);
     });
   }, []);
-  
+
   return (
-    <div  className="homepageK"  >
-        <div className="INTRO">
-        <div className="intrtolkk" > <h1>TODAY A READER ,, TOMORROW A LEADER</h1>
-        <h4>lets make you tomorrow's leader  :) </h4> </div>
-        <div className="intrpick" > <img src="https://c.tenor.com/GrKqz4mmq_0AAAAd/spiritual-book-glow.gif" style={{borderRadius:"5px"}} ></img>   </div>      
+    <div className="">
+      <div className="INTRO">
+        <div className="intrtolkk">
+          {" "}
+          <h1>TODAY A READER ,, TOMORROW A LEADER</h1>
+          <h4>lets make you tomorrow's leader </h4>{" "}
+        </div>
+        <div className="intrpick">
+          {" "}
+          <img
+            src="https://c.tenor.com/GrKqz4mmq_0AAAAd/spiritual-book-glow.gif"
+            style={{ borderRadius: "5px" }}
+          ></img>{" "}
+        </div>
       </div>
-      <SlideShow/>
-    <div id="main">
-      {books &&
-        books.map((element, index) => {
-          return (
-            
-           <div className="book">
-          <div className="book1">
-           <img className="imgooooooo"  src={element.image} style={{borderRadius:"5px"}}/>
-            
-          
-              
-              <div className="desc">
-                <div style={{display:"flex" , height:"80px" , width:"100%"}}>
-                <h3>Description</h3>
-                 <div style={{marginLeft:"150px" , marginBottom:"50px"}}> <Route
-                exact
-                path="/home"
-                render={() => <Favourite bookId={element._id} />}
-              /></div></div>
-                {element.description}
+      <SlideShow />
+      <div className="container">
+        <Row xs={1} md={4} className="g-4">
+          {books &&
+            books.map((element, index) => {
+              return (
+                <Col key={element.id}>
+                  <Card
+                    style={{ textAlign: "left", width: "100%", height: "100%" }}
+                  >
+                    <Card.Img
+                      variant="top"
+                      src={element.image}
+                      height="200px"
+                      width="200px"
+                    />
+                    <Card.Body>
+                      <Card.Title style={{ fontSize: "18px", display: "flex" }}>
+                        {element.name}{" "}
+                        <Route
+                          exact
+                          path="/home"
+                          render={() => <Favourite bookId={element._id} />}
+                        />
+                      </Card.Title>
+                      <Card.Text
+                        style={{
+                          fontSize: "13px",
+                          overflow: "hidden",
+                          textOverflow: "ellipsis",
+                          display: "-webkit-box",
+                          lineHeight: "16px",
+                          maxHeight: "32px",
+                          WebkitLineClamp: "2",
+                          WebkitBoxOrient: "vertical",
+                        }}
+                      >
+                        {element.description}
+                      </Card.Text>
+                      <Card.Text
+                        style={{ fontSize: "13px", textAlign: "left" }}
+                      >
+                        <a href="home">more</a>
+                      </Card.Text>
 
-               <p className="author"> Author: {element.author} </p>
+                      <Card.Text style={{ fontSize: "16px" }}>
+                        Price: {element.price} $
+                      </Card.Text>
 
+                      <Route
+                        exact
+                        path="/home"
+                        render={() => <AddCart bookId={element._id} />}
+                      />
 
-                <div style={{display:"flex" ,  width:"300px" , height:"60px" , marginTop:"50px"}}>
-                  <div > <Route
-                exact
-                path="/home"
-                render={() => <AddCart bookId={element._id} />}
-              /></div>
+                      <Card.Text style={{ fontSize: "13px" }}>
+                        <p>
+                          <Route
+                            exact
+                            path="/home"
+                            render={() => (
+                              <Rate
+                                bookId={element._id}
+                                rateCount={element.rating}
+                              />
+                            )}
+                          />
+                        </p>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
 
-                <div className="price"> {element.price} JD</div>
-                
-              
-              
-              </div>
+                // <div className="book">
+                //   <div className="book1">
+                //     <img
+                //       className="imgooooooo"
+                //       src={element.image}
+                //       style={{ borderRadius: "5px" }}
+                //     />
 
+                //     <div className="desc">
+                //       <div
+                //         style={{ display: "flex", height: "80px", width: "100%" }}
+                //       >
+                //         <h3>Description</h3>
+                //         <div
+                //           style={{ marginLeft: "150px", marginBottom: "50px" }}
+                //         >
+                //           {" "}
+                //           <Route
+                //             exact
+                //             path="/home"
+                //             render={() => <Favourite bookId={element._id} />}
+                //           />
+                //         </div>
+                //       </div>
+                //       {element.description}
 
-              
-              </div>
-             </div>
-              <div className="book-info" >
-             <h3 className="hover">{element.name}</h3>
-             <span><Route
-                exact
-                path="/home"
-                render={() => <Rate bookId={element._id} rateCount={element.rating}  />}
-              /></span>
-              </div>
-            </div>
-          );
-        })}
-             </div>
-           
+                //       <p className="author"> Author: {element.author} </p>
+
+                //       <div
+                //         style={{
+                //           display: "flex",
+                //           width: "300px",
+                //           height: "60px",
+                //           marginTop: "50px",
+                //         }}
+                //       >
+                //         <div>
+                //           {" "}
+                //           <Route
+                //             exact
+                //             path="/home"
+                //             render={() => <AddCart bookId={element._id} />}
+                //           />
+                //         </div>
+
+                //         <div className="price"> {element.price} JD</div>
+                //       </div>
+                //     </div>
+                //   </div>
+                //   <div className="book-info">
+                //     <h3 className="hover">{element.name}</h3>
+                //     <span>
+                //       <Route
+                //         exact
+                //         path="/home"
+                //         render={() => (
+                //           <Rate bookId={element._id} rateCount={element.rating} />
+                //         )}
+                //       />
+                //     </span>
+                //   </div>
+                // </div>
+              );
+            })}
+        </Row>
+      </div>
     </div>
   );
 };

@@ -13,6 +13,7 @@ import { Profile } from './components/profile/profile';
 import { Info } from './components/profile/info';
 import Dashboard from './components/dashboard';
 import { Result } from './components/search/result';
+import Payment from './components/payment/payment';
 import "./App.css"
 
 
@@ -47,7 +48,7 @@ const App = () => {
 
 
 <Switch>
-	
+<Route path="/payment" component={Payment} />	
 <Route path="/login" component={Login}/> 
 <Route path = "/signUp" component = {Register}/>
 <Route path = '/home' component = {AllBook} />
