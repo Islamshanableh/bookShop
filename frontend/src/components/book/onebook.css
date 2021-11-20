@@ -36,6 +36,7 @@
     display: grid;
     font-family: "Poppins" , sans-serif;
     height: 300px;
+    margin-left: 100px;
 
 }
 
@@ -43,4 +44,20 @@
     width: 400px;
     height: 600px;
     border: brown 1px solid;
+}
+
+.cardType{
+    height: 200px;
+    border: blue solid 1px;
+    width: 350px;
+    display: flex;
+    /* justify-content:space-between; */
+    text-align: center;
+}
+
+.imgSim{
+    height: auto;
+    width: 100px;
+    
+    
 }

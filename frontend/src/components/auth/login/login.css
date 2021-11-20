@@ -15,18 +15,35 @@
   }
 
   .logBtn{
-    background-color: gray;
-    font-size: 15px ;
-    font-weight: bold;
-    border-radius: 3px ;
-    width: 80px;
-    height: 30px;
+    color: white;
+    background-color: #72147e;
+    width: 150px;
     margin: auto;
+    border-radius: 5px;
+    height: 28px;
   }
+
+  .logBtn:hover{
+    border: solid 1px #72147e;
+    background-color: white;
+    color: #72147e;
+    height: 28px;
+   
+}
 
   .kero{
     text-align: center;
     margin-right: 100px;
+    margin-bottom: 20px;
   }
+
+  .socials{
+    margin-top: 20px;
+    margin-left: -20px;
+}
+
+.google{
+  margin: auto;
+}
 
   

@@ -4,6 +4,7 @@ import { Route, useHistory } from "react-router-dom";
 import { Result } from "./result";
 import { resultContext,resultS } from "../../App";
 import { Dropdown, InputGroup, SplitButton, FormControl, Nav } from "react-bootstrap";
+import {BsSearch} from 'react-icons/bs'
 
 export const Search = () => {
   
@@ -32,7 +33,7 @@ export const Search = () => {
     <FormControl aria-label="Text input with dropdown button" placeholder="search" />
     <SplitButton
       variant="outline-secondary"
-      title="Search"
+      title={<BsSearch/>}
       id="segmented-button-dropdown-2"
       alignRight
       onClick={() => {

@@ -6,6 +6,9 @@ import Modal from "react-modal";
 import "./login.css";
 import { Register } from "../signUp";
 import GoogleLogin from "react-google-login";
+import { FormControl, InputGroup } from "react-bootstrap";
+import { BsEye , BsEyeSlash } from "react-icons/bs";
+import { AiOutlineClose } from "react-icons/ai";
 
 const customStyles = {
   content: {
@@ -35,9 +38,9 @@ const Login = ({ value }) => {
   }
 
   function afterOpenModal() {
-    subtitle.style.color = "black";
-    subtitle.style.textAlign = "center";
-    subtitle.style.fontFamily = "bold";
+    // subtitle.style.color = "black";
+    // subtitle.style.textAlign = "center";
+    // subtitle.style.fontFamily = "bold";
   }
 
   function closeModal() {
@@ -50,6 +53,7 @@ const Login = ({ value }) => {
   const [password, setPassword] = useState();
   const [status, setStatus] = useState();
   const [message, setMessage] = useState();
+  const [showPassword , setShowPassword] = useState();
 
   const tokenContext = useContext(userContext);
 
@@ -70,7 +74,6 @@ const Login = ({ value }) => {
   };
 
   const responsesuccessGoogle = (response) => {
-    // console.log(response.profileObj);
     axios
       .post("http://localhost:5000/login/google", { tokenId: response.tokenId })
       .then((res) => {
@@ -118,49 +121,55 @@ const Login = ({ value }) => {
           contentLabel="Example Modal"
           ariaHideApp={false}
         >
-          <button
-            onClick={closeModal}
-            style={{
-              backgroundColor: "#72147e",
-              borderRadius: "5px",
-              marginLeft: "350px",
-              marginTop: "1px",
-              color: "white",
-            }}
-          >
-            X
-          </button>
-          <h3 class="kero">KERO BOOK</h3>
+         
+            <AiOutlineClose onClick={closeModal}/>
+         
+          <h3 class="kero">Login</h3>
           <div style={{ textAlign: "center", display: "grid" }}>
-            <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Login</h2>
-
-            <input
-              type="email"
-              placeholder="Email-here"
-              style={{ width: "150px", marginLeft: "115px" }}
+            
+            <InputGroup size="sm" className="mb-3">
+                <FormControl
+                  aria-label="Small"
+                  aria-describedby="inputGroup-sizing-sm"
+                   type="email"
+              placeholder="Email here"
+              style={{ width: "100px", margin: "auto" }}
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
-            />
+                />
+              </InputGroup>
             <br />
-            <input
-              type="password"
-              placeholder="Password Here"
-              style={{ width: "150px", marginLeft: "115px" }}
+           
+            <InputGroup size="sm" className="mb-3">
+                <FormControl
+                  aria-label="Small"
+                  aria-describedby="inputGroup-sizing-sm"
+                 type={showPassword ? "text" : "password"} 
+              placeholder="Password here"
+              style={{ width: "100px", margin: "auto" }}
               onChange={(e) => {
                 setPassword(e.target.value);
               }}
-            />
+                />
+                <i
+              style={{
+                marginLeft:"240px",
+                position: "absolute",
+                zIndex:"999",
+                marginTop:"2px"
+              }}
+              onClick={(e) => {
+                setShowPassword(!showPassword);
+              }}
+            >
+              {showPassword ? <BsEyeSlash /> : <BsEye />}
+            </i>
+              </InputGroup>
             <br />
             <button
               onClick={checkValid}
-              style={{
-                width: "60px",
-                borderRadius: "3px",
-                marginLeft: "160px",
-                color: "white",
-                backgroundColor: "#72147e",
-              }}
+              
               className="logBtn"
             >
               Login
@@ -168,17 +177,18 @@ const Login = ({ value }) => {
           </div>
 
           <div
-            style={{ display: "flex", marginLeft: "130px", marginTop: "30px" }}
+            style={{ display: "grid", marginTop: "50px" , textAlign:"center" }}
           >
-            <p> Login or </p>
+            <div style={{display:"flex" , gap:"7px" , marginLeft:"30%"}}>
+            <p>  or </p>
             <p>
-              <Register />
-            </p>
+              <Register  />
+            </p></div>
 
             <div className="social-login mt-0">
-              <span className="social-label">Or login with</span>
+              <span className="social-label">or Login with</span>
               <ul className="socials">
-                <GoogleLogin
+                <GoogleLogin className="google"
                   clientId="517614289407-55p7q5bogii5ln2l6qevnribl05519kn.apps.googleusercontent.com"
                   buttonText="Login"
                   onSuccess={(response) => responsesuccessGoogle(response)}
