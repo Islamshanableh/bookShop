@@ -26,7 +26,7 @@ const SlideShow = () => {
 
   return (
     <div className="slide" style={{marginTop:"80px"}}>
-      <div>
+      <div className="container">
       <Slide {...properties}>
         {books &&
         books.map((element, index) => {

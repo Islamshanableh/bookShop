@@ -43,12 +43,7 @@ const Navigation = () => {
           <li className="nav-item search">
             <Search/>
           </li>
-          <li className="nav-item">
-            <Login />
-          </li>
-          <li className="nav-item">
-            <Register />
-          </li>
+         
           <li className="nav-item">
             <Link to="/home">Home</Link>
           </li>
@@ -57,6 +52,12 @@ const Navigation = () => {
           </li>
           <li className="nav-item">
           <Link to="/contact">Contact</Link>
+          </li>
+          <li className="nav-item">
+            <Login />
+          </li>
+          <li className="nav-item">
+            <Register />
           </li>
         </ul>
       ) : (

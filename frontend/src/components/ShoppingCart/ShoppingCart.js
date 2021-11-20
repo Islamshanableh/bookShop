@@ -156,7 +156,7 @@ export const ShoppingCart = () => {
             path="/cart"
             render={() => (
               <Payment
-              
+              price = {price}
               />
             )}
           />

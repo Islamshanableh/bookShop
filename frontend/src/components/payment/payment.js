@@ -12,11 +12,11 @@ import {
 } from "@stripe/react-stripe-js";
 import "./payment.css";
 
-const Payment = () => {
+const Payment = ({price}) => {
   const token = localStorage.getItem("token");
   const [modalIsOpen, setIsOpen] = React.useState(false);
   let confirm =
-    "your subscribtion has been confirmed check your profile to see your subscribtion ";
+    "Your Card transaction of JOD" + price +" was processed successfully by KERO BOOK ";
 
   function sendMsg() {
     swal({
@@ -25,7 +25,10 @@ const Payment = () => {
       icon: "success",
       button: "OK",
     });
-    axios.post(`http://localhost:5000/sendMsg`, { confirm });
+    axios.post(`http://localhost:5000/sendMsg`, { confirm }).then((res)=>{
+     
+    })
+      
   }
  
 
