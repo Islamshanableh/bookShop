@@ -5,7 +5,15 @@ import { userContext } from "../../App";
 import { numberContext } from "../../App";
 import { BsCheckCircle } from "react-icons/bs";
 import { MdAddShoppingCart } from "react-icons/md";
-import { Col, Card, Row, Button, Nav,InputGroup,FormControl } from "react-bootstrap";
+import {
+  Col,
+  Card,
+  Row,
+  Button,
+  Nav,
+  InputGroup,
+  FormControl,
+} from "react-bootstrap";
 import Payment from "../payment/payment";
 import "./ShoppingCart.css";
 
@@ -19,7 +27,7 @@ export const ShoppingCart = () => {
 
   const getBooks = () => {
     axios
-      .get("http://localhost:5000/cart", {
+      .get("https://c3-bookshop.herokuapp.com/cart", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((result) => {
@@ -45,7 +53,7 @@ export const ShoppingCart = () => {
     cart.setNumber(cart.number - 1);
     axios
       .delete(
-        `http://localhost:5000/cart/${id}`,
+        `https://c3-bookshop.herokuapp.com/cart/${id}`,
 
         {
           headers: {
@@ -76,7 +84,7 @@ export const ShoppingCart = () => {
     <>
       <div className="contaner">
         {!book.length ? (
-          <div >
+          <div>
             <div>
               <MdAddShoppingCart size="5em" className="pssss" />{" "}
             </div>
@@ -87,84 +95,79 @@ export const ShoppingCart = () => {
           </div>
         ) : (
           <>
-          <div className="container">
-        <Row xs={1} md={4} className="g-4">
-            {book.map((element, i) => {
-              return (
-                <div className="container">
-                   <Col key={element.bookId.id}>
-                  <Card
-                    style={{ textAlign: "left", width: "100%", height: "100%" }}
-                  >
-                    <Card.Img
-                      variant="top"
-                      src={element.bookId.image}
-                      height="200px"
-                      width="200px"
-                    />
-                    <Card.Body style={{ height: "200px" }}>
-                      <Card.Title style={{ fontSize: "18px", display: "flex" }}>
-                        {element.bookId.name}{" "}
-                       
-                      </Card.Title>
-                      
-                      
+            <div className="container">
+              <Row xs={1} md={4} className="g-4">
+                {book.map((element, i) => {
+                  return (
+                    <div className="container">
+                      <Col key={element.bookId.id}>
+                        <Card
+                          style={{
+                            textAlign: "left",
+                            width: "100%",
+                            height: "100%",
+                          }}
+                        >
+                          <Card.Img
+                            variant="top"
+                            src={element.bookId.image}
+                            height="200px"
+                            width="200px"
+                          />
+                          <Card.Body style={{ height: "200px" }}>
+                            <Card.Title
+                              style={{ fontSize: "18px", display: "flex" }}
+                            >
+                              {element.bookId.name}{" "}
+                            </Card.Title>
 
-                      <Card.Text style={{ fontSize: "16px" }}>
-                        Price: {element.bookId.price} $
-                      </Card.Text>
-                      <Card.Text style={{ fontSize: "16px" , textAlign: "center"}} >
-                      <h1 onClick={() => {
-                        deleteBook(element._id, element.bookId._id);
-                      }} className="trash">🗑️</h1>
-                      </Card.Text>
-
-                      
-
-                    </Card.Body>
-                  </Card>
-                </Col>
-
-                </div>
-                
-              );
-            })}
-            </Row>
-        </div>
+                            <Card.Text style={{ fontSize: "16px" }}>
+                              Price: {element.bookId.price} $
+                            </Card.Text>
+                            <Card.Text
+                              style={{ fontSize: "16px", textAlign: "center" }}
+                            >
+                              <h1
+                                onClick={() => {
+                                  deleteBook(element._id, element.bookId._id);
+                                }}
+                                className="trash"
+                              >
+                                🗑️
+                              </h1>
+                            </Card.Text>
+                          </Card.Body>
+                        </Card>
+                      </Col>
+                    </div>
+                  );
+                })}
+              </Row>
+            </div>
           </>
         )}
       </div>
       <div className="container">
-      <div className="devider">
-        <div className="total_Price">
-          <span className="span">Total price : {price} JD</span>
-          <br />
-         
-          <input
-            className="pppp"
-            type="text"
-            placeholder="Enter youre discount code"
-            onChange={(e) => {
-              disc(e.target.value);
-            }}
-          ></input>
-          <div className="ll">{status}</div>
-          <br />
-          <div >
-          <Route
-            exact
-            path="/cart"
-            render={() => (
-              <Payment
-              
-              />
-            )}
-          />
+        <div className="devider">
+          <div className="total_Price">
+            <span className="span">Total price : {price} JD</span>
+            <br />
+
+            <input
+              className="pppp"
+              type="text"
+              placeholder="Enter youre discount code"
+              onChange={(e) => {
+                disc(e.target.value);
+              }}
+            ></input>
+            <div className="ll">{status}</div>
+            <br />
+            <div>
+              <Route exact path="/cart" render={() => <Payment />} />
+            </div>
+          </div>
         </div>
-          
-        </div>
-       
-      </div>
       </div>
     </>
   );

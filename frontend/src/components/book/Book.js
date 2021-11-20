@@ -12,7 +12,7 @@ export const AllBook = () => {
   const [books, setBooks] = useState([]);
   const history = useHistory();
   useEffect(() => {
-    axios.get("http://localhost:5000/books/").then((res) => {
+    axios.get("https://c3-bookshop.herokuapp.com/books/").then((res) => {
       setBooks([...res.data.books]);
     });
   }, []);
@@ -39,17 +39,29 @@ export const AllBook = () => {
             books.map((element, index) => {
               return (
                 <Col key={element.id}>
-                  <Card 
+                  <Card
                     style={{ textAlign: "left", width: "100%", height: "100%" }}
                   >
                     <Card.Img
                       variant="top"
                       src={element.image}
                       height="200px"
-                      width="200px" onClick={()=>{history.push(`/Book/${element._id}`)}}
+                      width="200px"
+                      onClick={() => {
+                        history.push(`/Book/${element._id}`);
+                      }}
                     />
                     <Card.Body>
-                      <Card.Title style={{ fontSize: "18px", display: "flex" , justifyContent:"space-between" }} onClick={()=>{history.push(`/Book/${element._id}`)}}>
+                      <Card.Title
+                        style={{
+                          fontSize: "18px",
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                        onClick={() => {
+                          history.push(`/Book/${element._id}`);
+                        }}
+                      >
                         {element.name}{" "}
                         <Route
                           exact
@@ -67,16 +79,22 @@ export const AllBook = () => {
                           maxHeight: "32px",
                           WebkitLineClamp: "2",
                           WebkitBoxOrient: "vertical",
-                        }} onClick={()=>{history.push(`/Book/${element._id}`)}}
+                        }}
+                        onClick={() => {
+                          history.push(`/Book/${element._id}`);
+                        }}
                       >
                         {element.description}
                       </Card.Text>
                       <Card.Text
                         style={{ fontSize: "13px", textAlign: "left" }}
+                      ></Card.Text>
+                      <Card.Text
+                        style={{ fontSize: "16px" }}
+                        onClick={() => {
+                          history.push(`/Book/${element._id}`);
+                        }}
                       >
-                        
-                      </Card.Text>
-                      <Card.Text style={{ fontSize: "16px" }} onClick={()=>{history.push(`/Book/${element._id}`)}}>
                         Price: {element.price} $
                       </Card.Text>
                       <Route

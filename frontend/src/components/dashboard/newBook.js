@@ -16,7 +16,7 @@ export const NewBook = () => {
   const addNewBook = () => {
     axios
       .post(
-        "http://localhost:5000/books/createbook",
+        "https://c3-bookshop.herokuapp.com/books/createbook",
         { image, name, type, author, language, description, price },
         {
           headers: {

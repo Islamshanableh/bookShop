@@ -1,4 +1,4 @@
-import React, {  useContext } from "react";
+import React, { useContext } from "react";
 import { Rating } from "react-simple-star-rating";
 import { userContext } from "../../App";
 import swal from "sweetalert";
@@ -12,7 +12,7 @@ export const Rate = ({ bookId, rateCount }) => {
   }, 0);
 
   const handleRating = (count) => {
-    if(!token){
+    if (!token) {
       swal({
         title: "You have to login first so you can rate",
         icon: "error",
@@ -21,7 +21,7 @@ export const Rate = ({ bookId, rateCount }) => {
     }
     axios
       .post(
-        "http://localhost:5000/rate",
+        "https://c3-bookshop.herokuapp.com/rate",
         { bookId, count },
         {
           headers: {

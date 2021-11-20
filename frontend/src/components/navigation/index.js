@@ -21,7 +21,7 @@ const Navigation = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:5000/users",
+        "https://c3-bookshop.herokuapp.com/users",
 
         {
           headers: {
@@ -38,17 +38,12 @@ const Navigation = () => {
       {!token.token ? (
         <ul className="nav-list">
           <li className="nav-item">
-            <h3 className="kero">KERO BOOK</h3>
+            <h3 className="keros">KERO BOOK</h3>
           </li>
           <li className="nav-item search">
-            <Search/>
+            <Search />
           </li>
-          <li className="nav-item">
-            <Login />
-          </li>
-          <li className="nav-item">
-            <Register />
-          </li>
+         
           <li className="nav-item">
             <Link to="/home">Home</Link>
           </li>
@@ -56,13 +51,19 @@ const Navigation = () => {
             <Link to="/about">About</Link>
           </li>
           <li className="nav-item">
-          <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li className="nav-item">
+            <Login />
+          </li>
+          <li className="nav-item">
+            <Register />
           </li>
         </ul>
       ) : (
         <ul className="nav-list">
           <li className="nav-item">
-            <h3 className="kero">KERO BOOK</h3>
+            <h3 className="keros">KERO BOOK</h3>
           </li>
           <li className="nav-item search">
             <Search />
@@ -75,7 +76,7 @@ const Navigation = () => {
 
           <li className="nav-item">
             <Link className="Link" to="/favorite">
-              Favourite 
+              Favourite
             </Link>
           </li>
           <li className="nav-item">
@@ -88,7 +89,7 @@ const Navigation = () => {
             <Link to="/about">About</Link>
           </li>
           <li className="nav-item">
-          <Link to="/contact">Contact</Link>
+            <Link to="/contact">Contact</Link>
           </li>
           <li className="nav-item">
             <Link className="Link" to="/logOut">

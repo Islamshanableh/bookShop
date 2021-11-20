@@ -22,7 +22,7 @@ export const Info = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:5000/users",
+        "https://c3-bookshop.herokuapp.com/users",
 
         {
           headers: {
@@ -37,7 +37,7 @@ export const Info = () => {
   const updateInfo = () => {
     axios
       .post(
-        "http://localhost:5000/users/update",
+        "https://c3-bookshop.herokuapp.com/users/update",
         {
           firstName: firstName,
           lastName: lastName,

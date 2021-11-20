@@ -23,7 +23,7 @@ export const Result = () => {
     if (setSearch.value === "type") {
       axios
         .get(
-          `http://localhost:5000/books/typeOfBook/${valueOfSearch.searchVal}`
+          `https://c3-bookshop.herokuapp.com/books/typeOfBook/${valueOfSearch.searchVal}`
         )
         .then((res) => {
           setBooks([...res.data.book]);
@@ -31,7 +31,7 @@ export const Result = () => {
     } else if (setSearch.value === "name") {
       axios
         .get(
-          `http://localhost:5000/books/nameOfBook/${valueOfSearch.searchVal}`
+          `https://c3-bookshop.herokuapp.com/books/nameOfBook/${valueOfSearch.searchVal}`
         )
         .then((res) => {
           setBooks([res.data.book]);
@@ -39,7 +39,7 @@ export const Result = () => {
     } else if (setSearch.value === "author") {
       axios
         .get(
-          `http://localhost:5000/books/nameOfAuthor/${valueOfSearch.searchVal}`
+          `https://c3-bookshop.herokuapp.com/books/nameOfAuthor/${valueOfSearch.searchVal}`
         )
         .then((res) => {
           setBooks([...res.data.book]);
