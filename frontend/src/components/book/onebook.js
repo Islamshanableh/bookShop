@@ -3,13 +3,14 @@ import React, { useEffect, useState } from "react";
 import { Route, useParams } from "react-router";
 import { Button ,Image, Col, Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './onebook.css'
-import { Rate } from "../rate/rate";
+import './onebook.css';
+
 
 export const OneBook = () => {
   let idd = useParams().id;
   const [book, setBook] = useState();
-  const [type , setType] = useState();
+  const [type , setType] = useState([]);
+  
   
   useEffect(() => {
     axios
@@ -26,9 +27,10 @@ export const OneBook = () => {
 
 
   useEffect( async ()=>{
-      await axios.get(`http://localhost:5000/books/typeOfBook/${book && book.type}`).then((result) => {
-        setType(result.data);
-        console.log("cta",result.data);
+      await axios.get(`http://localhost:5000/books/typeOfBook/${book && book.type}`).then(async(result) => {
+        console.log("cta",result.data.book);
+       await  setType(result.data.book);
+       
         
       })
       .catch((err) => {
@@ -36,7 +38,7 @@ export const OneBook = () => {
       });
   } , [])
 
-  return (
+  return (<div className="container">
     <div style={{display:"flex"}}>
       <div className="imgDetails">
         <Container>
@@ -47,11 +49,7 @@ export const OneBook = () => {
           </Row>
         </Container>
         <p className="nameBook">{book && book.name}</p>
-        <Route
-                exact
-                path="/Book"
-                render={() => <Rate bookId={book && book._id} rateCount={book && book.rating}  />}
-              />
+       
         <Button variant="outline-warning" style={{width:"150px" , margin:"auto" , fontWeight:"bold"}} >Add to cart</Button>
 
       </div>
@@ -61,14 +59,9 @@ export const OneBook = () => {
           <label> Book type</label>
           <p>{book && book.type} </p>
       </div>
-      <div className="SimilaBooks">
-         {/* {type && type.book}  */}
-         
-         {"mmmmmmmmmmmm"}
- 
-      </div>
+      
 
            
     </div>
-  );
+ </div> );
 };
