@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import { userContext } from "../../App";
 
-
 export const FavBage = () => {
   const [book, setBook] = useState();
   const [status, setStatus] = useState();
@@ -12,7 +11,7 @@ export const FavBage = () => {
 
   const getAllFavo = () => {
     axios
-      .get("http://localhost:5000/favorite/getAllFav/", {
+      .get("https://c3-bookshop.herokuapp.com/favorite/getAllFav/", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -31,7 +30,7 @@ export const FavBage = () => {
 
   const deleteBook = (id) => {
     axios
-      .delete(`http://localhost:5000/favorite/${id}`, {
+      .delete(`https://c3-bookshop.herokuapp.com/favorite/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

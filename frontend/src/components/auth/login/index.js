@@ -7,7 +7,7 @@ import "./login.css";
 import { Register } from "../signUp";
 import GoogleLogin from "react-google-login";
 import { FormControl, InputGroup } from "react-bootstrap";
-import { BsEye , BsEyeSlash } from "react-icons/bs";
+import { BsEye, BsEyeSlash } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 
 const customStyles = {
@@ -53,13 +53,13 @@ const Login = ({ value }) => {
   const [password, setPassword] = useState();
   const [status, setStatus] = useState();
   const [message, setMessage] = useState();
-  const [showPassword , setShowPassword] = useState();
+  const [showPassword, setShowPassword] = useState();
 
   const tokenContext = useContext(userContext);
 
   const checkValid = () => {
     axios
-      .post("http://localhost:5000/login", { email, password })
+      .post("https://c3-bookshop.herokuapp.com/login", { email, password })
       .then((res) => {
         if (!res.data.success) {
           return setStatus(<div>{res.data.message}</div>);
@@ -75,7 +75,9 @@ const Login = ({ value }) => {
 
   const responsesuccessGoogle = (response) => {
     axios
-      .post("http://localhost:5000/login/google", { tokenId: response.tokenId })
+      .post("https://c3-bookshop.herokuapp.com/login/google", {
+        tokenId: response.tokenId,
+      })
       .then((res) => {
         console.log(res);
         if (res.data) {
@@ -121,74 +123,70 @@ const Login = ({ value }) => {
           contentLabel="Example Modal"
           ariaHideApp={false}
         >
-         
-            <AiOutlineClose onClick={closeModal}/>
-         
-          <h3 class="kero">Login</h3>
+          <AiOutlineClose onClick={closeModal} />
+
+          <h3 className="kero">Login</h3>
           <div style={{ textAlign: "center", display: "grid" }}>
-            
             <InputGroup size="sm" className="mb-3">
-                <FormControl
-                  aria-label="Small"
-                  aria-describedby="inputGroup-sizing-sm"
-                   type="email"
-              placeholder="Email here"
-              style={{ width: "100px", margin: "auto" }}
-              onChange={(e) => {
-                setEmail(e.target.value);
-              }}
-                />
-              </InputGroup>
+              <FormControl
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                type="email"
+                placeholder="Email here"
+                style={{ width: "100px", margin: "auto" }}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+              />
+            </InputGroup>
             <br />
-           
+
             <InputGroup size="sm" className="mb-3">
-                <FormControl
-                  aria-label="Small"
-                  aria-describedby="inputGroup-sizing-sm"
-                 type={showPassword ? "text" : "password"} 
-              placeholder="Password here"
-              style={{ width: "100px", margin: "auto" }}
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-                />
-                <i
-              style={{
-                marginLeft:"240px",
-                position: "absolute",
-                zIndex:"999",
-                marginTop:"2px"
-              }}
-              onClick={(e) => {
-                setShowPassword(!showPassword);
-              }}
-            >
-              {showPassword ? <BsEyeSlash /> : <BsEye />}
-            </i>
-              </InputGroup>
+              <FormControl
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+                type={showPassword ? "text" : "password"}
+                placeholder="Password here"
+                style={{ width: "100px", margin: "auto" }}
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+              <i
+                style={{
+                  marginLeft: "240px",
+                  position: "absolute",
+                  zIndex: "999",
+                  marginTop: "2px",
+                }}
+                onClick={(e) => {
+                  setShowPassword(!showPassword);
+                }}
+              >
+                {showPassword ? <BsEyeSlash /> : <BsEye />}
+              </i>
+            </InputGroup>
             <br />
-            <button
-              onClick={checkValid}
-              
-              className="logBtn"
-            >
+            <button onClick={checkValid} className="logBtn">
               Login
             </button>
           </div>
 
           <div
-            style={{ display: "grid", marginTop: "50px" , textAlign:"center" }}
+            style={{ display: "grid", marginTop: "50px", textAlign: "center" }}
           >
-            <div style={{display:"flex" , gap:"7px" , marginLeft:"30%"}}>
-            <p>  or </p>
-            <p>
-              <Register  />
-            </p></div>
+            <div style={{ display: "flex", gap: "7px", marginLeft: "30%" }}>
+              <p> or </p>
+              <p>
+                <Register />
+              </p>
+            </div>
 
             <div className="social-login mt-0">
               <span className="social-label">or Login with</span>
               <ul className="socials">
-                <GoogleLogin className="google"
+                <GoogleLogin
+                  className="google"
                   clientId="517614289407-55p7q5bogii5ln2l6qevnribl05519kn.apps.googleusercontent.com"
                   buttonText="Login"
                   onSuccess={(response) => responsesuccessGoogle(response)}

@@ -18,7 +18,7 @@ const Dashboard = () => {
   const getAll = () => {
     axios
       .get(
-        "http://localhost:5000/books/myBook",
+        "https://c3-bookshop.herokuapp.com/books/myBook",
 
         {
           headers: {
@@ -33,7 +33,7 @@ const Dashboard = () => {
   useEffect(() => {
     axios
       .get(
-        "http://localhost:5000/books/myBook",
+        "https://c3-bookshop.herokuapp.com/books/myBook",
 
         {
           headers: {
@@ -49,7 +49,7 @@ const Dashboard = () => {
   const updateBook = (element) => {
     axios
       .put(
-        `http://localhost:5000/books/update/${element}`,
+        `https://c3-bookshop.herokuapp.com/books/update/${element}`,
         {
           image: image,
           name: name,

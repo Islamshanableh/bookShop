@@ -25,9 +25,8 @@ const Payment = () => {
       icon: "success",
       button: "OK",
     });
-    axios.post(`http://localhost:5000/sendMsg`, { confirm });
+    axios.post(`https://c3-bookshop.herokuapp.com/sendMsg`, { confirm });
   }
- 
 
   const CARD_OPTIONS = {
     iconStyle: "solid",
@@ -82,14 +81,14 @@ const Payment = () => {
         autoComplete={autoComplete}
         value={value}
         onChange={onChange}
-        style={{borderStyle:"none"}}
+        style={{ borderStyle: "none" }}
       />
     </div>
   );
 
   const SubmitButton = ({ processing, error, children, disabled }) => (
     <button
-    style={{borderStyle:"none"}}
+      style={{ borderStyle: "none" }}
       className={`SubmitButton ${error ? "SubmitButton--error" : ""}`}
       type="submit"
       disabled={processing || disabled}
@@ -269,8 +268,13 @@ const Payment = () => {
 
   return (
     <>
-      
-        <button onClick={() => setIsOpen(true)} className="oooo" style={{width: "100%"}}>Buy Now</button>
+      <button
+        onClick={() => setIsOpen(true)}
+        className="oooo"
+        style={{ width: "100%" }}
+      >
+        Buy Now
+      </button>
       <MyVerticallyCenteredModal
         show={modalIsOpen}
         onHide={() => setIsOpen(false)}
